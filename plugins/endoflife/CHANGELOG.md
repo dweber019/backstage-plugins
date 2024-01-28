@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.3
+
+### Patch Changes
+
+- 8128585: Update npm home page url.
+
 ## 0.0.2
 
 ### Patch Changes
