@@ -1,6 +1,6 @@
 {
   "name": "@dweber019/backstage-plugin-api-docs-spectral-linter",
-  "homepage": "https://github.com/dweber019/backstage-plugins",
+  "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/api-docs-spectral-linter",
   "repository": {
     "type": "git",
     "url": "https://github.com/dweber019/backstage-plugins.git"
