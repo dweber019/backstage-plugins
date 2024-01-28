@@ -1,0 +1,56 @@
+{
+  "name": "@dweber019/backstage-plugin-api-docs-module-wsdl",
+  "description": "Additional functionalities for the api-docs plugin that renders the output of WSDL",
+  "homepage": "https://github.com/dweber019/backstage-plugins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git"
+  },
+  "license": "MIT",
+  "version": "0.0.3",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "frontend-plugin"
+  },
+  "keywords": [
+    "backstage"
+  ],
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.4.3",
+    "@backstage/core-components": "^0.13.10",
+    "@backstage/core-plugin-api": "^1.8.2",
+    "@backstage/errors": "^1.2.3",
+    "@backstage/plugin-catalog-react": "^1.9.3",
+    "@material-ui/lab": "4.0.0-alpha.57",
+    "react-use": "^17.2.4"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.25.1",
+    "@backstage/dev-utils": "^1.0.26",
+    "@backstage/plugin-api-docs": "^0.10.3",
+    "@backstage/test-utils": "^1.4.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@types/react": "^16.13.1 || ^17.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

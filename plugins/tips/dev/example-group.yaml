@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-a
+  description: Team A
+  links:
+    - url: https://example.com/user
+      title: Team website
+spec:
+  type: team
+  children: []

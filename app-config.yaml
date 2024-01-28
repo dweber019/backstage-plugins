@@ -1,0 +1,89 @@
+app:
+  title: dweber019 Backstage App
+  baseUrl: http://localhost:3000
+
+organization:
+  name: dweber019
+
+backend:
+  # Used for enabling authentication, secret is shared by all backend plugins
+  # See https://backstage.io/docs/auth/service-to-service-auth for
+  # information on the format
+  # auth:
+  #   keys:
+  #     - secret: ${BACKEND_SECRET}
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+    # Uncomment the following host directive to bind to specific interfaces
+    # host: 127.0.0.1
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+
+  reading:
+    allow:
+      - host: "*.dneonline.com"
+  # This is for local development only, it is not recommended to use this in production
+  # The production database configuration is stored in app-config.production.yaml
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+  # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+
+integrations:
+
+proxy:
+### Example for how to add a proxy endpoint for the frontend.
+### A typical reason to do this is to handle HTTPS and CORS for internal services.
+# endpoints:
+#   '/test':
+#     target: 'https://example.com'
+#     changeOrigin: true
+
+# Reference documentation http://backstage.io/docs/features/techdocs/configuration
+# Note: After experimenting with basic setup, use CI/CD to generate docs
+# and an external cloud storage when deploying TechDocs for production use-case.
+# https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
+techdocs:
+  builder: 'local' # Alternatives - 'external'
+  generator:
+    runIn: 'docker' # Alternatives - 'local'
+  publisher:
+    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+
+auth:
+  # see https://backstage.io/docs/auth/ to learn about auth providers
+  providers: {}
+
+scaffolder:
+# see https://backstage.io/docs/features/software-templates/configuration for software template options
+
+catalog:
+  rules:
+    - allow: [Component, System, API, Resource, Location]
+  locations:
+    # Local example data, file locations are relative to the backend process, typically `packages/backend`
+    - type: file
+      target: ../entities/wsdl-api-example.yaml
+    - type: file
+      target: ../entities/end-of-life-resource-examples.yaml
+
+    - type: file
+      target: ../../plugins/api-docs-spectral-linter/dev/asyncapi-example-api.yaml
+    - type: file
+      target: ../../plugins/api-docs-spectral-linter/dev/openapi-baloise-example-api.yaml
+    - type: file
+      target: ../../plugins/api-docs-spectral-linter/dev/openapi-example-api.yaml
+    - type: file
+      target: ../../plugins/api-docs-spectral-linter/dev/openapi-zalando-example-api.yaml
+
+spectralLinter:
+  openApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml
+  asyncApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-asyncapi-ruleset.yaml
+

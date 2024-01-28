@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: artist-engagement-portal
+  description: Artist Engagement Portal
+spec:
+  owner: team-a

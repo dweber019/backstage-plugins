@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eol-angular
+  annotations:
+    endoflife.date/products: angular
+spec:
+  type: technology
+  owner: dweber019
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: eol-angular-nginx-app
+  annotations:
+    endoflife.date/products: angular,nginx
+spec:
+  type: service
+  lifecycle: experimental
+  owner: dweber019
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: eol-angular-nignx-version-app
+  annotations:
+    endoflife.date/products: angular@17,nginx@1.25
+spec:
+  type: service
+  lifecycle: experimental
+  owner: dweber019
