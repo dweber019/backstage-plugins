@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.8
+
+### Patch Changes
+
+- 8128585: Update npm home page url.
+
 ## 0.0.7
 
 ### Patch Changes

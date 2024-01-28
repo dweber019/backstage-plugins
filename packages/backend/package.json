@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.cjs.js",
   "types": "src/index.ts",
   "private": true,
@@ -39,8 +39,8 @@
     "@backstage/plugin-search-backend-module-techdocs": "^0.1.13",
     "@backstage/plugin-search-backend-node": "^1.2.13",
     "@backstage/plugin-techdocs-backend": "^1.9.2",
-    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": "^0.0.4",
-    "@dweber019/backstage-plugin-endoflife-backend": "^0.0.1",
+    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": "^0.0.5",
+    "@dweber019/backstage-plugin-endoflife-backend": "^0.0.2",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "dockerode": "^3.3.1",
