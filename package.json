@@ -29,7 +29,7 @@
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
     "new": "backstage-cli new --scope internal",
-    "version": "changeset version && yarn install && (git commit -am 'Update internal dependencies' || true)",
+    "version": "changeset version && yarn install --no-immutable && (git commit -am 'Update internal dependencies' || true)",
     "release": "changeset publish",
     "prepare": "husky install",
     "postinstall": "husky install || true"
