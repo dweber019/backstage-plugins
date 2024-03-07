@@ -26,18 +26,17 @@ export class ApiDocsModuleWsdlClient implements ApiDocsModuleWsdlApi {
     this.identityApi = options.identityApi;
   }
 
-  async convert(xml: string, entityRef: string): Promise<string> {
+  async convert(entityRef: string): Promise<string> {
     const baseUrl = await this.discoveryApi.getBaseUrl('api-docs-module-wsdl');
     const { token } = await this.identityApi.getCredentials();
 
     const res = await fetch(`${baseUrl}/v1/convert?entityRef=${entityRef}`, {
-      method: 'POST',
+      method: 'GET',
       headers: token
         ? {
             Authorization: `Bearer ${token}`,
           }
         : undefined,
-      body: xml,
     });
 
     if (!res.ok) {

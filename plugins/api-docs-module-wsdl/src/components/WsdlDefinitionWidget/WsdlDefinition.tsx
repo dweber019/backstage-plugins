@@ -15,10 +15,7 @@ export const WsdlDefinition = ({ definition }: WsdlDefinitionProps) => {
   const apiDocsModuleWsdlDocApi = useApi(apiDocsModuleWsdlApiRef);
   const { entity } = useEntity();
   const result = useAsync(() => {
-    return apiDocsModuleWsdlDocApi.convert(
-      definition,
-      stringifyEntityRef(entity),
-    );
+    return apiDocsModuleWsdlDocApi.convert(stringifyEntityRef(entity));
   }, [definition]);
 
   if (result.loading) {

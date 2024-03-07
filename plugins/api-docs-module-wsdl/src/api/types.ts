@@ -11,7 +11,7 @@ export interface ApiDocsModuleWsdlApi {
    *
    * @public
    */
-  convert(xml: string, entityRef: string): Promise<string>;
+  convert(entityRef: string): Promise<string>;
 }
 
 /**
