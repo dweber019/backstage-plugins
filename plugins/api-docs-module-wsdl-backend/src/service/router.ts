@@ -2,13 +2,12 @@ import express from 'express';
 import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
 import { Logger } from 'winston';
+import { CatalogClient } from '@backstage/catalog-client';
+import { PluginEndpointDiscovery } from '@backstage/backend-common';
+import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
 import styleSheet from '../stylesheet.sef.json';
-
-export interface RouterOptions {
-  logger: Logger;
-}
 
 const downloadExternalSchema = async (uri: string, logger: Logger) => {
   try {
@@ -100,11 +99,19 @@ const wsdlToHtml = async (xml: string, logger: Logger) => {
   ).then((output: { principalResult: string }) => output.principalResult);
 };
 
+export interface RouterOptions {
+  logger: Logger;
+  discovery: PluginEndpointDiscovery;
+}
+
 /** @public */
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger } = options;
+  const { logger, discovery } = options;
+
+  const catalogClient = new CatalogClient({ discoveryApi: discovery });
+
   const router = Router();
   router.use(express.text());
 
@@ -113,9 +120,13 @@ export async function createRouter(
     response.json({ status: 'ok' });
   });
 
-  router.post('/v1/convert', async (req, res) => {
-    const entityLogger = logger.child({ entity: req.query.entityRef });
-    const result = await wsdlToHtml(req.body.toString(), entityLogger);
+  router.get('/v1/convert', async (req, res) => {
+    const entityRef = req.query.entityRef as string;
+    const entityLogger = logger.child({ entity: entityRef });
+    const apiEntity = (await catalogClient.getEntityByRef(
+      entityRef,
+    )) as ApiEntity;
+    const result = await wsdlToHtml(apiEntity.spec.definition, entityLogger);
     res.send(result);
   });
 

@@ -16,11 +16,13 @@ export const apiDocsModuleWsdlPlugin = createBackendPlugin({
       deps: {
         logger: coreServices.logger,
         httpRouter: coreServices.httpRouter,
+        discovery: coreServices.discovery,
       },
-      async init({ logger, httpRouter }) {
+      async init({ logger, httpRouter, discovery }) {
         httpRouter.use(
           await createRouter({
             logger: loggerToWinstonLogger(logger),
+            discovery,
           }),
         );
       },

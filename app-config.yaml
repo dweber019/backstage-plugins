@@ -72,6 +72,8 @@ catalog:
     - type: file
       target: ../entities/wsdl-api-example.yaml
     - type: file
+      target: ../entities/wsdl-api-example-big.yaml
+    - type: file
       target: ../entities/end-of-life-resource-examples.yaml
 
     - type: file

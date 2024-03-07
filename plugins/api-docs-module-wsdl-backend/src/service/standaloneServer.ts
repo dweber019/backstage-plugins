@@ -1,4 +1,8 @@
-import { createServiceBuilder } from '@backstage/backend-common';
+import {
+  createServiceBuilder,
+  HostDiscovery,
+  loadBackendConfig,
+} from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
 import { createRouter } from './router';
@@ -16,7 +20,11 @@ export async function startStandaloneServer(
     service: 'api-docs-module-wsdl-backend',
   });
   logger.info('Starting application server...');
-  const router = await createRouter({ logger });
+  const config = await loadBackendConfig({ logger, argv: process.argv });
+  const router = await createRouter({
+    logger,
+    discovery: HostDiscovery.fromConfig(config),
+  });
 
   let service = createServiceBuilder(module)
     .setPort(options.port)
