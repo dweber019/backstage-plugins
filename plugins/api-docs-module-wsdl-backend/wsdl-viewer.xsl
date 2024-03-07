@@ -303,9 +303,13 @@ html&gt;body #rightColumn {
 */
 
 .page {
-	border-bottom: 3px dotted navy;
+	border-bottom: 3px dotted rgba(0, 0, 0, 0.87);
 	margin: 0;
 	padding: 10px 0 20px 0;
+}
+
+.theme-dark .page {
+    border-bottom: 3px dotted #fff;
 }
 
 .page:last-child {
@@ -324,12 +328,10 @@ html&gt;body #rightColumn {
 	font-weight: bold;
 	padding-bottom: .5em;
 	margin-right: 0;
-	color: darkblue;
 }
 
 .value {
 	margin-left: 147px;
-	color: darkblue;
 	padding-bottom: .5em;
 }
 
@@ -349,18 +351,16 @@ strong, strong a {
 
 a.local:link,
 a.local:visited {
-	color: blue; 
+    color: #1F5493;
 	margin-left: 10px;
-	border-bottom: 1px dotted blue;
-	text-decoration: none;
-	font-style: italic;
 }
 
 a.local:hover {
-	background-color: gainsboro; 
-	color: darkblue;
-	padding-bottom: 1px;
-	border-bottom: 1px solid darkblue;
+    text-decoration: underline;
+}
+
+.theme-dark a.local {
+    color: #9CC9FF;
 }
 
 a.target:link,
@@ -380,9 +380,13 @@ a.target:hover
 
 .box {
 	padding: 6px;
-	color: black;
-	background-color: gainsboro;
-	border: 1px solid gray;
+    background-color: #F8F8F8;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.theme-dark .box {
+    color: rgba(0, 0, 0, 0.87);
 }
 
 .shadow {

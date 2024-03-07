@@ -2,7 +2,7 @@ import React from 'react';
 import useAsync from 'react-use/lib/useAsync';
 import { Alert } from '@material-ui/lab';
 import { Progress } from '@backstage/core-components';
-import { useApi } from '@backstage/core-plugin-api';
+import { appThemeApiRef, useApi } from '@backstage/core-plugin-api';
 import { apiDocsModuleWsdlApiRef } from '../../api';
 import { useEntity } from '@backstage/plugin-catalog-react';
 import { stringifyEntityRef } from '@backstage/catalog-model';
@@ -14,6 +14,7 @@ export type WsdlDefinitionProps = {
 export const WsdlDefinition = ({ definition }: WsdlDefinitionProps) => {
   const apiDocsModuleWsdlDocApi = useApi(apiDocsModuleWsdlApiRef);
   const { entity } = useEntity();
+  const appThemeApi = useApi(appThemeApiRef);
   const result = useAsync(() => {
     return apiDocsModuleWsdlDocApi.convert(stringifyEntityRef(entity));
   }, [definition]);
@@ -26,5 +27,10 @@ export const WsdlDefinition = ({ definition }: WsdlDefinitionProps) => {
     return <Alert severity="error">{result?.error?.message}</Alert>;
   }
 
-  return <div dangerouslySetInnerHTML={{ __html: result.value || '' }} />;
+  return (
+    <div
+      className={`theme-${appThemeApi.getActiveThemeId()}`}
+      dangerouslySetInnerHTML={{ __html: result.value || '' }}
+    />
+  );
 };
