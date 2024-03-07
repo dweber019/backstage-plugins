@@ -1,0 +1,49 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: task-1
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
+  system: artist-engagement-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: task-2
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
+  system: artist-engagement-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: task-3
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
+  system: artist-engagement-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: task-4
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
+  system: artist-engagement-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: task-5
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
+  system: artist-engagement-portal

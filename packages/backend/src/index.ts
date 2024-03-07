@@ -33,6 +33,7 @@ import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import apiDocsModuleWsdlDoc from './plugins/apiDocsModuleWsdl';
 import endOfLife from './plugins/endoflife';
+import tasks from './plugins/tasks';
 
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
@@ -91,6 +92,7 @@ async function main() {
     createEnv('apiDocsModuleWsdl'),
   );
   const endOfLifeEnv = useHotMemoize(module, () => createEnv('endoflife'));
+  const tasksEnv = useHotMemoize(module, () => createEnv('tasks'));
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -104,6 +106,7 @@ async function main() {
     await apiDocsModuleWsdlDoc(apiDocsModuleWsdlDocEnv),
   );
   apiRouter.use('/endoflife', await endOfLife(endOfLifeEnv));
+  apiRouter.use('/tasks', await tasks(tasksEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());

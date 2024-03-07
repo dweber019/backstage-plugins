@@ -1,0 +1,42 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-1
+spec:
+  type: team
+  children: []
+  members:
+    - user:default/user-1
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-2
+spec:
+  type: team
+  children: []
+  members:
+    - user:default/user-1
+    - user:default/user-2
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-3
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: user-1
+spec:
+  memberOf: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: user-2
+spec:
+  memberOf: []

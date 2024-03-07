@@ -41,6 +41,7 @@
     "@backstage/plugin-techdocs-backend": "^1.9.2",
     "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": "^0.0.5",
     "@dweber019/backstage-plugin-endoflife-backend": "^0.0.2",
+    "@dweber019/backstage-plugin-tasks-backend": "0.0.0",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "dockerode": "^3.3.1",

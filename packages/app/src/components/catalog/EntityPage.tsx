@@ -59,6 +59,7 @@ import {
   isEndOfLifeAvailable,
 } from '@dweber019/backstage-plugin-endoflife';
 import { EntityTipsDialog } from '@dweber019/backstage-plugin-tips';
+import { EntityTasksCard } from '@dweber019/backstage-plugin-tasks';
 
 const techdocsContent = <EntityTechdocsContent />;
 
@@ -176,6 +177,10 @@ const serviceEntityPage = (
       if={isEndOfLifeAvailable}
     >
       <EntityEndOfLifeCard />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/tasks" title="Tasks">
+      <EntityTasksCard />
     </EntityLayout.Route>
   </EntityLayout>
 );
