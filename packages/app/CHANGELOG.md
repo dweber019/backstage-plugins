@@ -1,5 +1,13 @@
 # app
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [a151e66]
+- Updated dependencies [670c4c8]
+  - @dweber019/backstage-plugin-api-docs-module-wsdl@0.0.5
+
 ## 0.0.1
 
 ### Patch Changes

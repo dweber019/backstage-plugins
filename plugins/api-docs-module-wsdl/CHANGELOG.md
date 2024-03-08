@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl
 
+## 0.0.5
+
+### Patch Changes
+
+- a151e66: Improve dark mode.
+- 670c4c8: Use client catalog on backend side to load definition instead of providing definition from frontend.
+
 ## 0.0.4
 
 ### Patch Changes
