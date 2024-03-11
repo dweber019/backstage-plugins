@@ -1,7 +1,7 @@
 import {
   createServiceBuilder,
   HostDiscovery,
-  loadBackendConfig,
+  loadBackendConfig, ServerTokenManager,
 } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
@@ -24,6 +24,7 @@ export async function startStandaloneServer(
   const router = await createRouter({
     logger,
     discovery: HostDiscovery.fromConfig(config),
+    tokenManager: ServerTokenManager.noop(),
   });
 
   let service = createServiceBuilder(module)
