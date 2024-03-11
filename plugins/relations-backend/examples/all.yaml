@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: relation-processor
+  description: Examples of standard kinds extended with relations
+spec:
+  targets:
+    - ./group-1.yaml
+    - ./user-john-doe.yaml
+    - ./user-po.yaml
+    - ./component-1.yaml
+    - ./resource-1.yaml

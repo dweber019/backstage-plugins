@@ -17,6 +17,7 @@ import { CatalogBuilder } from '@backstage/plugin-catalog-backend';
 import { ScaffolderEntitiesProcessor } from '@backstage/plugin-catalog-backend-module-scaffolder-entity-model';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
+import { RelationEntitiesProcessor } from '@dweber019/backstage-plugin-relations-backend';
 import { AccentuateEntitiesProcessor } from '@dweber019/backstage-plugin-accentuate-backend';
 
 export default async function createPlugin(
@@ -28,6 +29,7 @@ export default async function createPlugin(
   builder.addProcessor(
     await AccentuateEntitiesProcessor.fromEnv(envAccentuate),
   );
+  builder.addProcessor(RelationEntitiesProcessor.fromConfig(env));
   const { processingEngine, router } = await builder.build();
   await processingEngine.start();
   return router;

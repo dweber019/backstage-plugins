@@ -1,0 +1,1 @@
+export { RelationsCatalogGraphPage } from './RelationsCatalogGraphPage';

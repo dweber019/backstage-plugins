@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`processor should emit relations 1`] = `
+{
+  "relation": {
+    "source": {
+      "kind": "Component",
+      "name": "component-name",
+      "namespace": "default",
+    },
+    "target": {
+      "kind": "user",
+      "name": "bruno",
+      "namespace": "default",
+    },
+    "type": "testBy",
+  },
+  "type": "relation",
+}
+`;
+
+exports[`processor should emit relations 2`] = `
+{
+  "relation": {
+    "source": {
+      "kind": "user",
+      "name": "bruno",
+      "namespace": "default",
+    },
+    "target": {
+      "kind": "Component",
+      "name": "component-name",
+      "namespace": "default",
+    },
+    "type": "testOf",
+  },
+  "type": "relation",
+}
+`;

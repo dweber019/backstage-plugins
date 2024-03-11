@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: resource
+metadata:
+  name: resource-1
+spec:
+  type: db
+  owner: group:default/group-1
+  supporter:
+    - john-doe
+    - group:default/group-1

@@ -1,0 +1,1 @@
+export { EntityRelationsCatalogGraphCard } from './EntityRelationsCatalogGraphCard';

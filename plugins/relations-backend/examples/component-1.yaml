@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: component-1
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/group-1
+  applicationOwner: user:default/kevin-po

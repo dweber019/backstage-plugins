@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: kevin-po
+spec:
+  profile:
+    displayName: Kevin the PO
+    email: kevin-po@example.com
+  memberOf: []
