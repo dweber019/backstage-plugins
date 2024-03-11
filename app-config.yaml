@@ -66,7 +66,7 @@ scaffolder:
 
 catalog:
   rules:
-    - allow: [Component, System, API, Resource, Location, User, Group]
+    - allow: [Component, System, API, Resource, Location, Group, User]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -88,9 +88,43 @@ catalog:
     - type: file
       target: ../../plugins/accentuate-backend/examples/all.yaml
 
+    - type: file
+      target: ../../plugins/relations-processor/examples/all.yaml
+
 spectralLinter:
   openApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml
   asyncApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-asyncapi-ruleset.yaml
 
 accentuate:
   allowedKinds: ['User', 'Group', 'Component', 'Resource', 'System', 'Domain']
+
+relationsProcessor:
+  relations:
+    - sourceKind: component
+      sourceType:
+      targetKinds:
+        - user
+      attribute: applicationOwner
+      multi: false
+      pairs:
+      - incoming: applicationOwnerOf
+        outgoing: applicationOwnerBy
+      - incoming: ownerOf
+        outgoing: ownedBy
+    - sourceKind: group
+      targetKinds:
+        - user
+      attribute: productOwner
+      multi: false
+      pairs:
+      - incoming: productOwnerOf
+        outgoing: productOwnerBy
+    - sourceKind: resource
+      targetKinds:
+        - user
+        - group
+      attribute: supporter
+      multi: true
+      pairs:
+      - incoming: supporterOf
+        outgoing: supportedBy

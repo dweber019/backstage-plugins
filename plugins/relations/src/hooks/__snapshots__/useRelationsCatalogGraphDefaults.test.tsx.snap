@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useRelationsCatalogGraphDefaults should return relationPairs defaults 1`] = `
+[
+  [
+    "ownerOf",
+    "ownedBy",
+  ],
+  [
+    "consumesApi",
+    "apiConsumedBy",
+  ],
+  [
+    "apiProvidedBy",
+    "providesApi",
+  ],
+  [
+    "hasPart",
+    "partOf",
+  ],
+  [
+    "parentOf",
+    "childOf",
+  ],
+  [
+    "hasMember",
+    "memberOf",
+  ],
+  [
+    "dependsOn",
+    "dependencyOf",
+  ],
+  [
+    "testOf",
+    "testBy",
+  ],
+]
+`;
+
+exports[`useRelationsCatalogGraphDefaults should return relationPairs overwrite 1`] = `
+[
+  [
+    "overwriteOf",
+    "overwriteBy",
+  ],
+]
+`;

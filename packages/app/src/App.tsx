@@ -44,7 +44,7 @@ import { Root } from './components/Root';
 import { AlertDisplay, OAuthRequestDialog } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
-import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
+import { RelationsCatalogGraphPage } from '@dweber019/backstage-plugin-relations';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { AccentuatePage } from '@dweber019/backstage-plugin-accentuate';
@@ -103,7 +103,7 @@ const routes = (
       {searchPage}
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
-    <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/catalog-graph" element={<RelationsCatalogGraphPage />} />
     <Route path="/accentuate" element={<AccentuatePage />} />
   </FlatRoutes>
 );

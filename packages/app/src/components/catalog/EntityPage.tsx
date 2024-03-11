@@ -60,6 +60,11 @@ import {
 } from '@dweber019/backstage-plugin-endoflife';
 import { EntityTipsDialog } from '@dweber019/backstage-plugin-tips';
 import {
+  EntityRelationsCard,
+  EntityRelationsCatalogGraphCard,
+} from '@dweber019/backstage-plugin-relations';
+import { relationLabels } from './relationLabels';
+import {
   EntityAccentuateInfo,
   isAccentuateEnabled,
   EntityLayoutWrapper,
@@ -135,13 +140,16 @@ const overviewContent = (
       <EntityAboutCard variant="gridItem" />
     </Grid>
     <Grid item md={6} xs={12}>
-      <EntityCatalogGraphCard variant="gridItem" height={400} />
+      <EntityRelationsCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
 
-    <Grid item md={4} xs={12}>
+    <Grid item md={6} xs={12}>
       <EntityLinksCard />
     </Grid>
-    <Grid item md={8} xs={12}>
+    <Grid item md={6} xs={12}>
+      <EntityRelationsCard />
+    </Grid>
+    <Grid item md={6} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
   </Grid>
@@ -270,7 +278,7 @@ const apiPage = (
           <EntityAboutCard />
         </Grid>
         <Grid item md={6} xs={12}>
-          <EntityCatalogGraphCard variant="gridItem" height={400} />
+          <EntityRelationsCatalogGraphCard variant="gridItem" height={400} />
         </Grid>
         <Grid item md={4} xs={12}>
           <EntityLinksCard />
@@ -315,6 +323,16 @@ const userPage = (
         <Grid item xs={12} md={6}>
           <EntityOwnershipCard variant="gridItem" />
         </Grid>
+        <Grid item md={6} xs={12}>
+          <EntityRelationsCatalogGraphCard
+            variant="gridItem"
+            height={400}
+            unidirectional={false}
+          />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <EntityRelationsCard relations={relationLabels} />
+        </Grid>
       </Grid>
     </EntityLayout.Route>
   </EntityLayout>
@@ -330,6 +348,12 @@ const groupPage = (
         </Grid>
         <Grid item xs={12} md={6}>
           <EntityOwnershipCard variant="gridItem" />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <EntityRelationsCatalogGraphCard variant="gridItem" height={400} />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <EntityRelationsCard />
         </Grid>
         <Grid item xs={12} md={6}>
           <EntityMembersListCard />
@@ -351,7 +375,7 @@ const systemPage = (
           <EntityAboutCard variant="gridItem" />
         </Grid>
         <Grid item md={6} xs={12}>
-          <EntityCatalogGraphCard variant="gridItem" height={400} />
+          <EntityRelationsCatalogGraphCard variant="gridItem" height={400} />
         </Grid>
         <Grid item md={4} xs={12}>
           <EntityLinksCard />
@@ -398,7 +422,7 @@ const domainPage = (
           <EntityAboutCard variant="gridItem" />
         </Grid>
         <Grid item md={6} xs={12}>
-          <EntityCatalogGraphCard variant="gridItem" height={400} />
+          <EntityRelationsCatalogGraphCard variant="gridItem" height={400} />
         </Grid>
         <Grid item md={6}>
           <EntityHasSystemsCard variant="gridItem" />

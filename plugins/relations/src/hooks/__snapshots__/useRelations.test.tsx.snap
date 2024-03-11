@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useRelationsCatalogGraphDefaults should return relations whitelisted 1`] = `
+[
+  {
+    "entityRefs": [
+      "other:default/other-1",
+    ],
+    "label": "otherOf",
+  },
+]
+`;
+
+exports[`useRelationsCatalogGraphDefaults should return relations with custom label 1`] = `
+[
+  {
+    "entityRefs": [
+      "test:default/test-1",
+    ],
+    "label": "Custom label",
+  },
+]
+`;
+
+exports[`useRelationsCatalogGraphDefaults should return relations with relation name as label 1`] = `
+[
+  {
+    "entityRefs": [
+      "test:default/test-1",
+    ],
+    "label": "testOf",
+  },
+  {
+    "entityRefs": [
+      "other:default/other-1",
+    ],
+    "label": "otherOf",
+  },
+]
+`;

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-1
+spec:
+  type: team
+  children: []
+  members:
+    - john-doe
+    - kevin-po
+  productOwner: user:default/kevin-po
