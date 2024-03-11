@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 
+## 0.0.7
+
+### Patch Changes
+
+- 01790f6: added tokenManager for authenticated catalogClient calls
+
 ## 0.0.6
 
 ### Patch Changes

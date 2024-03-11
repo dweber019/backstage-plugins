@@ -5269,7 +5269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dweber019/backstage-plugin-api-docs-module-wsdl-backend@^0.0.6, @dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend":
+"@dweber019/backstage-plugin-api-docs-module-wsdl-backend@^0.0.7, @dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend"
   dependencies:
@@ -14241,7 +14241,7 @@ __metadata:
     "@backstage/plugin-search-backend-module-techdocs": ^0.1.13
     "@backstage/plugin-search-backend-node": ^1.2.13
     "@backstage/plugin-techdocs-backend": ^1.9.2
-    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.6
+    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.7
     "@dweber019/backstage-plugin-endoflife-backend": ^0.0.2
     "@types/dockerode": ^3.3.0
     "@types/express": ^4.17.6
