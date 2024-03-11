@@ -3,7 +3,7 @@ import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
 import { Logger } from 'winston';
 import { CatalogClient } from '@backstage/catalog-client';
-import { PluginEndpointDiscovery } from '@backstage/backend-common';
+import {PluginEndpointDiscovery, TokenManager} from '@backstage/backend-common';
 import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
@@ -102,13 +102,14 @@ const wsdlToHtml = async (xml: string, logger: Logger) => {
 export interface RouterOptions {
   logger: Logger;
   discovery: PluginEndpointDiscovery;
+  tokenManager: TokenManager;
 }
 
 /** @public */
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, discovery } = options;
+  const { logger, discovery, tokenManager } = options;
 
   const catalogClient = new CatalogClient({ discoveryApi: discovery });
 
@@ -121,10 +122,11 @@ export async function createRouter(
   });
 
   router.get('/v1/convert', async (req, res) => {
+    const { token } = await tokenManager.getToken();
     const entityRef = req.query.entityRef as string;
     const entityLogger = logger.child({ entity: entityRef });
     const apiEntity = (await catalogClient.getEntityByRef(
-      entityRef,
+      entityRef, { token }
     )) as ApiEntity;
     const result = await wsdlToHtml(apiEntity.spec.definition, entityLogger);
     res.send(result);
