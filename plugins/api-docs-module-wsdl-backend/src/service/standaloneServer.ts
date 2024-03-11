@@ -1,7 +1,8 @@
 import {
   createServiceBuilder,
   HostDiscovery,
-  loadBackendConfig, ServerTokenManager,
+  loadBackendConfig,
+  ServerTokenManager,
 } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
