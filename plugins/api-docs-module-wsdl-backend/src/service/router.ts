@@ -3,7 +3,7 @@ import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
 import { Logger } from 'winston';
 import { CatalogClient } from '@backstage/catalog-client';
-import {PluginEndpointDiscovery, TokenManager} from '@backstage/backend-common';
+import { PluginEndpointDiscovery, TokenManager } from '@backstage/backend-common';
 import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
