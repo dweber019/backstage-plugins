@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-accentuate
+spec:
+  type: team
+  children: []
+  members: # add user-accentuate
+    - user:default/user-accentuate-2

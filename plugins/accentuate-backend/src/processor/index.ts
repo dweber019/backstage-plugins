@@ -1,0 +1,1 @@
+export { AccentuateEntitiesProcessor } from './processor';

@@ -1,0 +1,1 @@
+export { AccentuatePage } from './AccentuatePage';

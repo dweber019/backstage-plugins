@@ -59,6 +59,11 @@ import {
   isEndOfLifeAvailable,
 } from '@dweber019/backstage-plugin-endoflife';
 import { EntityTipsDialog } from '@dweber019/backstage-plugin-tips';
+import {
+  EntityAccentuateInfo,
+  isAccentuateEnabled,
+  EntityLayoutWrapper,
+} from '@dweber019/backstage-plugin-accentuate';
 
 const techdocsContent = <EntityTechdocsContent />;
 
@@ -111,6 +116,14 @@ const entityWarningContent = (
       </EntitySwitch.Case>
     </EntitySwitch>
 
+    <EntitySwitch>
+      <EntitySwitch.Case if={isAccentuateEnabled}>
+        <Grid item xs={12}>
+          <EntityAccentuateInfo />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
+
     <EntityTipsDialog />
   </>
 );
@@ -135,7 +148,7 @@ const overviewContent = (
 );
 
 const serviceEntityPage = (
-  <EntityLayout>
+  <EntityLayoutWrapper>
     <EntityLayout.Route path="/" title="Overview">
       {overviewContent}
     </EntityLayout.Route>
@@ -177,7 +190,7 @@ const serviceEntityPage = (
     >
       <EntityEndOfLifeCard />
     </EntityLayout.Route>
-  </EntityLayout>
+  </EntityLayoutWrapper>
 );
 
 const websiteEntityPage = (
@@ -249,7 +262,7 @@ const componentPage = (
 );
 
 const apiPage = (
-  <EntityLayout>
+  <EntityLayoutWrapper>
     <EntityLayout.Route path="/" title="Overview">
       <Grid container spacing={3}>
         {entityWarningContent}
@@ -288,7 +301,7 @@ const apiPage = (
     >
       <EntityApiDocsSpectralLinterContent />
     </EntityLayout.Route>
-  </EntityLayout>
+  </EntityLayoutWrapper>
 );
 
 const userPage = (

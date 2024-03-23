@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "GroupV1alpha1",
+  "description": "A group describes an organizational entity, such as for example a team, a business unit, or a loose collection of people in an interest group. Members of these groups are modeled in the catalog as kind User.",
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "A display name of the entity, to be presented in user interfaces instead of the name property, when available.",
+              "examples": ["React SSR Template"],
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "description": "A short (typically relatively few words, on one line) description of the entity."
+            },
+            "labels": {
+              "type": "object",
+              "description": "Key/value pairs of identifying information attached to the entity.",
+              "additionalProperties": true,
+              "patternProperties": {
+                "^.+$": {
+                  "type": "string"
+                }
+              }
+            },
+            "annotations": {
+              "type": "object",
+              "description": "Key/value pairs of non-identifying auxiliary information attached to the entity.",
+              "additionalProperties": true,
+              "patternProperties": {
+                "^.+$": {
+                  "type": "string"
+                }
+              }
+            },
+            "tags": {
+              "type": "array",
+              "description": "A list of single-valued strings, to for example classify catalog entities in various ways.",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "links": {
+              "type": "array",
+              "description": "A list of external hyperlinks related to the entity. Links can provide additional contextual information that may be located outside of Backstage itself. For example, an admin dashboard or external CMS page.",
+              "items": {
+                "type": "object",
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "A url in a standard uri format.",
+                    "examples": ["https://admin.example-org.com"],
+                    "minLength": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "A user friendly display name for the link.",
+                    "examples": ["Admin Dashboard"],
+                    "minLength": 1
+                  },
+                  "icon": {
+                    "type": "string",
+                    "description": "A key representing a visual icon to be displayed in the UI.",
+                    "examples": ["dashboard"],
+                    "minLength": 1
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "An optional value to categorize links into specific groups.",
+                    "examples": [
+                      "runbook",
+                      "documentation",
+                      "logs",
+                      "dashboard"
+                    ],
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "spec": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The type of group. There is currently no enforced set of values for this field, so it is left up to the adopting organization to choose a nomenclature that matches their org hierarchy.",
+              "examples": ["team", "business-unit", "product-area", "root"],
+              "minLength": 1
+            },
+            "profile": {
+              "type": "object",
+              "description": "Optional profile information about the group, mainly for display purposes. All fields of this structure are also optional. The email would be a group email of some form, that the group may wish to be used for contacting them. The picture is expected to be a URL pointing to an image that's representative of the group, and that a browser could fetch and render on a group page or similar.",
+              "properties": {
+                "displayName": {
+                  "type": "string",
+                  "description": "A simple display name to present to users.",
+                  "examples": ["Infrastructure"],
+                  "minLength": 1
+                },
+                "email": {
+                  "type": "string",
+                  "description": "An email where this entity can be reached.",
+                  "examples": ["infrastructure@example.com"],
+                  "minLength": 1
+                },
+                "picture": {
+                  "type": "string",
+                  "description": "The URL of an image that represents this entity.",
+                  "examples": [
+                    "https://example.com/groups/bu-infrastructure.jpeg"
+                  ],
+                  "minLength": 1
+                }
+              }
+            },
+            "parent": {
+              "type": "string",
+              "description": "The immediate parent group in the hierarchy, if any. Not all groups must have a parent; the catalog supports multi-root hierarchies. Groups may however not have more than one parent. This field is an entity reference.",
+              "examples": ["ops"],
+              "minLength": 1
+            },
+            "children": {
+              "type": "array",
+              "description": "The immediate child groups of this group in the hierarchy (whose parent field points to this group). The list must be present, but may be empty if there are no child groups. The items are not guaranteed to be ordered in any particular way. The entries of this array are entity references.",
+              "items": {
+                "type": "string",
+                "examples": ["backstage", "other"],
+                "minLength": 1
+              }
+            },
+            "members": {
+              "type": "array",
+              "description": "The users that are members of this group. The entries of this array are entity references.",
+              "items": {
+                "type": "string",
+                "examples": ["jdoe"],
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -33,6 +33,7 @@ import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import apiDocsModuleWsdlDoc from './plugins/apiDocsModuleWsdl';
 import endOfLife from './plugins/endoflife';
+import accentuate from './plugins/accentuate';
 
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
@@ -91,9 +92,10 @@ async function main() {
     createEnv('apiDocsModuleWsdl'),
   );
   const endOfLifeEnv = useHotMemoize(module, () => createEnv('endoflife'));
+  const accentuateEnv = useHotMemoize(module, () => createEnv('accentuate'));
 
   const apiRouter = Router();
-  apiRouter.use('/catalog', await catalog(catalogEnv));
+  apiRouter.use('/catalog', await catalog(catalogEnv, accentuateEnv));
   apiRouter.use('/scaffolder', await scaffolder(scaffolderEnv));
   apiRouter.use('/auth', await auth(authEnv));
   apiRouter.use('/techdocs', await techdocs(techdocsEnv));
@@ -104,6 +106,7 @@ async function main() {
     await apiDocsModuleWsdlDoc(apiDocsModuleWsdlDocEnv),
   );
   apiRouter.use('/endoflife', await endOfLife(endOfLifeEnv));
+  apiRouter.use('/accentuate', await accentuate(accentuateEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());

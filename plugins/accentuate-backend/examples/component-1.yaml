@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: component-accentuate
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/group-accentuate
+  # system
+  # dependsOn
+
