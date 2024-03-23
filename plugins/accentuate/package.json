@@ -1,0 +1,67 @@
+{
+  "name": "@dweber019/backstage-plugin-accentuate",
+  "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/accentuate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git"
+  },
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "frontend-plugin"
+  },
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.4.5",
+    "@backstage/core-components": "^0.14.2",
+    "@backstage/core-plugin-api": "^1.9.1",
+    "@backstage/errors": "^1.2.4",
+    "@backstage/plugin-catalog": "^1.18.1",
+    "@backstage/plugin-catalog-react": "^1.11.1",
+    "@backstage/types": "^1.1.1",
+    "@dweber019/backstage-plugin-accentuate-common": "^0.0.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "4.0.0-alpha.57",
+    "@rjsf/core": "^5.18.1",
+    "@rjsf/material-ui": "^5.18.1",
+    "@rjsf/utils": "^5.18.1",
+    "@rjsf/validator-ajv8": "^5.18.1",
+    "react-use": "^17.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.26.1",
+    "@backstage/dev-utils": "^1.0.29",
+    "@backstage/test-utils": "^1.5.2",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "*",
+    "cross-fetch": "^3.1.5",
+    "msw": "^1.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

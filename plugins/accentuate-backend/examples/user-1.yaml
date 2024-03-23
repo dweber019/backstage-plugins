@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: user-accentuate
+spec:
+  profile:
+    displayName: John Doe (accentuate)
+  #  email: john-doe@accentuate.com
+  memberOf: []

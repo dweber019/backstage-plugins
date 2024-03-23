@@ -6,6 +6,7 @@
 - [API docs Spectral linter](plugins/api-docs-spectral-linter)
 - [End of life](plugins/endoflife)
 - [Tips](plugins/tips)
+- [Accentuate](plugins/accentuate)
 
 ## Update backstage deps
 

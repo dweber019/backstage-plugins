@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: accentuate
+  description: Examples of standard kinds with accentuate
+spec:
+  targets:
+    - ./group-1.yaml
+    - ./user-1.yaml
+    - ./user-2.yaml
+    - ./component-1.yaml
+    - ./resource-1.yaml
+    - ./system-1.yaml
