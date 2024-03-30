@@ -1,11 +1,6 @@
 import { CatalogProcessor } from '@backstage/plugin-catalog-node';
-import {
-  Entity,
-  entityKindSchemaValidator,
-  stringifyEntityRef,
-} from '@backstage/catalog-model';
+import { Entity, stringifyEntityRef } from '@backstage/catalog-model';
 import { Logger } from 'winston';
-import * as schema from './Accentuate.v1alpha1.schema.json';
 import { AccentuateBackendDatabase } from '../db';
 import { AccentuateBackendClient } from '../api';
 import deepmerge from 'deepmerge';
@@ -13,6 +8,7 @@ import { PluginDatabaseManager } from '@backstage/backend-common';
 import {
   ANNOTATION_ACCENTUATE_DISABLE,
   DEFAULT_ALLOWED_KINDS,
+  isAllowedKind,
 } from '@dweber019/backstage-plugin-accentuate-common';
 import { Config } from '@backstage/config';
 
@@ -43,16 +39,16 @@ export class AccentuateEntitiesProcessor implements CatalogProcessor {
   getProcessorName(): string {
     return 'AccentuateEntitiesProcessor';
   }
-  async validateEntityKind(entity: Entity): Promise<boolean> {
-    const validator = entityKindSchemaValidator(schema);
-    return !!validator(entity);
-  }
 
   async preProcessEntity(entity: Entity): Promise<Entity> {
     const allowedKinds =
-      this.config.getOptionalStringArray('accentuate.allowedKinds') ??
-      DEFAULT_ALLOWED_KINDS;
-    if (!allowedKinds.includes(entity.kind)) {
+      this.config
+        .getOptionalConfigArray('accentuate.allowedKinds')
+        ?.map(config => ({
+          kind: config.getString('kind'),
+          specType: config.getOptionalString('specType'),
+        })) ?? DEFAULT_ALLOWED_KINDS;
+    if (!isAllowedKind(entity, allowedKinds)) {
       return deepmerge(entity, {
         metadata: { annotations: { [ANNOTATION_ACCENTUATE_DISABLE]: 'true' } },
       }) as any;

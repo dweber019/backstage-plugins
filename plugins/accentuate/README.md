@@ -38,10 +38,27 @@ You can configure which entity kind (e.g. Group) are modifiable by the plugin by
 ```yaml
 accentuate:
   allowedKinds:
-    ['User', 'Group', 'Component', 'Resource', 'API', 'System', 'Domain']
+    - kind: 'User'
+    - kind: 'Group'
+    - kind: 'Group'
+    - kind: 'Component'
+    - kind: 'Resource'
+    - kind: 'System'
+    - kind: 'Domain'
 ```
 
 The list above is the default.
+
+You can even more specific control the allowed entities over the `spec.type` with
+
+```yaml
+accentuate:
+  allowedKinds:
+    - kind: 'Component'
+      specType: 'service'
+```
+
+This could mean only components of type service are allowed to be accentuated.
 
 #### Annotations
 

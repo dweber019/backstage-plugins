@@ -2,6 +2,7 @@ import { createApiRef } from '@backstage/core-plugin-api';
 import { JsonSchema } from './AccentuateClient';
 import { AccentuateResponse } from '@dweber019/backstage-plugin-accentuate-common';
 import { JsonObject } from '@backstage/types';
+import { Entity } from '@backstage/catalog-model';
 
 /** @public */
 export interface AccentuateApi {
@@ -14,7 +15,7 @@ export interface AccentuateApi {
   /** @public */
   delete(entityRef: string): Promise<void>;
   /** @public */
-  getSchema(kind: string): JsonSchema | undefined;
+  getSchema(entity: Entity): JsonSchema | undefined;
   /** @public */
   refresh(entityRef: string): Promise<void>;
 }

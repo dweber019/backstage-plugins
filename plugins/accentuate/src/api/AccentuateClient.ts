@@ -12,10 +12,12 @@ import {
   AccentuateInput,
 } from '@dweber019/backstage-plugin-accentuate-common';
 import { JsonObject } from '@backstage/types';
+import { Entity } from '@backstage/catalog-model';
 
 /** @public */
 export interface JsonSchema {
   kind: string;
+  type?: string;
   schema: RJSFSchema;
   uiSchema: UiSchema;
 }
@@ -113,8 +115,22 @@ export class AccentuateClient implements AccentuateApi {
     }
   }
 
-  getSchema(kind: string): JsonSchema | undefined {
-    return this.schemas.find(schema => schema.kind === kind);
+  getSchema(
+    entity: Entity & { spec: { type?: string } },
+  ): JsonSchema | undefined {
+    const typeSpecificSchema = this.schemas.find(
+      schema =>
+        schema.kind === entity.kind &&
+        entity.spec.type &&
+        schema.type?.toLocaleLowerCase() ===
+          entity.spec.type.toLocaleLowerCase(),
+    );
+    if (typeSpecificSchema) {
+      return typeSpecificSchema;
+    }
+    return this.schemas.find(
+      schema => schema.kind === entity.kind && schema.type === undefined,
+    );
   }
 
   async refresh(entityRef: string): Promise<void> {

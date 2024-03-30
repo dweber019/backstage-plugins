@@ -47,7 +47,7 @@ export const EntityAccentuateDialog = (props: {
     return accentuateApi.get(stringifyEntityRef(entity));
   }, [entity]);
 
-  const jsonSchema = accentuateApi.getSchema(entity.kind);
+  const jsonSchema = accentuateApi.getSchema(entity);
 
   if (loading) {
     return <Progress />;

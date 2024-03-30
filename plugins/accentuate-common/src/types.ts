@@ -13,3 +13,9 @@ export interface AccentuateInput {
   entityRef: string;
   data: JsonObject;
 }
+
+/** @public */
+export interface ConfigAllowedKind {
+  kind: string;
+  specType?: string;
+}

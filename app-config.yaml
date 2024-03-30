@@ -89,14 +89,23 @@ catalog:
       target: ../../plugins/accentuate-backend/examples/all.yaml
 
     - type: file
-      target: ../../plugins/relations-processor/examples/all.yaml
+      target: ../../plugins/relations-backend/examples/all.yaml
 
 spectralLinter:
   openApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml
   asyncApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-asyncapi-ruleset.yaml
 
 accentuate:
-  allowedKinds: ['User', 'Group', 'Component', 'Resource', 'System', 'Domain']
+  allowedKinds:
+    - kind: 'User'
+    - kind: 'Group'
+      specType: team
+    - kind: 'Group'
+      specType: org
+    - kind: 'Component'
+    - kind: 'Resource'
+    - kind: 'System'
+    - kind: 'Domain'
 
 relationsProcessor:
   relations:

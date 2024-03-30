@@ -7,3 +7,23 @@ spec:
   children: []
   members: # add user-accentuate
     - user:default/user-accentuate-2
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-accentuate-org
+spec:
+  type: org
+  children: []
+  members: # add user-accentuate
+    - user:default/user-accentuate-2
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: group-accentuate-other
+spec:
+  type: other
+  children: []
+  members: # add user-accentuate
+    - user:default/user-accentuate-2

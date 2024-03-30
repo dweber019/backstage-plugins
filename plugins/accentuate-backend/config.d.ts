@@ -4,6 +4,9 @@ export interface Config {
      * The kinds allowed to be accentuated
      * @visibility frontend
      */
-    allowedKinds?: string[];
+    allowedKinds?: {
+      kind: string;
+      specType?: string;
+    }[];
   };
 }
