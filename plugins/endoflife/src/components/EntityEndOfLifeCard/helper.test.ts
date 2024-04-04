@@ -117,7 +117,7 @@ describe('Helper', () => {
       ]);
 
       expect(groups.length).toBe(3);
-      expect(groups[0].id).toBe('4');
+      expect(groups[0].id).toBe('rhel-4');
       expect((groups[0].content as HTMLElement).innerHTML).toContain('rhel 4');
     });
   });

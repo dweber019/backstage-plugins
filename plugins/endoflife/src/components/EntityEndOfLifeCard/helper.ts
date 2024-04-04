@@ -67,7 +67,7 @@ export const calculateTimelineGroups = (
     `;
 
     return {
-      id: cycleItem.cycle,
+      id: `${cycleItem.product}-${cycleItem.cycle}`,
       content,
     };
   });
@@ -97,7 +97,7 @@ export const calculateTimelineItems = (
           id: `${index}-support`,
           content: 'Support',
           title: `Support (${cycleItem.releaseDate} - ${cycleItem.support})`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: cycleItem.releaseDate,
           end: cycleItem.support as string,
           className: getDateClass(cycleItem.support as string),
@@ -109,7 +109,7 @@ export const calculateTimelineItems = (
           id: `${index}-support`,
           content: 'Support',
           title: `Support (${cycleItem.releaseDate} - end date not defined)`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: cycleItem.releaseDate,
           end: dateNow.toISO(),
           className: 'dateOk',
@@ -129,7 +129,7 @@ export const calculateTimelineItems = (
           id: `${index}-eol`,
           content: 'EOL',
           title: `EOL (${startDate} - ${cycleItem.eol})`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: startDate,
           end: cycleItem.eol as string,
           className: getDateClass(cycleItem.eol as string),
@@ -147,7 +147,7 @@ export const calculateTimelineItems = (
           id: `${index}-eol`,
           content: 'EOL',
           title: `EOL (${startDate} - end date not defined)`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: startDate,
           end: dateNow.toISO(),
           className: 'dateOk',
@@ -167,7 +167,7 @@ export const calculateTimelineItems = (
           id: `${index}-extendedSupport`,
           content: 'Extended support',
           title: `Extended support (${startDate} - ${cycleItem.extendedSupport})`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: startDate,
           end: cycleItem.extendedSupport as string,
           className: getDateClass(cycleItem.extendedSupport as string),
@@ -185,7 +185,7 @@ export const calculateTimelineItems = (
           id: `${index}-extendedSupport`,
           content: 'Extended support',
           title: `Extended support (${startDate} - end date not defined)`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: startDate,
           end: dateNow.toISO(),
           className: 'dateOk',
@@ -206,7 +206,7 @@ export const calculateTimelineItems = (
           title: `Support ${
             isBooleanAnd(cycleItem.discontinued, true) ? 'discontinued ' : ''
           }(${cycleItem.releaseDate} - ${endDateTitle})`,
-          group: cycleItem.cycle,
+          group: `${cycleItem.product}-${cycleItem.cycle}`,
           start: cycleItem.releaseDate,
           end: endDate,
           className: isBooleanAnd(cycleItem.discontinued, true)
