@@ -110,4 +110,68 @@ describe('EntityEndOfLifeCard', () => {
     const cardDeepLink = await rendered.findByText('View more for rhel');
     expect(cardDeepLink).toBeInTheDocument();
   });
+
+  it('should have rendered with overlapping cycles', async () => {
+    const mockEntity = {
+      apiVersion: 'backstage.io/v1beta1',
+      metadata: {
+        name: 'mock',
+        annotations: { 'endoflife.date/products': 'oracle-jdk,redhat-jboss-eap@7' },
+      },
+      kind: 'System',
+      spec: { owner: 'any' },
+    } as SystemEntity;
+
+    const mockEndOfLifeApiOverlappingCycles = {
+      ...mockEndOfLifeApi,
+      getAnnotationProducts: jest.fn().mockResolvedValue([
+        {
+          cycle: "7",
+          lts: true,
+          releaseDate: "2011-07-11",
+          eol: "2019-07-31",
+          link: "https://www.oracle.com/java/technologies/javase/7-support-relnotes.html#R170_361",
+          latest: "7u351",
+          latestReleaseDate: "2022-07-19",
+          extendedSupport: "2022-07-19",
+          product: 'oracle-jdk',
+        },
+        {
+          cycle: "7",
+          releaseDate: "2016-05-01",
+          eol: "2025-06-30",
+          latest: "7.4.14",
+          latestReleaseDate: "2023-12-12",
+          lts: false,
+          support: "2023-12-31",
+          extendedSupport: "2026-11-30",
+          product: 'redhat-jboss-eap',
+        },
+      ])
+    }
+
+    const rendered = await renderWithEffects(
+      <TestApiProvider
+        apis={[
+          [endOfLifeApiRef, mockEndOfLifeApiOverlappingCycles],
+          [appThemeApiRef, mockAppThemeApi],
+          [scmIntegrationsApiRef, mockScmIntegrationRegistry],
+          [configApiRef, mockConfigApi],
+        ]}
+      >
+        <EntityProvider entity={mockEntity}>
+          <EntityEndOfLifeCard />
+        </EntityProvider>
+      </TestApiProvider>,
+    );
+
+    const cardTitle = await rendered.findByText('End of life for oracle-jdk, redhat-jboss-eap');
+    expect(cardTitle).toBeInTheDocument();
+
+    const groupRhel8 = await rendered.findByText('oracle-jdk 7 (LTS)');
+    expect(groupRhel8).toBeInTheDocument();
+
+    const cardDeepLink = await rendered.findByText('View more for oracle-jdk, redhat-jboss-eap');
+    expect(cardDeepLink).toBeInTheDocument();
+  });
 });
