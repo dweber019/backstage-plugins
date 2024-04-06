@@ -1,5 +1,18 @@
 # backend
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [7830d8d]
+- Updated dependencies [666e5ab]
+- Updated dependencies [7830d8d]
+  - @dweber019/backstage-plugin-accentuate-backend@0.0.1
+  - @dweber019/backstage-plugin-relations-backend@0.0.1
+  - @dweber019/backstage-plugin-api-docs-module-wsdl-backend@0.0.8
+  - @dweber019/backstage-plugin-endoflife-backend@0.0.3
+  - app@0.0.3
+
 ## 0.0.3
 
 ### Patch Changes

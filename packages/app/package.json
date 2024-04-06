@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "backstage": {
     "role": "frontend"
@@ -31,12 +31,12 @@
     "@backstage/plugin-techdocs-react": "^1.2.1",
     "@backstage/plugin-user-settings": "^0.8.3",
     "@backstage/theme": "^0.5.2",
-    "@dweber019/backstage-plugin-accentuate": "^0.0.0",
-    "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.5",
-    "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.2.11",
-    "@dweber019/backstage-plugin-endoflife": "^0.0.3",
-    "@dweber019/backstage-plugin-relations": "0.0.0",
-    "@dweber019/backstage-plugin-tips": "^0.0.8",
+    "@dweber019/backstage-plugin-accentuate": "^0.0.1",
+    "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.6",
+    "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.2.12",
+    "@dweber019/backstage-plugin-endoflife": "^0.0.4",
+    "@dweber019/backstage-plugin-relations": "0.0.1",
+    "@dweber019/backstage-plugin-tips": "^0.0.9",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
     "history": "^5.0.0",
