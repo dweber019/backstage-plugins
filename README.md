@@ -7,6 +7,7 @@
 - [End of life](plugins/endoflife)
 - [Tips](plugins/tips)
 - [Accentuate](plugins/accentuate)
+- [Relations](plugins/relations)
 
 ## Update backstage deps
 
