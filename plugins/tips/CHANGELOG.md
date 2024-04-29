@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.10
+
+### Patch Changes
+
+- 74f37ae: Update backstage and nodeJS
+
 ## 0.0.9
 
 ### Patch Changes

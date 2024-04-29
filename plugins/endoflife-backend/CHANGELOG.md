@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-endoflife-backend
 
+## 0.0.4
+
+### Patch Changes
+
+- 12ff84e: Update to new backend system.
+- 74f37ae: Update backstage and nodeJS
+
 ## 0.0.3
 
 ### Patch Changes

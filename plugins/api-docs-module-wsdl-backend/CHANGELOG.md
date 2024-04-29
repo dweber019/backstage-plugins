@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 
+## 0.0.9
+
+### Patch Changes
+
+- 12ff84e: Update to new backend system.
+- 74f37ae: Update backstage and nodeJS
+
 ## 0.0.8
 
 ### Patch Changes

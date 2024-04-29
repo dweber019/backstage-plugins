@@ -1,5 +1,14 @@
 # @dweber019/backstage-plugin-accentuate-backend
 
+## 0.0.2
+
+### Patch Changes
+
+- 12ff84e: Update to new backend system.
+- 74f37ae: Update backstage and nodeJS
+- Updated dependencies [74f37ae]
+  - @dweber019/backstage-plugin-accentuate-common@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
