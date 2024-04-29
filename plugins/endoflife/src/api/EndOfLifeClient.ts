@@ -6,7 +6,11 @@ import {
   EndOfLifeProduct,
   EndOfLifeProducts,
 } from './types';
-import { DiscoveryApi, FetchApi } from '@backstage/core-plugin-api';
+import {
+  DiscoveryApi,
+  FetchApi,
+  IdentityApi,
+} from '@backstage/core-plugin-api';
 
 /**
  * Options for creating a EndOfLifeClient client.
@@ -17,6 +21,7 @@ export interface EndOfLifeClientOptions {
   baseUrl: string;
   discoveryApi: DiscoveryApi;
   fetchApi: FetchApi;
+  identityApi: IdentityApi;
 }
 
 const initRequestOption = {
@@ -32,11 +37,13 @@ export class EndOfLifeClient implements EndOfLifeApi {
   private readonly baseUrl: string;
   private readonly discoveryApi: DiscoveryApi;
   private readonly fetchApi: FetchApi;
+  private readonly identityApi: IdentityApi;
 
   constructor(options: EndOfLifeClientOptions) {
     this.baseUrl = options.baseUrl;
     this.discoveryApi = options.discoveryApi;
     this.fetchApi = options.fetchApi;
+    this.identityApi = options.identityApi;
   }
 
   async getProducts(): Promise<EndOfLifeProducts> {
@@ -124,9 +131,16 @@ export class EndOfLifeClient implements EndOfLifeApi {
 
   async getFromSource(fileUrl: string) {
     const baseUrl = await this.discoveryApi.getBaseUrl('endoflife');
+    const { token } = await this.identityApi.getCredentials();
     const targetUrl = `${baseUrl}/file?url=${encodeURIComponent(fileUrl)}`;
 
-    const res = await this.fetchApi.fetch(targetUrl);
+    const res = await this.fetchApi.fetch(targetUrl, {
+      headers: token
+        ? {
+            Authorization: `Bearer ${token}`,
+          }
+        : undefined,
+    });
 
     if (!res.ok) {
       throw await ResponseError.fromResponse(res);

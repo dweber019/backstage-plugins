@@ -3,5 +3,5 @@
  *
  * @packageDocumentation
  */
-export { catalogModuleRelationsProcessor } from './plugin';
+export { catalogModuleRelationsProcessor as default } from './plugin';
 export * from './processor';

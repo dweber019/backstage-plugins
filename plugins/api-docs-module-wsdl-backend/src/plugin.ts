@@ -18,15 +18,21 @@ export const apiDocsModuleWsdlPlugin = createBackendPlugin({
         httpRouter: coreServices.httpRouter,
         discovery: coreServices.discovery,
         tokenManager: coreServices.tokenManager,
+        auth: coreServices.auth,
       },
-      async init({ logger, httpRouter, discovery, tokenManager }) {
+      async init({ logger, httpRouter, discovery, tokenManager, auth }) {
         httpRouter.use(
           await createRouter({
             logger: loggerToWinstonLogger(logger),
             discovery,
             tokenManager,
+            auth,
           }),
         );
+        httpRouter.addAuthPolicy({
+          path: '/health',
+          allow: 'unauthenticated',
+        });
       },
     });
   },

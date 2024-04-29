@@ -20,6 +20,10 @@ export async function createRouter(
   const router = Router();
   router.use(express.json());
 
+  router.get('/health', (_, response) => {
+    response.json({ status: 'ok' });
+  });
+
   router.get('/file', async (req, res) => {
     const urlToProcess = req.query.url as string;
     if (!urlToProcess) {

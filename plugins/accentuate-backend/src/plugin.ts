@@ -1,4 +1,7 @@
-import { loggerToWinstonLogger } from '@backstage/backend-common';
+import {
+  DatabaseManager,
+  loggerToWinstonLogger,
+} from '@backstage/backend-common';
 import {
   coreServices,
   createBackendPlugin,
@@ -31,6 +34,10 @@ export const accentuatePlugin = createBackendPlugin({
             identity,
           }),
         );
+        httpRouter.addAuthPolicy({
+          path: '/health',
+          allow: 'unauthenticated',
+        });
       },
     });
   },
@@ -44,15 +51,16 @@ export const catalogModuleAccentuateProcessor = createBackendModule({
       deps: {
         catalog: catalogProcessingExtensionPoint,
         logger: coreServices.logger,
-        database: coreServices.database,
         config: coreServices.rootConfig,
       },
-      async init({ catalog, logger, config, database }) {
+      async init({ catalog, logger, config }) {
+        const databaseManager = DatabaseManager.fromConfig(config);
+        const databaseService = databaseManager.forPlugin('accentuate');
         catalog.addProcessor(
           await AccentuateEntitiesProcessor.fromEnv({
             logger: loggerToWinstonLogger(logger),
             config,
-            database,
+            database: databaseService,
           }),
         );
       },

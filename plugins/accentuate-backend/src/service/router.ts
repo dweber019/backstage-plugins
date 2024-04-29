@@ -24,13 +24,13 @@ export async function createRouter(
 ): Promise<express.Router> {
   const { logger, database, identity } = routerOptions;
 
-  const tasksBackendStore = await AccentuateBackendDatabase.create(
+  const accentuateBackendStore = await AccentuateBackendDatabase.create(
     await database.getClient(),
   );
 
   const accentuateBackendClient =
     routerOptions.accentuateBackendApi ||
-    new AccentuateBackendClient(logger, tasksBackendStore);
+    new AccentuateBackendClient(logger, accentuateBackendStore);
 
   const router = Router();
   router.use(express.json());
