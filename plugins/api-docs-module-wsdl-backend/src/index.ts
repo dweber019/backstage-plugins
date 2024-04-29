@@ -4,4 +4,4 @@
  * @packageDocumentation
  */
 export * from './service/router';
-export * from './plugin';
+export { apiDocsModuleWsdlPlugin as default } from './plugin';

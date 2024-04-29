@@ -31,10 +31,6 @@ export interface AccentuateClientOptions {
   schemas: JsonSchema[];
 }
 
-const initRequestOption = {
-  headers: { Accept: `application/json`, 'Content-Type': `application/json` },
-};
-
 /** @public */
 export class AccentuateClient implements AccentuateApi {
   private readonly discoveryApi: DiscoveryApi;
@@ -53,7 +49,10 @@ export class AccentuateClient implements AccentuateApi {
 
   async getAll(): Promise<AccentuateResponse[]> {
     const baseUrl = await this.discoveryApi.getBaseUrl('accentuate');
-    const res = await this.fetchApi.fetch(baseUrl, initRequestOption);
+    const res = await this.fetchApi.fetch(
+      baseUrl,
+      await this.buildInitRequest(),
+    );
 
     if (!res.ok) {
       throw await ResponseError.fromResponse(res);
@@ -66,7 +65,7 @@ export class AccentuateClient implements AccentuateApi {
     const baseUrl = await this.discoveryApi.getBaseUrl('accentuate');
     const res = await this.fetchApi.fetch(
       `${baseUrl}/?entityRef=${encodeURIComponent(entityRef)}`,
-      initRequestOption,
+      await this.buildInitRequest(),
     );
 
     if (res.status === 404) {
@@ -85,7 +84,7 @@ export class AccentuateClient implements AccentuateApi {
   ): Promise<AccentuateResponse> {
     const baseUrl = await this.discoveryApi.getBaseUrl('accentuate');
     const res = await this.fetchApi.fetch(baseUrl, {
-      ...initRequestOption,
+      ...(await this.buildInitRequest()),
       method: 'PUT',
       body: JSON.stringify({
         entityRef,
@@ -105,7 +104,7 @@ export class AccentuateClient implements AccentuateApi {
     const res = await this.fetchApi.fetch(
       `${baseUrl}/?entityRef=${encodeURIComponent(entityRef)}`,
       {
-        ...initRequestOption,
+        ...(await this.buildInitRequest()),
         method: 'DELETE',
       },
     );
@@ -136,5 +135,20 @@ export class AccentuateClient implements AccentuateApi {
   async refresh(entityRef: string): Promise<void> {
     const { token } = await this.identityApi.getCredentials();
     await this.catalogApi.refreshEntity(entityRef, { token });
+  }
+
+  private async buildInitRequest(): Promise<RequestInit> {
+    const { token } = await this.identityApi.getCredentials();
+    return {
+      headers: {
+        Accept: `application/json`,
+        'Content-Type': `application/json`,
+        ...(token
+          ? {
+              Authorization: `Bearer ${token}`,
+            }
+          : {}),
+      },
+    };
   }
 }

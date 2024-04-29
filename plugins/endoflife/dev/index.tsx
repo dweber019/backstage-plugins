@@ -5,7 +5,11 @@ import { Entity } from '@backstage/catalog-model';
 import { endOfLifeApiRef, endOfLifePlugin, EntityEndOfLifeCard } from '../src';
 import { Content, PageWithHeader } from '@backstage/core-components';
 import { TestEndOfLifeClient } from './TestEndOfLifeClient';
-import { discoveryApiRef, fetchApiRef } from '@backstage/core-plugin-api';
+import {
+  discoveryApiRef,
+  fetchApiRef,
+  identityApiRef,
+} from '@backstage/core-plugin-api';
 
 const entityTemplate = (productsAnnotation: string): Entity => {
   return {
@@ -86,12 +90,14 @@ const builder = createDevApp()
     deps: {
       discoveryApi: discoveryApiRef,
       fetchApi: fetchApiRef,
+      identityApi: identityApiRef,
     },
-    factory: ({ discoveryApi, fetchApi }) =>
+    factory: ({ discoveryApi, fetchApi, identityApi }) =>
       new TestEndOfLifeClient({
         baseUrl: 'https://endoflife.date',
         discoveryApi,
         fetchApi,
+        identityApi,
       }),
   })
   .addPage({

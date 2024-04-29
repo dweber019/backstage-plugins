@@ -3,11 +3,16 @@ import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
 import { Logger } from 'winston';
 import { CatalogClient } from '@backstage/catalog-client';
-import { PluginEndpointDiscovery, TokenManager } from '@backstage/backend-common';
+import {
+  createLegacyAuthAdapters,
+  PluginEndpointDiscovery,
+  TokenManager,
+} from '@backstage/backend-common';
 import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
 import styleSheet from '../stylesheet.sef.json';
+import { AuthService } from '@backstage/backend-plugin-api';
 
 const downloadExternalSchema = async (uri: string, logger: Logger) => {
   try {
@@ -103,31 +108,40 @@ export interface RouterOptions {
   logger: Logger;
   discovery: PluginEndpointDiscovery;
   tokenManager: TokenManager;
+  auth?: AuthService;
 }
 
 /** @public */
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, discovery, tokenManager } = options;
+  const { logger, discovery, tokenManager, auth } = options;
 
   const catalogClient = new CatalogClient({ discoveryApi: discovery });
+
+  const { auth: adaptedAuth } = createLegacyAuthAdapters({
+    auth,
+    tokenManager: tokenManager,
+    discovery: discovery,
+  });
 
   const router = Router();
   router.use(express.text());
 
   router.get('/health', (_, response) => {
-    logger.info('PONG!');
     response.json({ status: 'ok' });
   });
 
   router.get('/v1/convert', async (req, res) => {
-    const { token } = await tokenManager.getToken();
+    const { token } = await adaptedAuth.getPluginRequestToken({
+      onBehalfOf: await adaptedAuth.getOwnServiceCredentials(),
+      targetPluginId: 'catalog',
+    });
     const entityRef = req.query.entityRef as string;
     const entityLogger = logger.child({ entity: entityRef });
-    const apiEntity = (await catalogClient.getEntityByRef(
-      entityRef, { token }
-    )) as ApiEntity;
+    const apiEntity = (await catalogClient.getEntityByRef(entityRef, {
+      token,
+    })) as ApiEntity;
     const result = await wsdlToHtml(apiEntity.spec.definition, entityLogger);
     res.send(result);
   });

@@ -28,6 +28,10 @@ export const endOfLifePlugin = createBackendPlugin({
             cacheClient: cache,
           }),
         );
+        httpRouter.addAuthPolicy({
+          path: '/health',
+          allow: 'unauthenticated',
+        });
       },
     });
   },

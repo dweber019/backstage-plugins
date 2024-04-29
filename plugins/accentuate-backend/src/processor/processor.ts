@@ -69,12 +69,12 @@ export class AccentuateEntitiesProcessor implements CatalogProcessor {
   }
 
   public static async fromEnv(env: PluginEnvironment) {
-    const tasksBackendStore = await AccentuateBackendDatabase.create(
+    const accentuateBackendStore = await AccentuateBackendDatabase.create(
       await env.database.getClient(),
     );
     const accentuateBackendClient = new AccentuateBackendClient(
       env.logger,
-      tasksBackendStore,
+      accentuateBackendStore,
     );
     return new AccentuateEntitiesProcessor({
       logger: env.logger,

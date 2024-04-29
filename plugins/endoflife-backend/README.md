@@ -55,16 +55,14 @@ The backend plugin has support for the [new backend system](https://backstage.io
 
 In your `packages/backend/src/index.ts` make the following changes:
 
-```diff
+```ts
+const backend = createBackend();
 
-+ import { endOfLifePlugin } from '@dweber019/backstage-plugin-endoflife-backend';
-  const backend = createBackend();
-
-+ backend.add(endOfLifePlugin());
+backend.add(import('@dweber019/backstage-plugin-endoflife-backend'));
 
 // ... other feature additions
 
-  backend.start();
+backend.start();
 ```
 
 ## Local development

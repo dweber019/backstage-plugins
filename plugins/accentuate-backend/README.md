@@ -76,17 +76,19 @@ The backend plugin has support for the [new backend system](https://backstage.io
 
 In your `packages/backend/src/index.ts` make the following changes:
 
-```diff
+```ts
+import {
+  accentuatePlugin,
+  catalogModuleAccentuateProcessor,
+} from '@dweber019/backstage-plugin-accentuate-backend';
+const backend = createBackend();
 
-+ import { accentuatePlugin, catalogModuleAccentuateProcessor } from '@dweber019/backstage-plugin-accentuate-backend';
-  const backend = createBackend();
-
-+ backend.add(accentuatePlugin());
-+ backend.add(catalogModuleAccentuateProcessor());
+backend.add(accentuatePlugin);
+backend.add(catalogModuleAccentuateProcessor);
 
 // ... other feature additions
 
-  backend.start();
+backend.start();
 ```
 
 > This was not tested and is here for reference

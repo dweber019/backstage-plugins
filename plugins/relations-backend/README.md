@@ -137,16 +137,14 @@ The backend plugin has support for the [new backend system](https://backstage.io
 
 In your `packages/backend/src/index.ts` make the following changes:
 
-```diff
+```ts
+const backend = createBackend();
 
-+ import { catalogModuleRelationsProcessor } from '@dweber019/backstage-plugin-relations-backend';
-  const backend = createBackend();
-
-+ backend.add(catalogModuleRelationsProcessor());
+backend.add(import('@dweber019/backstage-plugin-relations-backend'));
 
 // ... other feature additions
 
-  backend.start();
+backend.start();
 ```
 
 > This was not tested and is here for reference

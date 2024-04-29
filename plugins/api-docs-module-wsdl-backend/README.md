@@ -18,7 +18,7 @@ import { PluginEnvironment } from '../types';
 export default async function createPlugin(
   env: PluginEnvironment,
 ): Promise<Router> {
-  return await createRouter({ logger: env.logger, discovery: env.discovery });
+  return await createRouter(env);
 }
 ```
 
@@ -41,13 +41,12 @@ The backend plugin has support for the [new backend system](https://backstage.io
 
 In your `packages/backend/src/index.ts` make the following changes:
 
-```diff
-  import { createBackend } from '@backstage/backend-defaults';
-+ import { apiDocsModuleWsdlPlugin } from '@dweber019/backstage-plugin-api-docs-module-wsdl-backend';
-  const backend = createBackend();
-  // ... other feature additions
-+ backend.add(apiDocsModuleWsdlPlugin());
-  backend.start();
+```ts
+import { createBackend } from '@backstage/backend-defaults';
+
+backend.add(import('@dweber019/backstage-plugin-api-docs-module-wsdl-backend'));
+
+backend.start();
 ```
 
 ## Development
