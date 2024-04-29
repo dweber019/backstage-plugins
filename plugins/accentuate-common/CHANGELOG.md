@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-accentuate-common
 
+## 0.0.2
+
+### Patch Changes
+
+- 74f37ae: Update backstage and nodeJS
+
 ## 0.0.1
 
 ### Patch Changes
