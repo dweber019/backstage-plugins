@@ -5737,7 +5737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dweber019/backstage-plugin-accentuate-backend@^0.0.2, @dweber019/backstage-plugin-accentuate-backend@workspace:plugins/accentuate-backend":
+"@dweber019/backstage-plugin-accentuate-backend@^0.0.3, @dweber019/backstage-plugin-accentuate-backend@workspace:plugins/accentuate-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-accentuate-backend@workspace:plugins/accentuate-backend"
   dependencies:
@@ -5750,7 +5750,7 @@ __metadata:
     "@backstage/plugin-auth-node": ^0.4.13
     "@backstage/plugin-catalog-node": ^1.12.0
     "@backstage/types": ^1.1.1
-    "@dweber019/backstage-plugin-accentuate-common": ^0.0.2
+    "@dweber019/backstage-plugin-accentuate-common": ^0.0.3
     "@types/express": ^4.17.6
     "@types/supertest": ^2.0.8
     deepmerge: ^4.3.1
@@ -5765,7 +5765,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-accentuate-common@^0.0.2, @dweber019/backstage-plugin-accentuate-common@workspace:plugins/accentuate-common":
+"@dweber019/backstage-plugin-accentuate-common@^0.0.3, @dweber019/backstage-plugin-accentuate-common@workspace:plugins/accentuate-common":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-accentuate-common@workspace:plugins/accentuate-common"
   dependencies:
@@ -5775,7 +5775,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-accentuate@^0.0.2, @dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate":
+"@dweber019/backstage-plugin-accentuate@^0.0.3, @dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate"
   dependencies:
@@ -5789,7 +5789,7 @@ __metadata:
     "@backstage/plugin-catalog-react": ^1.12.0
     "@backstage/test-utils": ^1.5.5
     "@backstage/types": ^1.1.1
-    "@dweber019/backstage-plugin-accentuate-common": ^0.0.2
+    "@dweber019/backstage-plugin-accentuate-common": ^0.0.3
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.11.3
     "@material-ui/lab": 4.0.0-alpha.57
@@ -5812,7 +5812,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-module-wsdl-backend@^0.0.9, @dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend":
+"@dweber019/backstage-plugin-api-docs-module-wsdl-backend@^0.0.10, @dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend"
   dependencies:
@@ -5836,7 +5836,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.7, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
+"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.8, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl"
   dependencies:
@@ -5861,7 +5861,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.2.13, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
+"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.2.14, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter"
   dependencies:
@@ -5892,7 +5892,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-endoflife-backend@^0.0.4, @dweber019/backstage-plugin-endoflife-backend@workspace:plugins/endoflife-backend":
+"@dweber019/backstage-plugin-endoflife-backend@^0.0.5, @dweber019/backstage-plugin-endoflife-backend@workspace:plugins/endoflife-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-endoflife-backend@workspace:plugins/endoflife-backend"
   dependencies:
@@ -5918,7 +5918,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-endoflife@^0.0.5, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
+"@dweber019/backstage-plugin-endoflife@^0.0.6, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife"
   dependencies:
@@ -5951,7 +5951,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-relations-backend@0.0.2, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
+"@dweber019/backstage-plugin-relations-backend@0.0.3, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend"
   dependencies:
@@ -5973,7 +5973,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-relations@0.0.2, @dweber019/backstage-plugin-relations@workspace:plugins/relations":
+"@dweber019/backstage-plugin-relations@0.0.3, @dweber019/backstage-plugin-relations@workspace:plugins/relations":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-relations@workspace:plugins/relations"
   dependencies:
@@ -6001,7 +6001,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-tips@^0.0.10, @dweber019/backstage-plugin-tips@workspace:plugins/tips":
+"@dweber019/backstage-plugin-tips@^0.0.11, @dweber019/backstage-plugin-tips@workspace:plugins/tips":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-tips@workspace:plugins/tips"
   dependencies:
@@ -14293,12 +14293,12 @@ __metadata:
     "@backstage/plugin-user-settings": ^0.8.6
     "@backstage/test-utils": ^1.5.5
     "@backstage/theme": ^0.5.4
-    "@dweber019/backstage-plugin-accentuate": ^0.0.2
-    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.7
-    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.2.13
-    "@dweber019/backstage-plugin-endoflife": ^0.0.5
-    "@dweber019/backstage-plugin-relations": 0.0.2
-    "@dweber019/backstage-plugin-tips": ^0.0.10
+    "@dweber019/backstage-plugin-accentuate": ^0.0.3
+    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.8
+    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.2.14
+    "@dweber019/backstage-plugin-endoflife": ^0.0.6
+    "@dweber019/backstage-plugin-relations": 0.0.3
+    "@dweber019/backstage-plugin-tips": ^0.0.11
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@playwright/test": ^1.32.3
@@ -14993,10 +14993,10 @@ __metadata:
     "@backstage/plugin-search-backend-module-techdocs": ^0.1.23
     "@backstage/plugin-search-backend-node": ^1.2.22
     "@backstage/plugin-techdocs-backend": ^1.10.5
-    "@dweber019/backstage-plugin-accentuate-backend": ^0.0.2
-    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.9
-    "@dweber019/backstage-plugin-endoflife-backend": ^0.0.4
-    "@dweber019/backstage-plugin-relations-backend": 0.0.2
+    "@dweber019/backstage-plugin-accentuate-backend": ^0.0.3
+    "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.10
+    "@dweber019/backstage-plugin-endoflife-backend": ^0.0.5
+    "@dweber019/backstage-plugin-relations-backend": 0.0.3
     "@types/dockerode": ^3.3.0
     "@types/express": ^4.17.6
     "@types/express-serve-static-core": ^4.17.5

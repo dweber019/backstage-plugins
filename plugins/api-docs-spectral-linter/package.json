@@ -6,7 +6,7 @@
     "url": "https://github.com/dweber019/backstage-plugins.git"
   },
   "license": "MIT",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

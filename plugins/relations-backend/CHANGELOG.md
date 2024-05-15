@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations-backend
 
+## 0.0.3
+
+### Patch Changes
+
+- b848a33: Update to Backstage 1.27.1.
+
 ## 0.0.2
 
 ### Patch Changes

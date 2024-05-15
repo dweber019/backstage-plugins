@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-relations
 
+## 0.0.3
+
+### Patch Changes
+
+- b848a33: Update to Backstage 1.27.1.
+- b848a33: Remove unidirectional default setting as it's not needed anymore.
+
 ## 0.0.2
 
 ### Patch Changes
