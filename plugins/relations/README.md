@@ -25,9 +25,12 @@ yarn --cwd packages/app add @dweber019/backstage-plugin-relations
 
 You need to have the [relations processor plugin](../relations-backend/README.md) configured.
 
+Additionally, make sure to use at least Backstage version `1.27.0`.
+
 ### Entity Pages
 
-You can replace all occurrences of `EntityCatalogGraphCard` with `EntityRelationsCatalogGraphCard` like
+As you introduced new relations you either have to manually add the relation to the `EntityCatalogGraphCard` or the replacement
+`EntityRelationsCatalogGraphCard`. This new card will add all newly configured relation pairs and enable arrows as default.
 
 ```tsx
 // packages/app/src/components/catalog/EntityPage.tsx

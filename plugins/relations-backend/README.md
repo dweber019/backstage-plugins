@@ -92,8 +92,6 @@ spec:
 
 ### Catalog graph
 
-Waiting for [backstage/23478](https://github.com/backstage/backstage/pull/23478).
-
 It's recommend to use the [Relations frontend plugin](../relations/README.md) to add new relations to the filters and set good defaults.
 
 ### Using well known relations
