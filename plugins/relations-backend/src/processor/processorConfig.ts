@@ -35,7 +35,8 @@ export class ProcessorConfig {
   }
 
   getSchema() {
-    const finalSchema = relationV1alpha1Schema;
+    // since we are modifying the schema, we need to deep clone it first
+    const finalSchema = JSON.parse(JSON.stringify(relationV1alpha1Schema));
     this.relations.forEach(relation => {
       if (relation.multi) {
         // @ts-ignore
