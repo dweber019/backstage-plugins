@@ -45,6 +45,53 @@ describe('processorConfig', () => {
     });
   });
 
+  test('should allow for multiple sourceKind mappings without creating an invalid schema', async () => {
+    const config = new ConfigReader({
+      relationsProcessor: {
+        relations: [
+          {
+            sourceKind: 'Component',
+            attribute: 'owner',
+            pairs: [
+              {
+                incoming: 'ownerOf',
+                outgoing: 'ownerBy',
+              },
+            ],
+          },
+          {
+            sourceKind: 'component',
+            attribute: 'test',
+            multi: true,
+            pairs: [
+              {
+                incoming: 'testOf',
+                outgoing: 'testBy',
+              },
+            ],
+          },
+          {
+            sourceKind: 'group',
+            attribute: 'leader',
+            pairs: [
+              {
+                incoming: 'leaderOf',
+                outgoing: 'leadBy',
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const processorConfig = new ProcessorConfig(config);
+    const schema = processorConfig.getSchema();
+
+    expect(schema.allOf[1].properties?.kind.enum).toHaveLength(2);
+    expect(schema.allOf[1].properties?.kind.enum).toContain('component');
+    expect(schema.allOf[1].properties?.kind.enum).toContain('group');
+  });
+
   test('should return only test relation', async () => {
     const config = new ConfigReader({
       relationsProcessor: {

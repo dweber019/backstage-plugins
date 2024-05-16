@@ -53,9 +53,13 @@ export class ProcessorConfig {
       }
     });
     // @ts-ignore
-    finalSchema.allOf[1].properties.kind.enum = this.relations.map(relation =>
-      relation.sourceKind.toLocaleLowerCase(),
-    );
+    finalSchema.allOf[1].properties.kind.enum = [
+      // we utilize a Set here to avoid duplicate entries in the enum if there are multiple
+      // relations with the same sourceKind
+      ...new Set(
+        this.relations.map(relation => relation.sourceKind.toLocaleLowerCase()),
+      ),
+    ];
     return finalSchema;
   }
 
