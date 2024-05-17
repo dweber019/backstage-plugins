@@ -5988,7 +5988,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-relations-backend@0.0.3, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
+"@dweber019/backstage-plugin-relations-backend@0.0.4, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend"
   dependencies:
@@ -15033,7 +15033,7 @@ __metadata:
     "@dweber019/backstage-plugin-accentuate-backend": ^0.0.3
     "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.10
     "@dweber019/backstage-plugin-endoflife-backend": ^0.0.5
-    "@dweber019/backstage-plugin-relations-backend": 0.0.3
+    "@dweber019/backstage-plugin-relations-backend": 0.0.4
     "@types/dockerode": ^3.3.0
     "@types/express": ^4.17.6
     "@types/express-serve-static-core": ^4.17.5

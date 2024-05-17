@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations-backend
 
+## 0.0.4
+
+### Patch Changes
+
+- 03acd4c: Ensure the multiple custom relations for a single kind do not result in an invalid JSON schema
+
 ## 0.0.3
 
 ### Patch Changes
