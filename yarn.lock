@@ -3272,9 +3272,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/cli@npm:^0.26.5":
-  version: 0.26.5
-  resolution: "@backstage/cli@npm:0.26.5"
+"@backstage/cli@npm:^0.26.6":
+  version: 0.26.6
+  resolution: "@backstage/cli@npm:0.26.6"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
     "@backstage/cli-common": ^0.1.13
@@ -3403,7 +3403,7 @@ __metadata:
       optional: true
   bin:
     backstage-cli: bin/backstage-cli
-  checksum: 9cf4ff219347becd11ed3060083fa42b6c11b98dcb05c6db5ae6527624cfa30304344968e245ccce855979c7926908ecf921a1e137fb68173b2aab025433f5ab
+  checksum: 8006e935cc1b6b11a7da8b0b963bc90ab565ada8920cc7b20940eeca8ca1e7aa083aad38aa7a37296552b90bdfb73a58e0fc925f08c6eae9e2df384208b2c37a
   languageName: node
   linkType: hard
 
@@ -4735,9 +4735,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-scaffolder-react@npm:^1.8.5":
-  version: 1.8.5
-  resolution: "@backstage/plugin-scaffolder-react@npm:1.8.5"
+"@backstage/plugin-scaffolder-react@npm:^1.8.6":
+  version: 1.8.6
+  resolution: "@backstage/plugin-scaffolder-react@npm:1.8.6"
   dependencies:
     "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.5.0
@@ -4745,7 +4745,7 @@ __metadata:
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/plugin-catalog-react": ^1.12.0
     "@backstage/plugin-scaffolder-common": ^1.5.2
-    "@backstage/theme": ^0.5.4
+    "@backstage/theme": ^0.5.5
     "@backstage/types": ^1.1.1
     "@backstage/version-bridge": ^1.0.8
     "@material-ui/core": ^4.12.2
@@ -4775,13 +4775,13 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: f52d5d1db62a14f0c2ec4265b6bfea7c08ba7eb97d7a2368498d47db04fdac923a2313f168a18f374170f7596b7f40810d5334a86238518eea7d419fe3c7fe3b
+  checksum: 28ad885982066ade57a993c65e09c2711d77a48b1dc0f405f3b2470237b64220c403aa9795a737f478c2523c77e2b87a773df565e06fa67310ef73886c6e7446
   languageName: node
   linkType: hard
 
-"@backstage/plugin-scaffolder@npm:^1.20.0":
-  version: 1.20.0
-  resolution: "@backstage/plugin-scaffolder@npm:1.20.0"
+"@backstage/plugin-scaffolder@npm:^1.20.1":
+  version: 1.20.1
+  resolution: "@backstage/plugin-scaffolder@npm:1.20.1"
   dependencies:
     "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.5.0
@@ -4796,7 +4796,7 @@ __metadata:
     "@backstage/plugin-catalog-react": ^1.12.0
     "@backstage/plugin-permission-react": ^0.4.22
     "@backstage/plugin-scaffolder-common": ^1.5.2
-    "@backstage/plugin-scaffolder-react": ^1.8.5
+    "@backstage/plugin-scaffolder-react": ^1.8.6
     "@backstage/types": ^1.1.1
     "@codemirror/language": ^6.0.0
     "@codemirror/legacy-modes": ^6.1.0
@@ -4830,7 +4830,7 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 88f404bacc435d9b1722f376fb85a8349467f8c449b665ad73a7ee2d895d2e098c88f3a44f37e7f8a7b8e18364875cd4ac69f828e04c60f621f8578ae036bb64
+  checksum: e3dd36594f64d96eedbea621dd8a708455601a84ceb7bf2ac3d6bd10952d854a3489568200dcd808dd3b1bd9f7bb223eb4a204476910259b3289865a69fc5e24
   languageName: node
   linkType: hard
 
@@ -5781,7 +5781,7 @@ __metadata:
     "@backstage/backend-common": ^0.22.0
     "@backstage/backend-plugin-api": ^0.6.18
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/config": ^1.2.0
     "@backstage/errors": ^1.2.4
     "@backstage/plugin-auth-node": ^0.4.13
@@ -5807,7 +5807,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-accentuate-common@workspace:plugins/accentuate-common"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/types": ^1.1.1
   languageName: unknown
   linkType: soft
@@ -5817,7 +5817,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/dev-utils": ^1.0.32
@@ -5857,7 +5857,7 @@ __metadata:
     "@backstage/backend-plugin-api": ^0.6.18
     "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@types/express": ^4.17.6
     "@types/supertest": ^2.0.8
     cross-fetch: ^3.1.5
@@ -5878,7 +5878,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/dev-utils": ^1.0.32
@@ -5903,7 +5903,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/dev-utils": ^1.0.32
@@ -5937,7 +5937,7 @@ __metadata:
     "@backstage/backend-plugin-api": ^0.6.18
     "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/config": ^1.2.0
     "@backstage/errors": ^1.2.4
     "@backstage/integration": ^1.11.0
@@ -5960,7 +5960,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/dev-utils": ^1.0.32
@@ -5995,7 +5995,7 @@ __metadata:
     "@backstage/backend-common": ^0.22.0
     "@backstage/backend-plugin-api": ^0.6.18
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/config": ^1.2.0
     "@backstage/plugin-catalog-common": ^1.0.23
     "@backstage/plugin-catalog-node": ^1.12.0
@@ -6015,7 +6015,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-relations@workspace:plugins/relations"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/config": ^1.2.0
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
@@ -6043,7 +6043,7 @@ __metadata:
   resolution: "@dweber019/backstage-plugin-tips@workspace:plugins/tips"
   dependencies:
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
     "@backstage/dev-utils": ^1.0.32
@@ -14308,7 +14308,7 @@ __metadata:
     "@backstage-community/plugin-tech-radar": ^0.7.4
     "@backstage/app-defaults": ^1.5.5
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/core-app-api": ^1.12.5
     "@backstage/core-components": ^0.14.7
     "@backstage/core-plugin-api": ^1.9.2
@@ -14321,7 +14321,7 @@ __metadata:
     "@backstage/plugin-catalog-react": ^1.12.0
     "@backstage/plugin-org": ^0.6.25
     "@backstage/plugin-permission-react": ^0.4.22
-    "@backstage/plugin-scaffolder": ^1.20.0
+    "@backstage/plugin-scaffolder": ^1.20.1
     "@backstage/plugin-search": ^1.4.11
     "@backstage/plugin-search-react": ^1.7.11
     "@backstage/plugin-techdocs": ^1.10.5
@@ -15010,7 +15010,7 @@ __metadata:
     "@backstage/backend-tasks": ^0.5.23
     "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.5.0
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/config": ^1.2.0
     "@backstage/plugin-app-backend": ^0.3.67
     "@backstage/plugin-auth-backend": ^0.22.5
@@ -30697,7 +30697,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@backstage/cli": ^0.26.5
+    "@backstage/cli": ^0.26.6
     "@backstage/e2e-test-utils": ^0.1.1
     "@changesets/cli": ^2.18.0
     "@playwright/test": ^1.32.3
