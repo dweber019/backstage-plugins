@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.12
+
+### Patch Changes
+
+- 1c845e0: Upgrade to backstage 1.27.5.
+
 ## 0.0.11
 
 ### Patch Changes

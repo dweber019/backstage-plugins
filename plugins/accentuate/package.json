@@ -6,7 +6,7 @@
     "url": "https://github.com/dweber019/backstage-plugins.git"
   },
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {
@@ -34,7 +34,7 @@
     "@backstage/plugin-catalog": "^1.20.0",
     "@backstage/plugin-catalog-react": "^1.12.0",
     "@backstage/types": "^1.1.1",
-    "@dweber019/backstage-plugin-accentuate-common": "^0.0.3",
+    "@dweber019/backstage-plugin-accentuate-common": "^0.0.4",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "4.0.0-alpha.57",
