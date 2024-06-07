@@ -37,6 +37,10 @@ export type LinterResultData = {
    */
   severity: number;
 
+  ruleDocumentationUrl?: string;
+
+  ruleDescription?: string;
+
   /**
    * The path in content.
    */

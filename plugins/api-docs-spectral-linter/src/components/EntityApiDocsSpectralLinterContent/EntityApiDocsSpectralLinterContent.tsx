@@ -18,6 +18,7 @@ import React, { useState } from 'react';
 import {
   CodeSnippet,
   InfoCard,
+  MarkdownContent,
   Progress,
   WarningPanel,
 } from '@backstage/core-components';
@@ -113,41 +114,50 @@ export const EntityApiDocsSpectralLinterContent = () => {
           value.data.map((ruleResult, idx) => (
             <Grid key={idx} container spacing={2}>
               <Grid item xs={12}>
-                <Alert
-                  severity={getSeverity(ruleResult.severity)}
-                  variant="outlined"
-                >
-                  <AlertTitle>
-                    {ruleResult.message} ({ruleResult.code})
-                    <IconButton
-                      aria-label="expand"
-                      onClick={handleChange(`alert${idx}`)}
-                      className={classes.alertButton}
-                    >
-                      {`alert${idx}` === expanded ? (
-                        <ExpandLessIcon />
-                      ) : (
-                        <ExpandMoreIcon />
-                      )}
-                    </IconButton>
-                  </AlertTitle>
-                  {`alert${idx}` === expanded && (
-                    <CodeSnippet
-                      text={previewContent(
-                        entity.spec.definition,
-                        ruleResult.linePosition.start,
-                        ruleResult.linePosition.end,
-                        ruleResult.path?.join(' / ') || 'unknown',
-                      )}
-                      language="yaml"
-                      customStyle={{
-                        background: 'transparent',
-                        margin: '0',
-                        padding: '0.5em 0',
-                      }}
-                    />
-                  )}
-                </Alert>
+                  <Alert
+                    severity={getSeverity(ruleResult.severity)}
+                    variant="outlined"
+                  >
+                    <AlertTitle>
+                      {ruleResult.message} ({ruleResult.code})
+                      <IconButton
+                        aria-label="expand"
+                        onClick={handleChange(`alert${idx}`)}
+                        className={classes.alertButton}
+                      >
+                        {`alert${idx}` === expanded ? (
+                          <ExpandLessIcon />
+                        ) : (
+                          <ExpandMoreIcon />
+                        )}
+                      </IconButton>
+                    </AlertTitle>
+                    {`alert${idx}` === expanded && (
+                      <InfoCard deepLink={
+                        ruleResult.ruleDocumentationUrl ?
+                          {
+                            title:"Documentation",
+                            link: ruleResult.ruleDocumentationUrl
+                          } : undefined
+                      }>
+                        <MarkdownContent content={ ruleResult.ruleDescription || "" }></MarkdownContent>
+                        <CodeSnippet
+                          text={previewContent(
+                            entity.spec.definition,
+                            ruleResult.linePosition.start,
+                            ruleResult.linePosition.end,
+                            ruleResult.path?.join(' / ') || 'unknown',
+                          )}
+                          language="yaml"
+                          customStyle={{
+                            background: 'transparent',
+                            margin: '0',
+                            padding: '0.5em 0',
+                          }}
+                        />
+                      </InfoCard>
+                    )}
+                  </Alert>
               </Grid>
             </Grid>
           ))
