@@ -103,6 +103,8 @@ export class LinterClient implements LinterApi {
           severity: diagnosticItem.severity,
           path: diagnosticItem.path.map(item => item.toString()),
           code: diagnosticItem.code,
+          ruleDocumentationUrl: ruleDocumentationUrl(spectral, diagnosticItem.code),
+          ruleDescription: ruleDescription(spectral, diagnosticItem.code)
         })),
     };
   }
@@ -123,4 +125,12 @@ export class LinterClient implements LinterApi {
   isApiTypeSupported(entity: ApiEntity) {
     return isApiDocsSpectralLinterAvailable(entity);
   }
+}
+
+function ruleDocumentationUrl(spectral: Spectral, code: string | number): string | undefined {
+  return spectral.ruleset?.rules[code].documentationUrl || undefined
+}
+
+function ruleDescription(spectral: Spectral, code: string | number): string | undefined {
+  return spectral.ruleset?.rules[code].description || undefined
 }

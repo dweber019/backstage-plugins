@@ -16,6 +16,8 @@ import openapiApiEntity from './openapi-example-api.yaml';
 import openapiZalandoApiEntity from './openapi-zalando-example-api.yaml';
 // @ts-ignore
 import openapiBaloiseApiEntity from './openapi-baloise-example-api.yaml';
+// @ts-ignore
+import openapiOwaspApiEntity from './openapi-owasp-example-api.yaml';
 
 const mockConfig = new MockConfigApi({
   spectralLinter: {
@@ -68,5 +70,14 @@ createDevApp()
     ),
     title: 'Open API - Baloise',
     path: '/open-api-baloise',
+  })
+  .addPage({
+    element: (
+      <EntityProvider entity={openapiOwaspApiEntity as any as Entity}>
+        <EntityApiDocsSpectralLinterContent />
+      </EntityProvider>
+    ),
+    title: 'Open API - OWASP',
+    path: '/open-api-owasp',
   })
   .render();
