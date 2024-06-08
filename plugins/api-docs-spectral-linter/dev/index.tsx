@@ -19,6 +19,9 @@ import openapiBaloiseApiEntity from './openapi-baloise-example-api.yaml';
 // @ts-ignore
 import openapiOwaspApiEntity from './openapi-owasp-example-api.yaml';
 
+// @ts-ignore
+import openapiNonPrettyPrintedApiEntity from './openapi-non-pretty-printed-example-api.yaml';
+
 const mockConfig = new MockConfigApi({
   spectralLinter: {
     openApiRulesetUrl:
@@ -79,5 +82,14 @@ createDevApp()
     ),
     title: 'Open API - OWASP',
     path: '/open-api-owasp',
+  })
+  .addPage({
+    element: (
+      <EntityProvider entity={openapiNonPrettyPrintedApiEntity as any as Entity}>
+        <EntityApiDocsSpectralLinterContent />
+      </EntityProvider>
+    ),
+    title: 'Open API - Non Pretty Printed',
+    path: '/open-api-non-pretty-printed',
   })
   .render();
