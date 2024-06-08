@@ -79,6 +79,7 @@ export const EntityApiDocsSpectralLinterContent = () => {
     startLine: number,
     endLine: number,
     path: string,
+    isPrettyPrinted: boolean
   ) => {
     const textArray = text.split('\n');
     textArray.splice(0, startLine);
@@ -88,6 +89,10 @@ export const EntityApiDocsSpectralLinterContent = () => {
     );
     textArray.unshift(`... line ${startLine + 1} in source under path ${path}`);
     textArray.push(`... line ${endLine + 1} in source`);
+
+    if (isPrettyPrinted) {
+      textArray.unshift('# To Notice: The API definition has been pretty printed for readability.\n# The line numbers will not match the actual definition unless that is exposed properly formatted.')
+    }
     return textArray.join('\n');
   };
 
@@ -143,10 +148,11 @@ export const EntityApiDocsSpectralLinterContent = () => {
                         <MarkdownContent content={ ruleResult.ruleDescription || "" } />
                         <CodeSnippet
                           text={previewContent(
-                            entity.spec.definition,
+                            ruleResult.definition,
                             ruleResult.linePosition.start,
                             ruleResult.linePosition.end,
                             ruleResult.path?.join(' / ') || 'unknown',
+                            entity.spec.definition !== ruleResult.definition
                           )}
                           language="yaml"
                           customStyle={{

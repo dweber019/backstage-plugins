@@ -49,6 +49,11 @@ export type LinterResultData = {
    * Rule set code
    */
   code?: string | number;
+
+  /**
+   * The processed api definition
+   */
+  definition: string;
 };
 
 export type LinterResult = {

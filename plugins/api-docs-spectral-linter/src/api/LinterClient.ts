@@ -88,7 +88,10 @@ export class LinterClient implements LinterApi {
       fetch,
     });
     spectral.setRuleset(ruleSet);
-    const spectralResult = await spectral.run(content);
+
+    const formattedContent = countLines(content) === 1 ? prettyPrint(content) : content;
+
+    const spectralResult = await spectral.run(formattedContent);
 
     return {
       rulesetUrl: ruleSetToDownload,
@@ -104,7 +107,8 @@ export class LinterClient implements LinterApi {
           path: diagnosticItem.path.map(item => item.toString()),
           code: diagnosticItem.code,
           ruleDocumentationUrl: ruleDocumentationUrl(spectral, diagnosticItem.code),
-          ruleDescription: ruleDescription(spectral, diagnosticItem.code)
+          ruleDescription: ruleDescription(spectral, diagnosticItem.code),
+          definition: formattedContent
         })),
     };
   }
@@ -133,4 +137,12 @@ function ruleDocumentationUrl(spectral: Spectral, code: string | number): string
 
 function ruleDescription(spectral: Spectral, code: string | number): string | undefined {
   return spectral.ruleset?.rules[code].description || undefined
+}
+
+function countLines(str: string): number {
+  return str.split('\n').length;
+}
+
+function prettyPrint(str: string): string {
+  return JSON.stringify(JSON.parse(str), null, 2);
 }
