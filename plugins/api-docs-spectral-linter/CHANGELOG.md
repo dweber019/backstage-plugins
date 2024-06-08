@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-spectral-linter
 
+## 0.3.0
+
+### Minor Changes
+
+- cb3a927: Add links to external documentation when that is available. Render rule descriptions as markdown.
+
 ## 0.2.15
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # app
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [cb3a927]
+  - @dweber019/backstage-plugin-api-docs-spectral-linter@0.3.0
+
 ## 0.0.6
 
 ### Patch Changes
