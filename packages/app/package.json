@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "backstage": {
     "role": "frontend"
@@ -33,7 +33,7 @@
     "@backstage/theme": "^0.5.5",
     "@dweber019/backstage-plugin-accentuate": "^0.0.4",
     "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.9",
-    "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.2.15",
+    "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.3.0",
     "@dweber019/backstage-plugin-endoflife": "^0.0.7",
     "@dweber019/backstage-plugin-relations": "0.0.4",
     "@dweber019/backstage-plugin-tips": "^0.0.12",

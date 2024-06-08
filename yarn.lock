@@ -5898,7 +5898,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.2.15, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
+"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.3.0, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter"
   dependencies:
@@ -14332,7 +14332,7 @@ __metadata:
     "@backstage/theme": ^0.5.5
     "@dweber019/backstage-plugin-accentuate": ^0.0.4
     "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.9
-    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.2.15
+    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.3.0
     "@dweber019/backstage-plugin-endoflife": ^0.0.7
     "@dweber019/backstage-plugin-relations": 0.0.4
     "@dweber019/backstage-plugin-tips": ^0.0.12
