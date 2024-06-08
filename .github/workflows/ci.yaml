@@ -29,6 +29,9 @@ jobs:
 
       - run: yarn build:all
 
+      - name: Check changeset
+        run: yarn changeset status --since=origin/main
+
   tests:
     name: Tests
     runs-on: ubuntu-latest
