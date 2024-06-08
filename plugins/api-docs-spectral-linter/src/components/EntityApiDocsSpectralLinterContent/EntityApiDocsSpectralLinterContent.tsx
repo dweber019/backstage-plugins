@@ -140,7 +140,7 @@ export const EntityApiDocsSpectralLinterContent = () => {
                             link: ruleResult.ruleDocumentationUrl
                           } : undefined
                       }>
-                        <MarkdownContent content={ ruleResult.ruleDescription || "" }></MarkdownContent>
+                        <MarkdownContent content={ ruleResult.ruleDescription || "" } />
                         <CodeSnippet
                           text={previewContent(
                             entity.spec.definition,
