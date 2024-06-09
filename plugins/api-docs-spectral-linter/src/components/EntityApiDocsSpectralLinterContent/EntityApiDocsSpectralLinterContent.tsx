@@ -91,7 +91,7 @@ export const EntityApiDocsSpectralLinterContent = () => {
     textArray.push(`... line ${endLine + 1} in source`);
 
     if (isPrettyPrinted) {
-      textArray.unshift('# To Notice: The API definition has been pretty printed for readability.\n# The line numbers will not match the actual definition unless that is exposed properly formatted.')
+      textArray.unshift('# Notice: The API definition has been pretty printed for readability.\n# The line numbers will not match the actual definition.')
     }
     return textArray.join('\n');
   };
