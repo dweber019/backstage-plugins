@@ -51,7 +51,7 @@ export type LinterResultData = {
   code?: string | number;
 
   /**
-   * The processed api definition
+   * The formatted api definition
    */
   definition: string;
 };
