@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-spectral-linter
 
+## 0.4.0
+
+### Minor Changes
+
+- 30e9602: Ensure API definition is formatted for readability
+
 ## 0.3.0
 
 ### Minor Changes
