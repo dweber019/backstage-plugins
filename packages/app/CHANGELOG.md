@@ -1,5 +1,12 @@
 # app
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [46d0778]
+  - @dweber019/backstage-plugin-endoflife@0.0.8
+
 ## 0.0.8
 
 ### Patch Changes
