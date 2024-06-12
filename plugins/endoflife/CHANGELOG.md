@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.8
+
+### Patch Changes
+
+- 46d0778: Add peer dependencies for `vis-timeline`.
+
 ## 0.0.7
 
 ### Patch Changes
