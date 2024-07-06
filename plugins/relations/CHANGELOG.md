@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations
 
+## 0.0.5
+
+### Patch Changes
+
+- 95bd35c: Update backstage to 1.28.4.
+
 ## 0.0.4
 
 ### Patch Changes
