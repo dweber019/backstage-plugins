@@ -3,7 +3,8 @@
   "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/accentuate-backend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dweber019/backstage-plugins.git"
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/accentuate-backend"
   },
   "license": "MIT",
   "version": "0.0.5",
@@ -15,7 +16,13 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "accentuate",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-accentuate",
+      "@dweber019/backstage-plugin-accentuate-backend",
+      "@dweber019/backstage-plugin-accentuate-common"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",

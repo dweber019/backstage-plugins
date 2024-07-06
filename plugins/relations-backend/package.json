@@ -3,7 +3,8 @@
   "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/relations-backend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dweber019/backstage-plugins.git"
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/relations-backend"
   },
   "license": "MIT",
   "version": "0.0.6",
@@ -15,7 +16,12 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "relations",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-relations",
+      "@dweber019/backstage-plugin-relations-backend"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",

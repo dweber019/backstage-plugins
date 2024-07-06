@@ -4,7 +4,8 @@
   "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/api-docs-module-wsdl",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dweber019/backstage-plugins.git"
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/api-docs-module-wsdl-backend"
   },
   "license": "MIT",
   "version": "0.0.12",
@@ -16,7 +17,12 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "api-docs-module-wsdl",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-api-docs-module-wsdl",
+      "@dweber019/backstage-plugin-api-docs-module-wsdl-backend"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",
