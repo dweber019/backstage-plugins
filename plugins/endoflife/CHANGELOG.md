@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.10
+
+### Patch Changes
+
+- ded3248: Update Backstage to 1.29.1.
+- 6aec480: Fix styles by ignoring css files in sideEffects settings.
+
 ## 0.0.9
 
 ### Patch Changes
