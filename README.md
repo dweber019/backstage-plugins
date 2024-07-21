@@ -17,3 +17,5 @@ To update the plugin with the latest backstage dependencies run `yarn backstage-
 ## License
 
 This library is under the [MIT](LICENSE) license.
+
+The plugin [api-docs-module-wsdl-backend](plugins/api-docs-module-wsdl-backend) has a special license.

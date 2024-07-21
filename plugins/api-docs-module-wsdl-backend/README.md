@@ -63,3 +63,7 @@ xslt3 -t -xsl:./wsdl-viewer.xsl -export:./src/stylesheet.sef.json -nogo
 ## Local development
 
 There is a local setup at `plugins/api-docs-module-wsdl-backend/dev` which can be started with `yarn --cwd plugins/api-docs-module-wsdl-backend start` from the root.
+
+## License
+
+SaxonJS is free of charge but not open source, you can find the license [here](https://www.saxonica.com/saxon-js/documentation2/index.html#!conditions/public-license).
