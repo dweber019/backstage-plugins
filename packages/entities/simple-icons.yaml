@@ -1,0 +1,34 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: simple-icons
+  links:
+    - title: built in github
+      url: https://google.ch
+      icon: github
+    - title: Test fallback
+      url: https://google.ch
+      icon: test
+    - title: Prometheus
+      url: https://google.ch
+      icon: prometheus
+    - title: Grafana
+      url: https://google.ch
+      icon: grafana
+    - title: Google BigQuery
+      url: https://google.ch
+      icon: googlebigquery
+    - title: 1.1.1.1
+      url: https://google.ch
+      icon: 1dot1dot1dot1
+    - title: Github copilot
+      url: https://google.ch
+      icon: githubcopilot
+    - title: Backstage
+      url: https://google.ch
+      icon: backstage
+spec:
+  type: service
+  lifecycle: experimental
+  owner: dweber019
