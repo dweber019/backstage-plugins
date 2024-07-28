@@ -77,6 +77,8 @@ catalog:
       target: ../entities/wsdl-api-example-big.yaml
     - type: file
       target: ../entities/end-of-life-resource-examples.yaml
+    - type: file
+      target: ../entities/simple-icons.yaml
 
     - type: file
       target: ../../plugins/api-docs-spectral-linter/dev/asyncapi-example-api.yaml

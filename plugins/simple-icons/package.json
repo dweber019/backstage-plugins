@@ -1,0 +1,56 @@
+{
+  "name": "@dweber019/backstage-plugin-simple-icons",
+  "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/simple-icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/simple-icons"
+  },
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "web-library",
+    "pluginId": "simple-icons",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-simple-icons"
+    ]
+  },
+  "sideEffects": false,
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack"
+  },
+  "dependencies": {
+    "@backstage/app-defaults": "^1.5.8",
+    "@material-ui/core": "^4.12.2",
+    "simple-icons": "^13.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.26.11",
+    "@backstage/dev-utils": "^1.0.35",
+    "@backstage/test-utils": "^1.5.8",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/node": "*",
+    "msw": "^1.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
