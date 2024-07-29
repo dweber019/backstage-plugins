@@ -92,3 +92,7 @@ const app = createApp({
 ## Licence
 
 Please read the [legal disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md) of [Simple Icons](https://simpleicons.org/).
+
+## Credits
+
+Thanks @mikevader for the inspriration.
