@@ -5688,7 +5688,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-accentuate@^0.0.6, @dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate":
+"@dweber019/backstage-plugin-accentuate@^0.0.7, @dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-accentuate@workspace:plugins/accentuate"
   dependencies:
@@ -5749,7 +5749,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.11, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
+"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.12, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl"
   dependencies:
@@ -5774,7 +5774,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.4.2, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
+"@dweber019/backstage-plugin-api-docs-spectral-linter@^0.4.3, @dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-spectral-linter@workspace:plugins/api-docs-spectral-linter"
   dependencies:
@@ -5831,7 +5831,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-endoflife@^0.0.10, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
+"@dweber019/backstage-plugin-endoflife@^0.0.11, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife"
   dependencies:
@@ -5892,7 +5892,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-relations@0.0.6, @dweber019/backstage-plugin-relations@workspace:plugins/relations":
+"@dweber019/backstage-plugin-relations@0.0.7, @dweber019/backstage-plugin-relations@workspace:plugins/relations":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-relations@workspace:plugins/relations"
   dependencies:
@@ -5920,7 +5920,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-simple-icons@^0.0.0, @dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons":
+"@dweber019/backstage-plugin-simple-icons@^0.0.1, @dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons"
   dependencies:
@@ -5940,7 +5940,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-tips@^0.0.14, @dweber019/backstage-plugin-tips@workspace:plugins/tips":
+"@dweber019/backstage-plugin-tips@^0.0.15, @dweber019/backstage-plugin-tips@workspace:plugins/tips":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-tips@workspace:plugins/tips"
   dependencies:
@@ -14240,13 +14240,13 @@ __metadata:
     "@backstage/plugin-user-settings": ^0.8.10
     "@backstage/test-utils": ^1.5.9
     "@backstage/theme": ^0.5.6
-    "@dweber019/backstage-plugin-accentuate": ^0.0.6
-    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.11
-    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.4.2
-    "@dweber019/backstage-plugin-endoflife": ^0.0.10
-    "@dweber019/backstage-plugin-relations": 0.0.6
-    "@dweber019/backstage-plugin-simple-icons": ^0.0.0
-    "@dweber019/backstage-plugin-tips": ^0.0.14
+    "@dweber019/backstage-plugin-accentuate": ^0.0.7
+    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.12
+    "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.4.3
+    "@dweber019/backstage-plugin-endoflife": ^0.0.11
+    "@dweber019/backstage-plugin-relations": 0.0.7
+    "@dweber019/backstage-plugin-simple-icons": ^0.0.1
+    "@dweber019/backstage-plugin-tips": ^0.0.15
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@playwright/test": ^1.32.3
