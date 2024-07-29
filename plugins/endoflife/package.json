@@ -61,9 +61,9 @@
   },
   "devDependencies": {
     "@backstage/cli": "^0.26.11",
-    "@backstage/dev-utils": "^1.0.35",
+    "@backstage/dev-utils": "^1.0.36",
     "@backstage/integration": "^1.13.0",
-    "@backstage/test-utils": "^1.5.8",
+    "@backstage/test-utils": "^1.5.9",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
