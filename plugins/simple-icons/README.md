@@ -95,4 +95,4 @@ Please read the [legal disclaimer](https://github.com/simple-icons/simple-icons/
 
 ## Credits
 
-Thanks @mikevader for the inspriration.
+Thanks [@mikevader](https://github.com/mikevader) for the inspriration.
