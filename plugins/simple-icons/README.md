@@ -89,6 +89,33 @@ const app = createApp({
 });
 ```
 
+## Entity presentation API
+
+This plugin also exports a implementation of the `EntityPresentationApi` to display the simple icons based on the
+annotation `simpleicons.org/icon-slug`.
+
+![entity presentation api](https://raw.githubusercontent.com/dweber019/backstage-plugins/main/plugins/simple-icons/docs/entitiy-presentation-api.png)
+
+For this to work add the following line of code
+
+```ts
+// packages/app/src/apis.ts
+
+import { catalogApiRef, entityPresentationApiRef } from '@backstage/plugin-catalog-react';
+import { SimpleIconsEntityPresentationApi } from '@dweber019/backstage-plugin-simple-icons';
+
+export const apis: AnyApiFactory[] = [
+  ...
+  createApiFactory({
+    api: entityPresentationApiRef,
+    deps: { catalogApi: catalogApiRef },
+    factory: ({ catalogApi }) => {
+      return SimpleIconsEntityPresentationApi.create({ catalogApi });
+    },
+  }),
+];
+```
+
 ## Licence
 
 Please read the [legal disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md) of [Simple Icons](https://simpleicons.org/).

@@ -20,6 +20,8 @@ import {
   wsdlApiWidget,
 } from '@dweber019/backstage-plugin-api-docs-module-wsdl';
 import { ApiEntity } from '@backstage/catalog-model';
+import { catalogApiRef, entityPresentationApiRef } from '@backstage/plugin-catalog-react';
+import { SimpleIconsEntityPresentationApi } from '@dweber019/backstage-plugin-simple-icons';
 
 export const apis: AnyApiFactory[] = [
   createApiFactory({
@@ -54,6 +56,13 @@ export const apis: AnyApiFactory[] = [
           return definitionWidgets.find(d => d.type === apiEntity.spec.type);
         },
       };
+    },
+  }),
+  createApiFactory({
+    api: entityPresentationApiRef,
+    deps: { catalogApi: catalogApiRef },
+    factory: ({ catalogApi }) => {
+      return SimpleIconsEntityPresentationApi.create({ catalogApi });
     },
   }),
 ];

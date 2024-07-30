@@ -32,3 +32,26 @@ spec:
   type: service
   lifecycle: experimental
   owner: dweber019
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: simple-icons-annotation-1dot1dot1dot1
+  annotations:
+    simpleicons.org/icon-slug: 1dot1dot1dot1
+spec:
+  type: service
+  lifecycle: experimental
+  owner: dweber019
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: simple-icons-annotation-backstage
+  annotations:
+    simpleicons.org/icon-slug: backstage
+spec:
+  type: service
+  lifecycle: experimental
+  owner: dweber019
+  subcomponentOf: simple-icons-annotation-1dot1dot1dot1
