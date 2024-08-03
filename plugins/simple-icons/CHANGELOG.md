@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.2
+
+### Patch Changes
+
+- 739406e: Add `EntityPresentationApi` implementation using simple icons annotation.
+
 ## 0.0.1
 
 ### Patch Changes
