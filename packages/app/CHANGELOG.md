@@ -1,5 +1,12 @@
 # app
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [739406e]
+  - @dweber019/backstage-plugin-simple-icons@0.0.2
+
 ## 0.0.12
 
 ### Patch Changes

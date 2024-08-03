@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": true,
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.4.3",
     "@dweber019/backstage-plugin-endoflife": "^0.0.11",
     "@dweber019/backstage-plugin-relations": "0.0.7",
-    "@dweber019/backstage-plugin-simple-icons": "^0.0.1",
+    "@dweber019/backstage-plugin-simple-icons": "^0.0.2",
     "@dweber019/backstage-plugin-tips": "^0.0.15",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
