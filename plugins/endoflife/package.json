@@ -23,9 +23,7 @@
       "@dweber019/backstage-plugin-endoflife-backend"
     ]
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "scripts": {
     "start": "backstage-cli package start",
     "build": "backstage-cli package build",
