@@ -4,7 +4,6 @@ import {
   useEntity,
 } from '@backstage/plugin-catalog-react';
 import { Entity } from '@backstage/catalog-model';
-import { appThemeApiRef, useApi } from '@backstage/core-plugin-api';
 import { isEndOfLifeAvailable } from '../../conditions';
 import { END_OF_LIFE_PRODUCTS_ANNOTATION } from '../../constants';
 import {
@@ -21,11 +20,67 @@ import {
   calculateTimelineGroups,
   calculateTimelineItems,
 } from './helper';
-import './EntityEndOfLifeCard.css';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import { HeightWidthType } from 'vis-timeline';
 import { useEndOfLife } from '../../hooks';
 import { HelpText } from '../HelpText/HelpText';
+
+const useStyles = makeStyles(theme => ({
+  visWrapper: {
+    '@global': {
+      '.vis-timeline': {
+        border: 'none !important',
+      },
+      '.vis-label': {
+        display: 'flex',
+        alignItems: 'center',
+        padding: `0 ${theme.spacing(1)}px`,
+        color: 'inherit !important',
+      },
+      '.vis-text': {
+        color: 'inherit !important',
+      },
+      '.vis-label .cycle': {
+        fontWeight: 'bold !important',
+      },
+      '.vis-current-time': {
+        backgroundColor: `${theme.palette.error.light} !important`,
+      },
+      '.vis-item': {
+        borderRadius: `${theme.spacing(2)}px !important`,
+        top: '10px !important',
+      },
+      '.vis-item.dateMissed': {
+        backgroundColor: theme.palette.error.light,
+        borderColor: theme.palette.error.dark,
+        color: theme.palette.common.white,
+        fontWeight: 'bold',
+      },
+      '.vis-item.dateClose': {
+        backgroundColor: theme.palette.warning.light,
+        borderColor: theme.palette.warning.dark,
+        color: theme.palette.common.white,
+        fontWeight: 'bold',
+      },
+      '.vis-item.dateOk': {
+        backgroundColor: theme.palette.success.light,
+        borderColor: theme.palette.success.dark,
+        color: theme.palette.common.white,
+        fontWeight: 'bold',
+      },
+      '.vis-tooltip': {
+        padding: `${theme.spacing(1)}px !important`,
+        color: `${theme.palette.common.white} !important`,
+        zIndex: '1500 !important',
+        fontSize: '0.625rem !important',
+        borderRadius: `${theme.shape.borderRadius}px !important`,
+        backgroundColor: `rgba(97, 97, 97, 0.9) !important`,
+        border: 'none !important',
+        boxShadow: 'none !important',
+      },
+    },
+  },
+}));
 
 export type EntityEndOfLifeCardProps = {
   maxHeight?: HeightWidthType;
@@ -34,8 +89,8 @@ export type EntityEndOfLifeCardProps = {
 export const EntityEndOfLifeCard = ({
   maxHeight = 400,
 }: EntityEndOfLifeCardProps) => {
+  const classes = useStyles();
   const { entity } = useEntity<Entity>();
-  const appThemeApi = useApi(appThemeApiRef);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const timelineRef = useRef<Vis | null>(null);
@@ -106,7 +161,7 @@ export const EntityEndOfLifeCard = ({
       noPadding
     >
       <div
-        className={`vis-${appThemeApi.getActiveThemeId()}`}
+        className={classes.visWrapper}
         ref={containerRef}
       />
     </InfoCard>
