@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.12
+
+### Patch Changes
+
+- d36cdfd: Use `makeStyles` for CSS instead of CSS import.
+
 ## 0.0.11
 
 ### Patch Changes
