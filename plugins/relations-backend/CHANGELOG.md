@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations-backend
 
+## 0.0.8
+
+### Patch Changes
+
+- f549958: Update backstage to 1.30.2.
+
 ## 0.0.7
 
 ### Patch Changes
