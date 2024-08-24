@@ -65,7 +65,7 @@ export class SimpleIconsEntityPresentationApi implements EntityPresentationApi {
         return icon.slug === annotation;
       }).map(key => {
         const icon = (icons as any)[key] as SimpleIcon;
-        return createIcon(icon, this.color, { fontSize: 'inherit' });
+        return createIcon(icon, this.color, { fontSize: 'inherit', width: 17, height: 17, y: 10, x: 10 });
       });
       if (simpleIcons.length > 0) {
         return simpleIcons[0];
