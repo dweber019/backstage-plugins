@@ -95,6 +95,9 @@ catalog:
     - type: file
       target: ../../plugins/relations-backend/examples/all.yaml
 
+    - type: file
+      target: ../../plugins/entity-changed-backend/examples/all.yaml
+
 spectralLinter:
   openApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml
   asyncApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-asyncapi-ruleset.yaml
@@ -141,3 +144,7 @@ relationsProcessor:
       pairs:
       - incoming: supporterOf
         outgoing: supportedBy
+
+entityChangedProcessor:
+  ignoreAttribute:
+    - 'metadata.annotations["backstage.io/ignore"]'

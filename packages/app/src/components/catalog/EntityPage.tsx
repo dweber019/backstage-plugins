@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode, useMemo, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import {
   EntityApiDefinitionCard,
@@ -67,8 +67,49 @@ import { relationLabels } from './relationLabels';
 import {
   EntityAccentuateInfo,
   isAccentuateEnabled,
-  EntityLayoutWrapper,
+  EntityAccentuateDialog,
 } from '@dweber019/backstage-plugin-accentuate';
+import EmailIcon from '@material-ui/icons/Email';
+import { EntitySubscribeDialog } from '@dweber019/backstage-plugin-subscribe';
+import EditIcon from '@material-ui/icons/Edit';
+import { useEntity } from '@backstage/plugin-catalog-react';
+
+const EntityLayoutWrapper = (props: { children?: ReactNode }) => {
+  const { entity } = useEntity();
+  const [accentuateDialogOpen, setAccentuateDialogOpen] = useState(false);
+  const [subscribeDialogOpen, setSubscribeDialogOpen] = useState(false);
+
+  const extraMenuItems = useMemo(() => {
+    return [
+      {
+        title: 'Accentuate',
+        Icon: EditIcon,
+        onClick: () => setAccentuateDialogOpen(true),
+      },
+      {
+        title: 'Subscribe',
+        Icon: EmailIcon,
+        onClick: () => setSubscribeDialogOpen(true),
+      },
+    ];
+  }, [entity]);
+
+  return (
+    <>
+      <EntityLayout UNSTABLE_extraContextMenuItems={extraMenuItems}>
+        {props.children}
+      </EntityLayout>
+      <EntityAccentuateDialog
+        open={accentuateDialogOpen}
+        onClose={() => setAccentuateDialogOpen(false)}
+      />
+      <EntitySubscribeDialog
+        open={subscribeDialogOpen}
+        onClose={() => setSubscribeDialogOpen(false)}
+      />
+    </>
+  );
+};
 
 const techdocsContent = <EntityTechdocsContent />;
 

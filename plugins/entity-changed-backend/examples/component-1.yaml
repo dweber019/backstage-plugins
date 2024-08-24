@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: entity-changed-component-1
+  annotations:
+    backstage.io/ignore: bubu
+    backstage.io/change: "2"
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/entity-changed-group-1

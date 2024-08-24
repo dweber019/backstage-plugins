@@ -32,7 +32,6 @@ export const apis: AnyApiFactory[] = [
   ScmAuth.createDefaultApiFactory(),
 
   // Custom
-
   createApiFactory({
     api: apiDocsModuleWsdlApiRef,
     deps: {

@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: resource
+metadata:
+  name: entity-changed-resource-1
+spec:
+  type: db
+  owner: group:default/entity-changed-group-1

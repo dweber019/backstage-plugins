@@ -3,6 +3,7 @@ import {
   accentuatePlugin,
   catalogModuleAccentuateProcessor,
 } from '@dweber019/backstage-plugin-accentuate-backend';
+import { subscribePlugin } from '@dweber019/backstage-plugin-subscribe-backend';
 
 const backend = createBackend();
 backend.add(import('@backstage/plugin-app-backend/alpha'));
@@ -42,5 +43,12 @@ backend.add(import('@dweber019/backstage-plugin-relations-backend'));
 // accentuate-backend plugin
 backend.add(accentuatePlugin);
 backend.add(catalogModuleAccentuateProcessor);
+
+// Notification
+backend.add(import('@backstage/plugin-notifications-backend'));
+backend.add(import('@backstage/plugin-events-backend/alpha'));
+backend.add(import('@dweber019/backstage-plugin-entity-changed-backend'));
+backend.add(import('@dweber019/backstage-plugin-subscribe-backend'));
+backend.add(subscribePlugin);
 
 backend.start();

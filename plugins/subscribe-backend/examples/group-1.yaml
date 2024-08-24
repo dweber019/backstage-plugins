@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: entity-changed-group-1
+spec:
+  type: team
+  children: []
+  members: []

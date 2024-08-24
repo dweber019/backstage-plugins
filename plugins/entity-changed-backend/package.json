@@ -1,0 +1,55 @@
+{
+  "name": "@dweber019/backstage-plugin-entity-changed-backend",
+  "homepage": "https://github.com/dweber019/backstage-plugins/tree/main/plugins/entity-changed-backend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/entity-changed-backend"
+  },
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "backend-plugin",
+    "pluginId": "entity-changed",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-entity-changed-backend"
+    ]
+  },
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack"
+  },
+  "dependencies": {
+    "@backstage/backend-common": "^0.23.3",
+    "@backstage/backend-plugin-api": "^0.7.0",
+    "@backstage/catalog-model": "^1.5.0",
+    "@backstage/config": "^1.2.0",
+    "@backstage/plugin-catalog-common": "^1.0.25",
+    "@backstage/plugin-catalog-node": "^1.12.4",
+    "@backstage/plugin-events-node": "^0.3.8",
+    "winston": "^3.2.1",
+    "yn": "^4.0.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.26.11",
+    "@types/supertest": "^2.0.8",
+    "supertest": "^6.1.3"
+  },
+  "files": [
+    "dist",
+    "config.d.ts"
+  ],
+  "configSchema": "config.d.ts"
+}

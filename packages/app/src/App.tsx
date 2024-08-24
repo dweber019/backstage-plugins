@@ -40,7 +40,6 @@ import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 import { simpleIconsColor } from '@dweber019/backstage-plugin-simple-icons';
-
 import {
   AlertDisplay,
   OAuthRequestDialog,
@@ -52,9 +51,14 @@ import { RelationsCatalogGraphPage } from '@dweber019/backstage-plugin-relations
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { AccentuatePage } from '@dweber019/backstage-plugin-accentuate';
+import { NotificationsPage } from '@backstage/plugin-notifications';
+import { subscribePlugin } from '@dweber019/backstage-plugin-subscribe';
 
 const app = createApp({
   apis,
+  plugins: [
+    subscribePlugin,
+  ],
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -109,6 +113,7 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<RelationsCatalogGraphPage />} />
     <Route path="/accentuate" element={<AccentuatePage />} />
+    <Route path="/notifications" element={<NotificationsPage />} />
   </FlatRoutes>
 );
 
