@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife-backend
 
+## 0.0.9
+
+### Patch Changes
+
+- f549958: Update backstage to 1.30.2.
+
 ## 0.0.8
 
 ### Patch Changes

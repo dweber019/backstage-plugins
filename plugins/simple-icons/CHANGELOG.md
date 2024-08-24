@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.3
+
+### Patch Changes
+
+- d418d7b: Fix size of icons.
+- f549958: Update backstage to 1.30.2.
+
 ## 0.0.2
 
 ### Patch Changes
