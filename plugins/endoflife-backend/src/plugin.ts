@@ -1,4 +1,3 @@
-import { loggerToWinstonLogger } from '@backstage/backend-common';
 import {
   coreServices,
   createBackendPlugin,
@@ -23,7 +22,7 @@ export const endOfLifePlugin = createBackendPlugin({
       async init({ httpRouter, logger, reader, cache }) {
         httpRouter.use(
           await createRouter({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             reader,
             cacheClient: cache,
           }),

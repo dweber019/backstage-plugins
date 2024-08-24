@@ -1,4 +1,4 @@
-import { resolvePackagePath } from '@backstage/backend-common';
+import { resolvePackagePath } from '@backstage/backend-plugin-api';
 import { Knex } from 'knex';
 
 export type RawDbRow = {

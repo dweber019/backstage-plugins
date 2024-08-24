@@ -1,4 +1,3 @@
-import { loggerToWinstonLogger } from '@backstage/backend-common';
 import {
   coreServices,
   createBackendModule,
@@ -19,7 +18,7 @@ export const catalogModuleRelationsProcessor = createBackendModule({
       async init({ catalog, logger, config }) {
         catalog.addProcessor(
           RelationEntitiesProcessor.fromConfig({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             config,
           }),
         );

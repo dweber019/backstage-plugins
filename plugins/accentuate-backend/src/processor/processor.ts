@@ -1,30 +1,29 @@
 import { CatalogProcessor } from '@backstage/plugin-catalog-node';
 import { Entity, stringifyEntityRef } from '@backstage/catalog-model';
-import { Logger } from 'winston';
 import { AccentuateBackendDatabase } from '../db';
 import { AccentuateBackendClient } from '../api';
 import deepmerge from 'deepmerge';
-import { PluginDatabaseManager } from '@backstage/backend-common';
 import {
   ANNOTATION_ACCENTUATE_DISABLE,
   DEFAULT_ALLOWED_KINDS,
   isAllowedKind,
 } from '@dweber019/backstage-plugin-accentuate-common';
 import { Config } from '@backstage/config';
+import { DatabaseService, LoggerService } from '@backstage/backend-plugin-api';
 
 export type PluginEnvironment = {
-  logger: Logger;
+  logger: LoggerService;
   config: Config;
-  database: PluginDatabaseManager;
+  database: DatabaseService;
 };
 
 export class AccentuateEntitiesProcessor implements CatalogProcessor {
-  private readonly logger: Logger;
+  private readonly logger: LoggerService;
   private readonly config: Config;
   private readonly accentuateBackendClient: AccentuateBackendClient;
 
   constructor(options: {
-    logger: Logger;
+    logger: LoggerService;
     config: Config;
     accentuateBackendClient: AccentuateBackendClient;
   }) {

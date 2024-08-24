@@ -1,8 +1,8 @@
-import { Logger } from 'winston';
 import { AccentuateBackendStore } from '../db';
 import { JsonObject } from '@backstage/types';
 import { RawDbRow } from '../db/AccentuateBackendDatabase';
 import { DateTime } from 'luxon';
+import { LoggerService } from '@backstage/backend-plugin-api';
 
 export interface AccentuateResponse {
   entityRef: string;
@@ -26,9 +26,9 @@ export interface AccentuateBackendApi {
 /** @public */
 export class AccentuateBackendClient implements AccentuateBackendApi {
   // @ts-ignore
-  private readonly logger: Logger;
+  private readonly logger: LoggerService;
   private readonly store: AccentuateBackendStore;
-  public constructor(logger: Logger, store: AccentuateBackendStore) {
+  public constructor(logger: LoggerService, store: AccentuateBackendStore) {
     this.logger = logger;
     this.store = store;
   }

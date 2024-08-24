@@ -1,19 +1,18 @@
-import { errorHandler, PluginDatabaseManager } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
-import { Logger } from 'winston';
 import { AccentuateBackendDatabase } from '../db';
 import { AccentuateBackendClient, AccentuateBackendApi } from '../api';
 import { Config } from '@backstage/config';
 import { InputError } from '@backstage/errors';
 import { IdentityApi } from '@backstage/plugin-auth-node';
 import { AccentuateInput } from '@dweber019/backstage-plugin-accentuate-common';
+import { DatabaseService, LoggerService } from '@backstage/backend-plugin-api';
 
 /** @public */
 export interface RouterOptions {
   accentuateBackendApi?: AccentuateBackendApi;
-  logger: Logger;
-  database: PluginDatabaseManager;
+  logger: LoggerService;
+  database: DatabaseService;
   identity: IdentityApi;
   config?: Config;
 }
@@ -34,10 +33,6 @@ export async function createRouter(
 
   const router = Router();
   router.use(express.json());
-
-  router.get('/health', (_, response) => {
-    response.send({ status: 'ok' });
-  });
 
   router.get('/', async (req, res) => {
     if (req.query.entityRef) {
@@ -88,7 +83,6 @@ export async function createRouter(
     }
   });
 
-  router.use(errorHandler());
   return router;
 }
 

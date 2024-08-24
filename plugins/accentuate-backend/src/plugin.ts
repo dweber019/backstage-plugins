@@ -1,8 +1,4 @@
 import {
-  DatabaseManager,
-  loggerToWinstonLogger,
-} from '@backstage/backend-common';
-import {
   coreServices,
   createBackendPlugin,
   createBackendModule,
@@ -10,6 +6,7 @@ import {
 import { createRouterFromConfig } from './service/router';
 import { catalogProcessingExtensionPoint } from '@backstage/plugin-catalog-node/alpha';
 import { AccentuateEntitiesProcessor } from './processor';
+import { DatabaseManager } from '@backstage/backend-common';
 
 /**
  * @public
@@ -28,7 +25,7 @@ export const accentuatePlugin = createBackendPlugin({
       async init({ logger, config, database, identity, httpRouter }) {
         httpRouter.use(
           await createRouterFromConfig({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             config,
             database,
             identity,
@@ -58,7 +55,7 @@ export const catalogModuleAccentuateProcessor = createBackendModule({
         const databaseService = databaseManager.forPlugin('accentuate');
         catalog.addProcessor(
           await AccentuateEntitiesProcessor.fromEnv({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             config,
             database: databaseService,
           }),
