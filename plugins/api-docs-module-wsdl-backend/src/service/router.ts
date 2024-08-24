@@ -1,7 +1,6 @@
 import express from 'express';
 import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
-import { Logger } from 'winston';
 import { CatalogClient } from '@backstage/catalog-client';
 import {
   createLegacyAuthAdapters,
@@ -12,9 +11,9 @@ import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
 import styleSheet from '../stylesheet.sef.json';
-import { AuthService } from '@backstage/backend-plugin-api';
+import { AuthService, LoggerService } from '@backstage/backend-plugin-api';
 
-const downloadExternalSchema = async (uri: string, logger: Logger) => {
+const downloadExternalSchema = async (uri: string, logger: LoggerService) => {
   try {
     const value = await fetch(uri);
     return await value.text();
@@ -40,7 +39,7 @@ const removePort = (uri: string) => {
 
 const recursiveDocumentPoolDownload = async (
   saxonDocument: any,
-  logger: Logger,
+  logger: LoggerService,
   documentPool: { [name: string]: string } = {},
 ) => {
   const schemaURIs: Array<{ value: string }> =
@@ -74,7 +73,7 @@ const recursiveDocumentPoolDownload = async (
   return documentPool;
 };
 
-const wsdlToHtml = async (xml: string, logger: Logger) => {
+const wsdlToHtml = async (xml: string, logger: LoggerService) => {
   const saxonDocument = await SaxonJS.getResource({ text: xml, type: 'xml' });
   const documentPool: { [name: string]: string } =
     await recursiveDocumentPoolDownload(saxonDocument, logger);
@@ -105,7 +104,7 @@ const wsdlToHtml = async (xml: string, logger: Logger) => {
 };
 
 export interface RouterOptions {
-  logger: Logger;
+  logger: LoggerService;
   discovery: PluginEndpointDiscovery;
   tokenManager: TokenManager;
   auth?: AuthService;

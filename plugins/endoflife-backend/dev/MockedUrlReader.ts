@@ -1,35 +1,31 @@
 import {
-  ReadTreeOptions,
-  ReadTreeResponse,
-  ReadUrlOptions,
-  ReadUrlResponse,
-  SearchOptions,
-  SearchResponse,
-  UrlReader,
-} from '@backstage/backend-common';
+  UrlReaderService, UrlReaderServiceReadTreeResponse,
+  UrlReaderServiceReadUrlOptions,
+  UrlReaderServiceReadUrlResponse, UrlReaderServiceSearchOptions, UrlReaderServiceSearchResponse,
+} from '@backstage/backend-plugin-api';
 import * as fs from 'fs';
 
 const data = fs.readFileSync('./dev/source-location-example.json', 'utf8');
 
-export class MockUrlReader implements UrlReader {
+export class MockUrlReader implements UrlReaderService {
   readTree(
     _url: string,
-    _options?: ReadTreeOptions,
-  ): Promise<ReadTreeResponse> {
+    _options?: UrlReaderServiceReadUrlOptions,
+  ): Promise<UrlReaderServiceReadTreeResponse> {
     throw new Error('search not implemented.');
   }
 
   async readUrl(
     _url: string,
-    _options?: ReadUrlOptions,
-  ): Promise<ReadUrlResponse> {
+    _options?: UrlReaderServiceReadUrlOptions,
+  ): Promise<UrlReaderServiceReadUrlResponse> {
     return {
       // @ts-ignore
       buffer: async () => Buffer.from(data),
-    } as unknown as ReadUrlResponse;
+    } as unknown as UrlReaderServiceReadUrlResponse;
   }
 
-  search(_url: string, _options?: SearchOptions): Promise<SearchResponse> {
+  search(_url: string, _options?: UrlReaderServiceSearchOptions): Promise<UrlReaderServiceSearchResponse> {
     throw new Error('search not implemented.');
   }
 }

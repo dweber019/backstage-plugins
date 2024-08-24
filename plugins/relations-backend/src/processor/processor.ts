@@ -12,16 +12,16 @@ import {
   parseEntityRef,
   stringifyEntityRef,
 } from '@backstage/catalog-model';
-import { Logger } from 'winston';
 import { ProcessorConfig } from './processorConfig';
 import { Config } from '@backstage/config';
+import { LoggerService } from '@backstage/backend-plugin-api';
 
 export class RelationEntitiesProcessor implements CatalogProcessor {
-  private readonly logger: Logger;
+  private readonly logger: LoggerService;
   private readonly processorConfig: ProcessorConfig;
   private readonly schema;
 
-  constructor(options: { logger: Logger; processorConfig: ProcessorConfig }) {
+  constructor(options: { logger: LoggerService; processorConfig: ProcessorConfig }) {
     this.logger = options.logger.child({
       type: 'processor',
       processor: this.getProcessorName(),
@@ -127,7 +127,7 @@ export class RelationEntitiesProcessor implements CatalogProcessor {
     return entity.spec![attribute] as string[] | string;
   }
 
-  public static fromConfig(options: { logger: Logger; config: Config }) {
+  public static fromConfig(options: { logger: LoggerService; config: Config }) {
     return new RelationEntitiesProcessor({
       logger: options.logger,
       processorConfig: new ProcessorConfig(options.config),

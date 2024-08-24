@@ -1,4 +1,3 @@
-import { loggerToWinstonLogger } from '@backstage/backend-common';
 import {
   coreServices,
   createBackendPlugin,
@@ -23,7 +22,7 @@ export const apiDocsModuleWsdlPlugin = createBackendPlugin({
       async init({ logger, httpRouter, discovery, tokenManager, auth }) {
         httpRouter.use(
           await createRouter({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             discovery,
             tokenManager,
             auth,
