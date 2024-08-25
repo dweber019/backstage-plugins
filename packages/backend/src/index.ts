@@ -30,6 +30,9 @@ backend.add(import('@backstage/plugin-search-backend/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-catalog/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
+// Notifications plugin
+backend.add(import('@backstage/plugin-notifications-backend'));
+
 // api-docs-module-wsdl-backend plugin
 backend.add(import('@dweber019/backstage-plugin-api-docs-module-wsdl-backend'));
 
@@ -42,5 +45,8 @@ backend.add(import('@dweber019/backstage-plugin-relations-backend'));
 // accentuate-backend plugin
 backend.add(accentuatePlugin);
 backend.add(catalogModuleAccentuateProcessor);
+
+// missing entity plugin
+backend.add(import('@dweber019/backstage-plugin-missing-entity-backend'));
 
 backend.start();

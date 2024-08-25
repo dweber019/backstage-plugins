@@ -40,7 +40,6 @@ import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 import { simpleIconsColor } from '@dweber019/backstage-plugin-simple-icons';
-
 import {
   AlertDisplay,
   OAuthRequestDialog,
@@ -52,6 +51,9 @@ import { RelationsCatalogGraphPage } from '@dweber019/backstage-plugin-relations
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { AccentuatePage } from '@dweber019/backstage-plugin-accentuate';
+import { MissingEntityPage } from '@dweber019/backstage-plugin-missing-entity';
+import LinkOffIcon from '@material-ui/icons/LinkOff';
+import { NotificationsPage } from '@backstage/plugin-notifications';
 
 const app = createApp({
   apis,
@@ -75,7 +77,10 @@ const app = createApp({
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
-  icons: simpleIconsColor,
+  icons: {
+    ...simpleIconsColor,
+    linkOff: LinkOffIcon,
+  },
 });
 
 const routes = (
@@ -108,7 +113,9 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<RelationsCatalogGraphPage />} />
+    <Route path="/notifications" element={<NotificationsPage />} />
     <Route path="/accentuate" element={<AccentuatePage />} />
+    <Route path="/missing-entity" element={<MissingEntityPage />} />
   </FlatRoutes>
 );
 

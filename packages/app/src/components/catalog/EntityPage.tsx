@@ -25,8 +25,6 @@ import {
   isKind,
   hasCatalogProcessingErrors,
   isOrphan,
-  hasRelationWarnings,
-  EntityRelationWarning,
 } from '@backstage/plugin-catalog';
 import {
   EntityUserProfileCard,
@@ -69,6 +67,10 @@ import {
   isAccentuateEnabled,
   EntityLayoutWrapper,
 } from '@dweber019/backstage-plugin-accentuate';
+import {
+  MissingEntityWarning,
+  hasEntityMissingWarnings,
+} from '@dweber019/backstage-plugin-missing-entity';
 
 const techdocsContent = <EntityTechdocsContent />;
 
@@ -106,9 +108,9 @@ const entityWarningContent = (
     </EntitySwitch>
 
     <EntitySwitch>
-      <EntitySwitch.Case if={hasRelationWarnings}>
+      <EntitySwitch.Case if={hasEntityMissingWarnings}>
         <Grid item xs={12}>
-          <EntityRelationWarning />
+          <MissingEntityWarning />
         </Grid>
       </EntitySwitch.Case>
     </EntitySwitch>

@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: resource
+metadata:
+  name: missing-entity
+spec:
+  type: db
+  owner: group:default/missing-entity

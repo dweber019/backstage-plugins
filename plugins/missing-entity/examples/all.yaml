@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: missing-entity-examples
+spec:
+  targets:
+    - ./component-1.yaml
+    - ./group-1.yaml
+    - ./resource-1.yaml
