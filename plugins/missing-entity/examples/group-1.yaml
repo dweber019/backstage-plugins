@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: missing-entity
+spec:
+  type: team
+  children: []
+  members:
+    - missing-user
+    - user:development/guest

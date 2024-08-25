@@ -64,7 +64,7 @@ const recursiveDocumentPoolDownload = async (
     }
 
     await Promise.all(
-      externalSchemas.map(async document =>
+      externalSchemas.map(async (document: any) =>
         recursiveDocumentPoolDownload(document, logger, documentPool),
       ),
     );

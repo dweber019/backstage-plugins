@@ -1,0 +1,67 @@
+{
+  "name": "@dweber019/backstage-plugin-missing-entity-backend",
+  "version": "0.0.0",
+  "backstage": {
+    "role": "backend-plugin",
+    "pluginId": "missing-entity",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-missing-entity",
+      "@dweber019/backstage-plugin-missing-entity-backend",
+      "@dweber019/backstage-plugin-missing-entity-common"
+    ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/missing-entity-backend"
+  },
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "dist",
+    "config.d.ts",
+    "migrations/**/*.{js,d.ts}"
+  ],
+  "scripts": {
+    "build": "backstage-cli package build",
+    "clean": "backstage-cli package clean",
+    "lint": "backstage-cli package lint",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "start": "backstage-cli package start",
+    "test": "backstage-cli package test"
+  },
+  "dependencies": {
+    "@backstage/backend-common": "^0.24.0",
+    "@backstage/backend-defaults": "^0.4.3",
+    "@backstage/backend-plugin-api": "^0.8.0",
+    "@backstage/catalog-client": "^1.6.6",
+    "@backstage/catalog-model": "^1.6.0",
+    "@backstage/config": "^1.2.0",
+    "@backstage/errors": "^1.2.4",
+    "@backstage/plugin-notifications-node": "^0.2.5",
+    "@backstage/types": "^1.1.1",
+    "@dweber019/backstage-plugin-missing-entity-common": "workspace:^",
+    "@types/express": "*",
+    "express": "^4.18.1",
+    "express-promise-router": "^4.1.0",
+    "knex": "^3.0.0",
+    "lodash": "^4.17.21",
+    "luxon": "^3.0.0",
+    "yn": "^4.0.0"
+  },
+  "devDependencies": {
+    "@backstage/backend-test-utils": "^0.5.0",
+    "@backstage/cli": "^0.27.0",
+    "@types/lodash": "^4.17.0",
+    "@types/supertest": "^6.0.0",
+    "supertest": "^7.0.0"
+  },
+  "configSchema": "config.d.ts"
+}

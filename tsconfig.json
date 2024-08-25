@@ -10,6 +10,6 @@
   "compilerOptions": {
     "outDir": "dist-types",
     "rootDir": ".",
-    "allowUmdGlobalAccess": true
+    "jsx": "preserve"
   }
 }
