@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.14
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 
+## 0.0.15
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+- 2409aaa: Fix type error with new typescript version.
+
 ## 0.0.14
 
 ### Patch Changes

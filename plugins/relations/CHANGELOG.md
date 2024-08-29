@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations
 
+## 0.0.9
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+
 ## 0.0.8
 
 ### Patch Changes

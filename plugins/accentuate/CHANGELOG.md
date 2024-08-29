@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-accentuate
 
+## 0.0.9
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+- 2409aaa: Fix `@rjsf/*` at 5.20.1 and use patch to fix typescript issues.
+
 ## 0.0.8
 
 ### Patch Changes

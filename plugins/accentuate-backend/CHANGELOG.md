@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-accentuate-backend
 
+## 0.0.8
+
+### Patch Changes
+
+- cd2f9cf: Refactor accentuate backend to use REST API instead of database.
+- cd2f9cf: Update some dependencies.
+
 ## 0.0.7
 
 ### Patch Changes

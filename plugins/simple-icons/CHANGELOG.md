@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.4
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+
 ## 0.0.3
 
 ### Patch Changes
