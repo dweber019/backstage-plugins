@@ -1,7 +1,5 @@
 import { CatalogProcessor } from '@backstage/plugin-catalog-node';
 import { Entity, stringifyEntityRef } from '@backstage/catalog-model';
-import { AccentuateBackendDatabase } from '../db';
-import { AccentuateBackendClient } from '../api';
 import deepmerge from 'deepmerge';
 import {
   ANNOTATION_ACCENTUATE_DISABLE,
@@ -9,30 +7,35 @@ import {
   isAllowedKind,
 } from '@dweber019/backstage-plugin-accentuate-common';
 import { Config } from '@backstage/config';
-import { DatabaseService, LoggerService } from '@backstage/backend-plugin-api';
+import { AuthService, DiscoveryService, LoggerService } from '@backstage/backend-plugin-api';
+import { AccentuateResponse } from '../api/AccentuateBackendClient';
 
 export type PluginEnvironment = {
   logger: LoggerService;
   config: Config;
-  database: DatabaseService;
+  discovery: DiscoveryService;
+  auth: AuthService;
 };
 
 export class AccentuateEntitiesProcessor implements CatalogProcessor {
   private readonly logger: LoggerService;
   private readonly config: Config;
-  private readonly accentuateBackendClient: AccentuateBackendClient;
+  private readonly discovery: DiscoveryService;
+  private readonly auth: AuthService;
 
   constructor(options: {
     logger: LoggerService;
     config: Config;
-    accentuateBackendClient: AccentuateBackendClient;
+    discovery: DiscoveryService;
+    auth: AuthService;
   }) {
     this.logger = options.logger.child({
       type: 'processor',
       processor: this.getProcessorName(),
     });
     this.config = options.config;
-    this.accentuateBackendClient = options.accentuateBackendClient;
+    this.discovery = options.discovery;
+    this.auth = options.auth;
   }
 
   getProcessorName(): string {
@@ -53,10 +56,30 @@ export class AccentuateEntitiesProcessor implements CatalogProcessor {
       }) as any;
     }
 
-    const accentuate = await this.accentuateBackendClient.get(
-      stringifyEntityRef(entity),
-    );
-    this.logger.debug('Does accentuate for entity exists', {
+    const baseUrl = await this.discovery.getBaseUrl('accentuate');
+    const { token } = await this.auth.getPluginRequestToken({
+      onBehalfOf: await this.auth.getOwnServiceCredentials(),
+      targetPluginId: 'accentuate',
+    });
+
+    const response = await fetch(`${baseUrl}?entityRef=${stringifyEntityRef(entity)}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.status === 404) {
+      return entity;
+    }
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    const accentuate = await response.json() as AccentuateResponse;
+
+    this.logger.info('Does accentuate for entity exists', {
       entity: stringifyEntityRef(entity),
       exists: !!accentuate,
     });
@@ -68,17 +91,11 @@ export class AccentuateEntitiesProcessor implements CatalogProcessor {
   }
 
   public static async fromEnv(env: PluginEnvironment) {
-    const accentuateBackendStore = await AccentuateBackendDatabase.create(
-      await env.database.getClient(),
-    );
-    const accentuateBackendClient = new AccentuateBackendClient(
-      env.logger,
-      accentuateBackendStore,
-    );
     return new AccentuateEntitiesProcessor({
       logger: env.logger,
       config: env.config,
-      accentuateBackendClient,
+      discovery: env.discovery,
+      auth: env.auth,
     });
   }
 }

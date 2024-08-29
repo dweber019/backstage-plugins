@@ -2961,7 +2961,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/backend-app-api@npm:^0.9.0, @backstage/backend-app-api@npm:^0.9.1":
+"@backstage/backend-app-api@npm:^0.9.1":
   version: 0.9.2
   resolution: "@backstage/backend-app-api@npm:0.9.2"
   dependencies:
@@ -3001,6 +3001,49 @@ __metadata:
     winston: ^3.2.1
     winston-transport: ^4.5.0
   checksum: 6b831239b734d22dd09b1238d2a30e205b72019072db13ee5bf275d2c8a8d85262987dab29bdc90c0bbb89c38edb735c5eba0a32404d7f944cd0acddeb799da7
+  languageName: node
+  linkType: hard
+
+"@backstage/backend-app-api@npm:^0.9.3":
+  version: 0.9.3
+  resolution: "@backstage/backend-app-api@npm:0.9.3"
+  dependencies:
+    "@backstage/backend-common": ^0.24.1
+    "@backstage/backend-plugin-api": ^0.8.1
+    "@backstage/cli-common": ^0.1.14
+    "@backstage/cli-node": ^0.2.7
+    "@backstage/config": ^1.2.0
+    "@backstage/config-loader": ^1.9.0
+    "@backstage/errors": ^1.2.4
+    "@backstage/plugin-auth-node": ^0.5.1
+    "@backstage/plugin-permission-node": ^0.8.2
+    "@backstage/types": ^1.1.1
+    "@manypkg/get-packages": ^1.1.3
+    compression: ^1.7.4
+    cookie: ^0.6.0
+    cors: ^2.8.5
+    express: ^4.17.1
+    express-promise-router: ^4.1.0
+    fs-extra: ^11.2.0
+    helmet: ^6.0.0
+    jose: ^5.0.0
+    knex: ^3.0.0
+    lodash: ^4.17.21
+    logform: ^2.3.2
+    luxon: ^3.0.0
+    minimatch: ^9.0.0
+    minimist: ^1.2.5
+    morgan: ^1.10.0
+    node-fetch: ^2.7.0
+    node-forge: ^1.3.1
+    path-to-regexp: ^6.2.1
+    selfsigned: ^2.0.0
+    stoppable: ^1.1.0
+    triple-beam: ^1.4.1
+    uuid: ^9.0.0
+    winston: ^3.2.1
+    winston-transport: ^4.5.0
+  checksum: 42c41bf9c71bcd5a34675e9116879949693f388d74147a6f1c8ad4b483799ee03be999b5d431547f0ab3f3e24cc9a7a813315fc627b2ba4af961f99b237e9dd5
   languageName: node
   linkType: hard
 
@@ -3234,6 +3277,83 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/backend-defaults@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "@backstage/backend-defaults@npm:0.4.4"
+  dependencies:
+    "@aws-sdk/abort-controller": ^3.347.0
+    "@aws-sdk/client-codecommit": ^3.350.0
+    "@aws-sdk/client-s3": ^3.350.0
+    "@aws-sdk/credential-providers": ^3.350.0
+    "@aws-sdk/types": ^3.347.0
+    "@backstage/backend-app-api": ^0.9.3
+    "@backstage/backend-common": ^0.24.1
+    "@backstage/backend-dev-utils": ^0.1.5
+    "@backstage/backend-plugin-api": ^0.8.1
+    "@backstage/cli-common": ^0.1.14
+    "@backstage/config": ^1.2.0
+    "@backstage/config-loader": ^1.9.0
+    "@backstage/errors": ^1.2.4
+    "@backstage/integration": ^1.14.0
+    "@backstage/integration-aws-node": ^0.1.12
+    "@backstage/plugin-auth-node": ^0.5.1
+    "@backstage/plugin-events-node": ^0.3.10
+    "@backstage/plugin-permission-node": ^0.8.2
+    "@backstage/types": ^1.1.1
+    "@google-cloud/storage": ^7.0.0
+    "@keyv/memcache": ^1.3.5
+    "@keyv/redis": ^2.5.3
+    "@manypkg/get-packages": ^1.1.3
+    "@octokit/rest": ^19.0.3
+    "@opentelemetry/api": ^1.3.0
+    "@types/cors": ^2.8.6
+    "@types/express": ^4.17.6
+    archiver: ^6.0.0
+    base64-stream: ^1.0.0
+    better-sqlite3: ^11.0.0
+    compression: ^1.7.4
+    concat-stream: ^2.0.0
+    cookie: ^0.6.0
+    cors: ^2.8.5
+    cron: ^3.0.0
+    express: ^4.17.1
+    express-promise-router: ^4.1.0
+    fs-extra: ^11.2.0
+    git-url-parse: ^14.0.0
+    helmet: ^6.0.0
+    isomorphic-git: ^1.23.0
+    jose: ^5.0.0
+    keyv: ^4.5.2
+    knex: ^3.0.0
+    lodash: ^4.17.21
+    logform: ^2.3.2
+    luxon: ^3.0.0
+    minimatch: ^9.0.0
+    minimist: ^1.2.5
+    morgan: ^1.10.0
+    mysql2: ^3.0.0
+    node-fetch: ^2.7.0
+    node-forge: ^1.3.1
+    p-limit: ^3.1.0
+    path-to-regexp: ^6.2.1
+    pg: ^8.11.3
+    pg-connection-string: ^2.3.0
+    pg-format: ^1.0.4
+    raw-body: ^2.4.1
+    selfsigned: ^2.0.0
+    stoppable: ^1.1.0
+    tar: ^6.1.12
+    triple-beam: ^1.4.1
+    uuid: ^9.0.0
+    winston: ^3.2.1
+    winston-transport: ^4.5.0
+    yauzl: ^3.0.0
+    yn: ^4.0.0
+    zod: ^3.22.4
+  checksum: 07f02b0eed51b5741b8e32f3026b8a2a29c8598a60bd20c4c4ae98dcdf849321f55672266ae50de9f28fb6f1e9c65409d8a76760ca405af175739eb00a01be21
+  languageName: node
+  linkType: hard
+
 "@backstage/backend-dev-utils@npm:^0.1.5":
   version: 0.1.5
   resolution: "@backstage/backend-dev-utils@npm:0.1.5"
@@ -3319,17 +3439,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/backend-test-utils@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@backstage/backend-test-utils@npm:0.5.0"
+"@backstage/backend-test-utils@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@backstage/backend-test-utils@npm:0.5.1"
   dependencies:
-    "@backstage/backend-app-api": ^0.9.0
-    "@backstage/backend-defaults": ^0.4.2
-    "@backstage/backend-plugin-api": ^0.8.0
+    "@backstage/backend-app-api": ^0.9.3
+    "@backstage/backend-defaults": ^0.4.4
+    "@backstage/backend-plugin-api": ^0.8.1
     "@backstage/config": ^1.2.0
     "@backstage/errors": ^1.2.4
-    "@backstage/plugin-auth-node": ^0.5.0
-    "@backstage/plugin-events-node": ^0.3.9
+    "@backstage/plugin-auth-node": ^0.5.1
+    "@backstage/plugin-events-node": ^0.3.10
     "@backstage/types": ^1.1.1
     "@keyv/memcache": ^1.3.5
     "@keyv/redis": ^2.5.3
@@ -3350,7 +3470,7 @@ __metadata:
     yn: ^4.0.0
   peerDependencies:
     "@types/jest": "*"
-  checksum: 949d5cc4225759e97a92e79988679254f6dff3760f422dd91b8e1d2f2589813a42cd1ffd51237bc3edbc85d61abef58a80185a264531a70a5bb4b560f94f400b
+  checksum: e583423ccac137ca403dbb473cc8a1be081cd71f45082a55ad096b4e6177fae1f953d829051524319ab342065dbebda9bcb5b5a69f35d82185c496f7eff12606
   languageName: node
   linkType: hard
 
@@ -4664,6 +4784,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-permission-node@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "@backstage/plugin-permission-node@npm:0.8.2"
+  dependencies:
+    "@backstage/backend-common": ^0.24.1
+    "@backstage/backend-plugin-api": ^0.8.1
+    "@backstage/config": ^1.2.0
+    "@backstage/errors": ^1.2.4
+    "@backstage/plugin-auth-node": ^0.5.1
+    "@backstage/plugin-permission-common": ^0.8.1
+    "@types/express": ^4.17.6
+    express: ^4.17.1
+    express-promise-router: ^4.1.0
+    zod: ^3.22.4
+    zod-to-json-schema: ^3.20.4
+  checksum: 3af9ea151e6fa2bcbe4c48a1062191118fa8efd31bf1f40c45165e48b165facc0308abd63365d32e1908cd91632c8a97bd5ed844e322da8bd534adde7c50779b
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-permission-react@npm:^0.4.25":
   version: 0.4.25
   resolution: "@backstage/plugin-permission-react@npm:0.4.25"
@@ -5922,26 +6061,28 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-accentuate-backend@workspace:plugins/accentuate-backend"
   dependencies:
-    "@backstage/backend-common": ^0.24.0
     "@backstage/backend-defaults": ^0.4.3
     "@backstage/backend-plugin-api": ^0.8.0
+    "@backstage/backend-test-utils": ^0.5.1
     "@backstage/catalog-model": ^1.6.0
     "@backstage/cli": ^0.27.0
     "@backstage/config": ^1.2.0
     "@backstage/errors": ^1.2.4
     "@backstage/plugin-auth-node": ^0.5.0
     "@backstage/plugin-catalog-node": ^1.12.5
+    "@backstage/test-utils": ^1.5.10
     "@backstage/types": ^1.1.1
     "@dweber019/backstage-plugin-accentuate-common": ^0.0.7
     "@types/express": ^4.17.6
-    "@types/supertest": ^2.0.8
+    "@types/supertest": ^6.0.0
     deepmerge: ^4.3.1
-    express: ^4.17.1
+    express: ^4.18.1
     express-promise-router: ^4.1.0
     knex: ^3.1.0
     luxon: ^3.0.0
+    msw: ^1.0.0
     node-fetch: ^2.6.5
-    supertest: ^6.1.3
+    supertest: ^7.0.0
     winston: ^3.2.1
     yn: ^4.0.0
   languageName: unknown
@@ -5974,13 +6115,13 @@ __metadata:
     "@dweber019/backstage-plugin-accentuate-common": ^0.0.7
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.11.3
-    "@material-ui/lab": 4.0.0-alpha.57
+    "@material-ui/lab": 4.0.0-alpha.61
     "@rjsf/core": 5.20.1
     "@rjsf/material-ui": 5.20.1
     "@rjsf/utils": 5.20.1
     "@rjsf/validator-ajv8": 5.20.1
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/lodash": ^4.17.0
     "@types/node": "*"
@@ -6004,14 +6145,14 @@ __metadata:
     "@backstage/catalog-model": ^1.6.0
     "@backstage/cli": ^0.27.0
     "@types/express": ^4.17.6
-    "@types/supertest": ^2.0.8
+    "@types/supertest": ^6.0.0
     cross-fetch: ^3.1.5
-    express: ^4.17.1
+    express: ^4.18.1
     express-promise-router: ^4.1.0
     leasot: ^12.0.0
-    msw: ^0.49.0
+    msw: ^1.0.0
     saxon-js: ^2.6.0
-    supertest: ^6.1.3
+    supertest: ^7.0.0
     winston: ^3.2.1
     xslt3: ^2.6.0
     yn: ^4.0.0
@@ -6031,9 +6172,9 @@ __metadata:
     "@backstage/plugin-api-docs": ^0.11.8
     "@backstage/plugin-catalog-react": ^1.12.3
     "@backstage/test-utils": ^1.5.10
-    "@material-ui/lab": 4.0.0-alpha.57
+    "@material-ui/lab": 4.0.0-alpha.61
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     react-use: ^17.2.4
   peerDependencies:
@@ -6056,12 +6197,12 @@ __metadata:
     "@backstage/test-utils": ^1.5.10
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
-    "@material-ui/lab": 4.0.0-alpha.57
+    "@material-ui/lab": 4.0.0-alpha.61
     "@stoplight/spectral-core": ^1.18.3
     "@stoplight/spectral-ruleset-bundler": ^1.5.2
     "@stoplight/spectral-runtime": ^1.1.2
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/node": "*"
     cross-fetch: ^3.1.5
@@ -6088,13 +6229,13 @@ __metadata:
     "@backstage/integration": ^1.14.0
     "@types/express": ^4.17.6
     "@types/marked": ^5.0.0
-    "@types/supertest": ^2.0.8
-    express: ^4.17.1
+    "@types/supertest": ^6.0.0
+    express: ^4.18.1
     express-promise-router: ^4.1.0
     luxon: ^3.0.0
     marked: ^4.0.14
     node-fetch: ^2.6.5
-    supertest: ^6.1.3
+    supertest: ^7.0.0
     winston: ^3.2.1
     yn: ^4.0.0
   languageName: unknown
@@ -6118,7 +6259,7 @@ __metadata:
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/luxon": ^3.4.0
     "@types/node": "*"
@@ -6146,7 +6287,7 @@ __metadata:
     "@backstage/backend-common": ^0.24.0
     "@backstage/backend-defaults": ^0.4.3
     "@backstage/backend-plugin-api": ^0.8.0
-    "@backstage/backend-test-utils": ^0.5.0
+    "@backstage/backend-test-utils": ^0.5.1
     "@backstage/catalog-client": ^1.6.6
     "@backstage/catalog-model": ^1.6.0
     "@backstage/cli": ^0.27.0
@@ -6216,11 +6357,11 @@ __metadata:
     "@backstage/plugin-catalog-common": ^1.0.26
     "@backstage/plugin-catalog-node": ^1.12.5
     "@types/express": ^4.17.6
-    "@types/supertest": ^2.0.8
-    express: ^4.17.1
+    "@types/supertest": ^6.0.0
+    express: ^4.18.1
     express-promise-router: ^4.1.0
     node-fetch: ^2.6.5
-    supertest: ^6.1.3
+    supertest: ^7.0.0
     winston: ^3.2.1
     yn: ^4.0.0
   languageName: unknown
@@ -6241,7 +6382,7 @@ __metadata:
     "@backstage/test-utils": ^1.5.10
     "@material-ui/core": ^4.12.2
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/node": "*"
     cross-fetch: ^3.1.5
@@ -6268,7 +6409,7 @@ __metadata:
     "@backstage/test-utils": ^1.5.10
     "@material-ui/core": ^4.12.2
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/node": "*"
     msw: ^1.0.0
@@ -6292,7 +6433,7 @@ __metadata:
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/node": "*"
     cross-fetch: ^3.1.5
@@ -8128,27 +8269,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@material-ui/lab@npm:4.0.0-alpha.57":
-  version: 4.0.0-alpha.57
-  resolution: "@material-ui/lab@npm:4.0.0-alpha.57"
-  dependencies:
-    "@babel/runtime": ^7.4.4
-    "@material-ui/utils": ^4.11.2
-    clsx: ^1.0.4
-    prop-types: ^15.7.2
-    react-is: ^16.8.0 || ^17.0.0
-  peerDependencies:
-    "@material-ui/core": ^4.9.10
-    "@types/react": ^16.8.6 || ^17.0.0
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 0bc8b35e4a96ea04fa3fd43a64ff9685bdea2ad6ed8baf4c8f5cbe1524101a87f33229f6d23638074a3626fc3c55ba15a38d2ab984777dda896e117d0cea5c0e
-  languageName: node
-  linkType: hard
-
 "@material-ui/lab@npm:4.0.0-alpha.61, @material-ui/lab@npm:^4.0.0-alpha.61":
   version: 4.0.0-alpha.61
   resolution: "@material-ui/lab@npm:4.0.0-alpha.61"
@@ -8264,7 +8384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@material-ui/utils@npm:^4.11.2, @material-ui/utils@npm:^4.11.3":
+"@material-ui/utils@npm:^4.11.3":
   version: 4.11.3
   resolution: "@material-ui/utils@npm:4.11.3"
   dependencies:
@@ -8519,7 +8639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mswjs/interceptors@npm:^0.17.10, @mswjs/interceptors@npm:^0.17.5":
+"@mswjs/interceptors@npm:^0.17.10":
   version: 0.17.10
   resolution: "@mswjs/interceptors@npm:0.17.10"
   dependencies:
@@ -12651,22 +12771,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^9.0.0":
-  version: 9.3.4
-  resolution: "@testing-library/dom@npm:9.3.4"
-  dependencies:
-    "@babel/code-frame": ^7.10.4
-    "@babel/runtime": ^7.12.5
-    "@types/aria-query": ^5.0.1
-    aria-query: 5.1.3
-    chalk: ^4.1.0
-    dom-accessibility-api: ^0.5.9
-    lz-string: ^1.5.0
-    pretty-format: ^27.0.2
-  checksum: dfd6fb0d6c7b4dd716ba3c47309bc9541b4a55772cb61758b4f396b3785efe2dbc75dc63423545c039078c7ffcc5e4b8c67c2db1b6af4799580466036f70026f
-  languageName: node
-  linkType: hard
-
 "@testing-library/jest-dom@npm:^6.0.0":
   version: 6.4.2
   resolution: "@testing-library/jest-dom@npm:6.4.2"
@@ -12697,20 +12801,6 @@ __metadata:
     vitest:
       optional: true
   checksum: 631aeadbf4e738080ae095242cf1a29a0b4ee2f09c8bdd0d3f00a923707da64c1617e088ba9a961d098481afabdc1d19149fb7ef98edf15132348eb222f345ae
-  languageName: node
-  linkType: hard
-
-"@testing-library/react@npm:^14.0.0":
-  version: 14.2.2
-  resolution: "@testing-library/react@npm:14.2.2"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@testing-library/dom": ^9.0.0
-    "@types/react-dom": ^18.0.0
-  peerDependencies:
-    react: ^18.0.0
-    react-dom: ^18.0.0
-  checksum: cb73df588592d9101429f057eaa6f320fc12524d5eb2acc8a16002c1ee2d9422a49e44841003bba42974c9ae1ced6b134f0d647826eca42ab8f19e4592971b16
   languageName: node
   linkType: hard
 
@@ -13729,17 +13819,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/superagent@npm:*":
-  version: 8.1.6
-  resolution: "@types/superagent@npm:8.1.6"
-  dependencies:
-    "@types/cookiejar": ^2.1.5
-    "@types/methods": ^1.1.4
-    "@types/node": "*"
-  checksum: 240ea5a58bb3c9e53f0dbe1ccd1bfe046e084fffdb4eaf44f0bf846fb98dad98ce03d057fdfb555bfa06afbb76a0e5877fe639750b798edac594bc7e19833934
-  languageName: node
-  linkType: hard
-
 "@types/superagent@npm:^8.1.0":
   version: 8.1.8
   resolution: "@types/superagent@npm:8.1.8"
@@ -13749,15 +13828,6 @@ __metadata:
     "@types/node": "*"
     form-data: ^4.0.0
   checksum: 19e9573a66c0aebeafae8243dc8fb613f1ba3376d448faa648c097b889ca51e52c470e64d850dcc1d4d30c13cfa5721b564e062a6b67ccc4892330c9ec7aaa14
-  languageName: node
-  linkType: hard
-
-"@types/supertest@npm:^2.0.8":
-  version: 2.0.16
-  resolution: "@types/supertest@npm:2.0.16"
-  dependencies:
-    "@types/superagent": "*"
-  checksum: 2fc998ea698e0467cdbe3bea0ebce2027ea3a45a13e51a6cecb0435f44b486faecf99c34d8702d2d7fe033e6e09fdd2b374af52ecc8d0c69a1deec66b8c0dd52
   languageName: node
   linkType: hard
 
@@ -14799,9 +14869,9 @@ __metadata:
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@playwright/test": ^1.32.3
-    "@testing-library/dom": ^9.0.0
+    "@testing-library/dom": ^10.0.0
     "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
+    "@testing-library/react": ^15.0.0
     "@testing-library/user-event": ^14.0.0
     "@types/react-dom": "*"
     cross-env: ^7.0.0
@@ -14951,15 +15021,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aria-query@npm:5.1.3":
-  version: 5.1.3
-  resolution: "aria-query@npm:5.1.3"
-  dependencies:
-    deep-equal: ^2.0.5
-  checksum: 929ff95f02857b650fb4cbcd2f41072eee2f46159a6605ea03bf63aa572e35ffdff43d69e815ddc462e16e07de8faba3978afc2813650b4448ee18c9895d982b
-  languageName: node
-  linkType: hard
-
 "aria-query@npm:5.3.0, aria-query@npm:^5.0.0, aria-query@npm:^5.3.0":
   version: 5.3.0
   resolution: "aria-query@npm:5.3.0"
@@ -14969,7 +15030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-buffer-byte-length@npm:^1.0.0, array-buffer-byte-length@npm:^1.0.1":
+"array-buffer-byte-length@npm:^1.0.1":
   version: 1.0.1
   resolution: "array-buffer-byte-length@npm:1.0.1"
   dependencies:
@@ -15544,7 +15605,7 @@ __metadata:
     "@types/luxon": ^2.0.4
     app: "link:../app"
     better-sqlite3: ^9.0.0
-    express: ^4.17.1
+    express: ^4.18.1
     express-promise-router: ^4.1.0
     node-gyp: ^10.0.0
     pg: ^8.11.3
@@ -16410,16 +16471,6 @@ __metadata:
     ansi-styles: ^4.1.0
     supports-color: ^7.1.0
   checksum: 5561c7b4c063badee3e16d04bce50bd033e1be1bf4c6948639275683ffa7a1993c44639b43c22b1c505f0f813a24b1889037eb182546b48946f9fe7cdd0e7d13
-  languageName: node
-  linkType: hard
-
-"chalk@npm:4.1.1":
-  version: 4.1.1
-  resolution: "chalk@npm:4.1.1"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: 036e973e665ba1a32c975e291d5f3d549bceeb7b1b983320d4598fb75d70fe20c5db5d62971ec0fe76cdbce83985a00ee42372416abfc3a5584465005a7855ed
   languageName: node
   linkType: hard
 
@@ -18316,32 +18367,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deep-equal@npm:^2.0.5":
-  version: 2.2.3
-  resolution: "deep-equal@npm:2.2.3"
-  dependencies:
-    array-buffer-byte-length: ^1.0.0
-    call-bind: ^1.0.5
-    es-get-iterator: ^1.1.3
-    get-intrinsic: ^1.2.2
-    is-arguments: ^1.1.1
-    is-array-buffer: ^3.0.2
-    is-date-object: ^1.0.5
-    is-regex: ^1.1.4
-    is-shared-array-buffer: ^1.0.2
-    isarray: ^2.0.5
-    object-is: ^1.1.5
-    object-keys: ^1.1.1
-    object.assign: ^4.1.4
-    regexp.prototype.flags: ^1.5.1
-    side-channel: ^1.0.4
-    which-boxed-primitive: ^1.0.2
-    which-collection: ^1.0.1
-    which-typed-array: ^1.1.13
-  checksum: ee8852f23e4d20a5626c13b02f415ba443a1b30b4b3d39eaf366d59c4a85e6545d7ec917db44d476a85ae5a86064f7e5f7af7479f38f113995ba869f3a1ddc53
-  languageName: node
-  linkType: hard
-
 "deep-equal@npm:~1.0.1":
   version: 1.0.1
   resolution: "deep-equal@npm:1.0.1"
@@ -19243,23 +19268,6 @@ __metadata:
   version: 1.3.0
   resolution: "es-errors@npm:1.3.0"
   checksum: ec1414527a0ccacd7f15f4a3bc66e215f04f595ba23ca75cdae0927af099b5ec865f9f4d33e9d7e86f512f252876ac77d4281a7871531a50678132429b1271b5
-  languageName: node
-  linkType: hard
-
-"es-get-iterator@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "es-get-iterator@npm:1.1.3"
-  dependencies:
-    call-bind: ^1.0.2
-    get-intrinsic: ^1.1.3
-    has-symbols: ^1.0.3
-    is-arguments: ^1.1.1
-    is-map: ^2.0.2
-    is-set: ^2.0.2
-    is-string: ^1.0.7
-    isarray: ^2.0.5
-    stop-iteration-iterator: ^1.0.0
-  checksum: 8fa118da42667a01a7c7529f8a8cca514feeff243feec1ce0bb73baaa3514560bd09d2b3438873cf8a5aaec5d52da248131de153b28e2638a061b6e4df13267d
   languageName: node
   linkType: hard
 
@@ -20838,18 +20846,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formidable@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "formidable@npm:2.1.2"
-  dependencies:
-    dezalgo: ^1.0.4
-    hexoid: ^1.0.0
-    once: ^1.4.0
-    qs: ^6.11.0
-  checksum: 81c8e5d89f5eb873e992893468f0de22c01678ca3d315db62be0560f9de1c77d4faefc9b1f4575098eb2263b3c81ba1024833a9fc3206297ddbac88a4f69b7a8
-  languageName: node
-  linkType: hard
-
 "formidable@npm:^3.5.1":
   version: 3.5.1
   resolution: "formidable@npm:3.5.1"
@@ -21165,7 +21161,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.1, get-intrinsic@npm:^1.2.2, get-intrinsic@npm:^1.2.3, get-intrinsic@npm:^1.2.4":
+"get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.1, get-intrinsic@npm:^1.2.3, get-intrinsic@npm:^1.2.4":
   version: 1.2.4
   resolution: "get-intrinsic@npm:1.2.4"
   dependencies:
@@ -21770,7 +21766,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^15.0.0 || ^16.0.0, graphql@npm:^16.0.0, graphql@npm:^16.8.1":
+"graphql@npm:^16.0.0, graphql@npm:^16.8.1":
   version: 16.8.1
   resolution: "graphql@npm:16.8.1"
   checksum: 8d304b7b6f708c8c5cc164b06e92467dfe36aff6d4f2cf31dd19c4c2905a0e7b89edac4b7e225871131fd24e21460836b369de0c06532644d15b461d55b1ccc0
@@ -21992,13 +21988,6 @@ __metadata:
   version: 3.2.5
   resolution: "headers-polyfill@npm:3.2.5"
   checksum: a3c4bdd661584fd39e40c0f91412abc514616edfbd20d29a75567e591f90ef5c445c8e209b7f3c2b2375d27e95e4690f33417368a168d4832484a93861ab6a3c
-  languageName: node
-  linkType: hard
-
-"headers-polyfill@npm:^3.1.0":
-  version: 3.3.0
-  resolution: "headers-polyfill@npm:3.3.0"
-  checksum: 6dd010544b7c1a878aa612b49d9e27d273aa9e8a462e1ae05ca212fafa68e6b7cbdec4765f4e443b2fe70d2818f5d9814eab53fa2ba793bf1e5a6b6eff760474
   languageName: node
   linkType: hard
 
@@ -22691,7 +22680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"internal-slot@npm:^1.0.4, internal-slot@npm:^1.0.7":
+"internal-slot@npm:^1.0.7":
   version: 1.0.7
   resolution: "internal-slot@npm:1.0.7"
   dependencies:
@@ -22776,7 +22765,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-arguments@npm:^1.0.4, is-arguments@npm:^1.1.1":
+"is-arguments@npm:^1.0.4":
   version: 1.1.1
   resolution: "is-arguments@npm:1.1.1"
   dependencies:
@@ -22786,7 +22775,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-array-buffer@npm:^3.0.2, is-array-buffer@npm:^3.0.4":
+"is-array-buffer@npm:^3.0.4":
   version: 3.0.4
   resolution: "is-array-buffer@npm:3.0.4"
   dependencies:
@@ -23027,7 +23016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-map@npm:^2.0.2, is-map@npm:^2.0.3":
+"is-map@npm:^2.0.3":
   version: 2.0.3
   resolution: "is-map@npm:2.0.3"
   checksum: e6ce5f6380f32b141b3153e6ba9074892bbbbd655e92e7ba5ff195239777e767a976dcd4e22f864accaf30e53ebf961ab1995424aef91af68788f0591b7396cc
@@ -23055,7 +23044,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-node-process@npm:^1.0.1, is-node-process@npm:^1.2.0":
+"is-node-process@npm:^1.2.0":
   version: 1.2.0
   resolution: "is-node-process@npm:1.2.0"
   checksum: 930765cdc6d81ab8f1bbecbea4a8d35c7c6d88a3ff61f3630e0fc7f22d624d7661c1df05c58547d0eb6a639dfa9304682c8e342c4113a6ed51472b704cee2928
@@ -23183,7 +23172,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-set@npm:^2.0.2, is-set@npm:^2.0.3":
+"is-set@npm:^2.0.3":
   version: 2.0.3
   resolution: "is-set@npm:2.0.3"
   checksum: 36e3f8c44bdbe9496c9689762cc4110f6a6a12b767c5d74c0398176aa2678d4467e3bf07595556f2dba897751bde1422480212b97d973c7b08a343100b0c0dfe
@@ -27037,40 +27026,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:^0.49.0":
-  version: 0.49.3
-  resolution: "msw@npm:0.49.3"
-  dependencies:
-    "@mswjs/cookies": ^0.2.2
-    "@mswjs/interceptors": ^0.17.5
-    "@open-draft/until": ^1.0.3
-    "@types/cookie": ^0.4.1
-    "@types/js-levenshtein": ^1.1.1
-    chalk: 4.1.1
-    chokidar: ^3.4.2
-    cookie: ^0.4.2
-    graphql: ^15.0.0 || ^16.0.0
-    headers-polyfill: ^3.1.0
-    inquirer: ^8.2.0
-    is-node-process: ^1.0.1
-    js-levenshtein: ^1.1.6
-    node-fetch: ^2.6.7
-    outvariant: ^1.3.0
-    path-to-regexp: ^6.2.0
-    strict-event-emitter: ^0.4.3
-    type-fest: ^2.19.0
-    yargs: ^17.3.1
-  peerDependencies:
-    typescript: ">= 4.4.x <= 4.9.x"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  bin:
-    msw: cli/index.js
-  checksum: 8322cd42cd69f289c05517d02bde22fc2f10e86fc2d0d209d9df54bd03d10b8123723c5587a2654dcd2cd0f314a016f9eccac88cffa30fafd1f9fead16db639e
-  languageName: node
-  linkType: hard
-
 "msw@npm:^1.0.0":
   version: 1.3.3
   resolution: "msw@npm:1.3.3"
@@ -28008,16 +27963,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-is@npm:^1.1.5":
-  version: 1.1.6
-  resolution: "object-is@npm:1.1.6"
-  dependencies:
-    call-bind: ^1.0.7
-    define-properties: ^1.2.1
-  checksum: 3ea22759967e6f2380a2cbbd0f737b42dc9ddb2dfefdb159a1b927fea57335e1b058b564bfa94417db8ad58cddab33621a035de6f5e5ad56d89f2dd03e66c6a1
-  languageName: node
-  linkType: hard
-
 "object-keys@npm:^1.1.1":
   version: 1.1.1
   resolution: "object-keys@npm:1.1.1"
@@ -28352,7 +28297,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"outvariant@npm:^1.2.1, outvariant@npm:^1.3.0, outvariant@npm:^1.4.0":
+"outvariant@npm:^1.2.1, outvariant@npm:^1.4.0":
   version: 1.4.2
   resolution: "outvariant@npm:1.4.2"
   checksum: 5d9e2b3edb1cc8be9cbfc1c8c97e8b05137c4384bbfc56e0a465de26c5d2f023e65732ddcda9d46599b06d667fbc0de32c30d2ecd11f6f3f43bcf8ce0d320918
@@ -31182,7 +31127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regexp.prototype.flags@npm:^1.5.1, regexp.prototype.flags@npm:^1.5.2":
+"regexp.prototype.flags@npm:^1.5.2":
   version: 1.5.2
   resolution: "regexp.prototype.flags@npm:1.5.2"
   dependencies:
@@ -32933,15 +32878,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stop-iteration-iterator@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "stop-iteration-iterator@npm:1.0.0"
-  dependencies:
-    internal-slot: ^1.0.4
-  checksum: d04173690b2efa40e24ab70e5e51a3ff31d56d699550cfad084104ab3381390daccb36652b25755e420245f3b0737de66c1879eaa2a8d4fc0a78f9bf892fcb42
-  languageName: node
-  linkType: hard
-
 "stoppable@npm:^1.1.0":
   version: 1.1.0
   resolution: "stoppable@npm:1.1.0"
@@ -33410,24 +33346,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superagent@npm:^8.1.2":
-  version: 8.1.2
-  resolution: "superagent@npm:8.1.2"
-  dependencies:
-    component-emitter: ^1.3.0
-    cookiejar: ^2.1.4
-    debug: ^4.3.4
-    fast-safe-stringify: ^2.1.1
-    form-data: ^4.0.0
-    formidable: ^2.1.2
-    methods: ^1.1.2
-    mime: 2.6.0
-    qs: ^6.11.0
-    semver: ^7.3.8
-  checksum: f3601c5ccae34d5ba684a03703394b5d25931f4ae2e1e31a1de809f88a9400e997ece037f9accf148a21c408f950dc829db1e4e23576a7f9fe0efa79fd5c9d2f
-  languageName: node
-  linkType: hard
-
 "superagent@npm:^9.0.1":
   version: 9.0.2
   resolution: "superagent@npm:9.0.2"
@@ -33442,16 +33360,6 @@ __metadata:
     mime: 2.6.0
     qs: ^6.11.0
   checksum: f471461b21f034d844fd0aca332128d61e3afb75c2ee5950f3339f2a3b5ca8b23e2861224f19ad9b43f21c9184d28b7d9384af5a4fde64fdef479efdb15036db
-  languageName: node
-  linkType: hard
-
-"supertest@npm:^6.1.3":
-  version: 6.3.4
-  resolution: "supertest@npm:6.3.4"
-  dependencies:
-    methods: ^1.1.2
-    superagent: ^8.1.2
-  checksum: 875c6fa7940f21e5be9bb646579cdb030d4057bf2da643e125e1f0480add1200395d2b17e10b8e54e1009efc63e047422501e9eb30e12828668498c0910f295f
   languageName: node
   linkType: hard
 
@@ -35784,7 +35692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which-typed-array@npm:^1.1.13, which-typed-array@npm:^1.1.14, which-typed-array@npm:^1.1.15, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
+"which-typed-array@npm:^1.1.14, which-typed-array@npm:^1.1.15, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
   version: 1.1.15
   resolution: "which-typed-array@npm:1.1.15"
   dependencies:

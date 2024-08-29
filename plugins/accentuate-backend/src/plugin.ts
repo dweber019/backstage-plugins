@@ -6,7 +6,6 @@ import {
 import { createRouterFromConfig } from './service/router';
 import { catalogProcessingExtensionPoint } from '@backstage/plugin-catalog-node/alpha';
 import { AccentuateEntitiesProcessor } from './processor';
-import { DatabaseManager } from '@backstage/backend-common';
 
 /**
  * @public
@@ -49,15 +48,16 @@ export const catalogModuleAccentuateProcessor = createBackendModule({
         catalog: catalogProcessingExtensionPoint,
         logger: coreServices.logger,
         config: coreServices.rootConfig,
+        discovery: coreServices.discovery,
+        auth: coreServices.auth,
       },
-      async init({ catalog, logger, config }) {
-        const databaseManager = DatabaseManager.fromConfig(config);
-        const databaseService = databaseManager.forPlugin('accentuate');
+      async init({ catalog, logger, config, discovery, auth }) {
         catalog.addProcessor(
           await AccentuateEntitiesProcessor.fromEnv({
             logger,
             config,
-            database: databaseService,
+            discovery,
+            auth
           }),
         );
       },
