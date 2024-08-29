@@ -1,11 +1,13 @@
 import { AccentuateEntitiesProcessor } from './processor';
 import { ConfigReader } from '@backstage/config';
-import { getVoidLogger } from '@backstage/backend-common';
-import { AccentuateBackendClient } from '../api';
 import { Entity } from '@backstage/catalog-model';
 import { ANNOTATION_ACCENTUATE_DISABLE } from '@dweber019/backstage-plugin-accentuate-common';
+import { mockCredentials, mockServices } from '@backstage/backend-test-utils';
+import { registerMswTestHooks } from '@backstage/test-utils';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
 
-const logger = getVoidLogger();
+const logger = mockServices.logger.mock();
 const config = new ConfigReader({
   accentuate: {
     allowedKinds: [
@@ -20,21 +22,33 @@ const config = new ConfigReader({
 });
 
 describe('processor', () => {
+  const server = setupServer();
+  registerMswTestHooks(server);
+
+  const discovery = mockServices.discovery.mock({
+    getBaseUrl: jest.fn().mockResolvedValue('http://example.com'),
+  });
+  const auth = mockServices.auth();
+
   test('should merge entity with stored data', async () => {
-    function mockAccentuateBackendClient(): jest.Mocked<AccentuateBackendClient> {
-      const mock = {
-        get: jest
-          .fn()
-          .mockReturnValue({
-            data: { spec: { owner: 'group:default/group-1' } },
+    server.use(
+      rest.get('http://example.com', async (req, res, ctx) => {
+        expect(req.headers.get('Authorization')).toBe(
+          mockCredentials.service.header({
+            onBehalfOf: await auth.getOwnServiceCredentials(),
+            targetPluginId: 'accentuate',
           }),
-      };
-      return mock as unknown as jest.Mocked<AccentuateBackendClient>;
-    }
+        );
+        return res(ctx.json({
+          data: { spec: { owner: 'group:default/group-1' } },
+        }));
+      }),
+    );
     const processor = new AccentuateEntitiesProcessor({
       logger,
       config,
-      accentuateBackendClient: mockAccentuateBackendClient(),
+      discovery,
+      auth,
     });
 
     const entity = {
@@ -59,20 +73,24 @@ describe('processor', () => {
   });
 
   test('should not merge entity if not allowed kind', async () => {
-    function mockAccentuateBackendClient(): jest.Mocked<AccentuateBackendClient> {
-      const mock = {
-        get: jest
-          .fn()
-          .mockReturnValue({
-            data: { spec: { owner: 'group:default/group-1' } },
+    server.use(
+      rest.get('http://example.com', async (req, res, ctx) => {
+        expect(req.headers.get('Authorization')).toBe(
+          mockCredentials.service.header({
+            onBehalfOf: await auth.getOwnServiceCredentials(),
+            targetPluginId: 'accentuate',
           }),
-      };
-      return mock as unknown as jest.Mocked<AccentuateBackendClient>;
-    }
+        );
+        return res(ctx.json({
+          data: { spec: { owner: 'group:default/group-1' } },
+        }));
+      }),
+    );
     const processor = new AccentuateEntitiesProcessor({
       logger,
       config,
-      accentuateBackendClient: mockAccentuateBackendClient(),
+      discovery,
+      auth,
     });
 
     const entity = {
@@ -97,16 +115,22 @@ describe('processor', () => {
   });
 
   test('should not merge entity if nothing found', async () => {
-    function mockAccentuateBackendClient(): jest.Mocked<AccentuateBackendClient> {
-      const mock = {
-        get: jest.fn().mockReturnValue(undefined),
-      };
-      return mock as unknown as jest.Mocked<AccentuateBackendClient>;
-    }
+    server.use(
+      rest.get('http://example.com', async (req, res, ctx) => {
+        expect(req.headers.get('Authorization')).toBe(
+          mockCredentials.service.header({
+            onBehalfOf: await auth.getOwnServiceCredentials(),
+            targetPluginId: 'accentuate',
+          }),
+        );
+        return res(ctx.status(404));
+      }),
+    );
     const processor = new AccentuateEntitiesProcessor({
       logger,
       config,
-      accentuateBackendClient: mockAccentuateBackendClient(),
+      discovery,
+      auth,
     });
 
     const entity = {
