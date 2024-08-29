@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.17
+
+### Patch Changes
+
+- cd2f9cf: Update some dependencies.
+
 ## 0.0.16
 
 ### Patch Changes

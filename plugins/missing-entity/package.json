@@ -1,6 +1,6 @@
 {
   "name": "@dweber019/backstage-plugin-missing-entity",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "missing-entity",
