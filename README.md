@@ -9,6 +9,7 @@
 - [Accentuate](plugins/accentuate)
 - [Relations](plugins/relations)
 - [Simple Icons](plugins/simple-icons)
+- [Missing entity](plugins/missing-entity)
 
 ## Update backstage deps
 
