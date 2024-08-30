@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity
 
+## 0.0.2
+
+### Patch Changes
+
+- c5824bb: Respect include and exclude list.
+
 ## 0.0.1
 
 ### Patch Changes
