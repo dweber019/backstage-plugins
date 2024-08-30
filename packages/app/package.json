@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "private": true,
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     "@backstage/plugin-user-settings": "^0.8.11",
     "@backstage/theme": "^0.5.6",
     "@dweber019/backstage-plugin-accentuate": "^0.0.9",
-    "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.14",
+    "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.15",
     "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.4.5",
     "@dweber019/backstage-plugin-endoflife": "^0.0.14",
     "@dweber019/backstage-plugin-missing-entity": "0.0.2",

@@ -6159,7 +6159,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.14, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
+"@dweber019/backstage-plugin-api-docs-module-wsdl@^0.0.15, @dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl@workspace:plugins/api-docs-module-wsdl"
   dependencies:
@@ -14859,7 +14859,7 @@ __metadata:
     "@backstage/test-utils": ^1.5.10
     "@backstage/theme": ^0.5.6
     "@dweber019/backstage-plugin-accentuate": ^0.0.9
-    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.14
+    "@dweber019/backstage-plugin-api-docs-module-wsdl": ^0.0.15
     "@dweber019/backstage-plugin-api-docs-spectral-linter": ^0.4.5
     "@dweber019/backstage-plugin-endoflife": ^0.0.14
     "@dweber019/backstage-plugin-missing-entity": 0.0.2
