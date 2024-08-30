@@ -47,7 +47,7 @@
     "@backstage/errors": "^1.2.4",
     "@backstage/plugin-notifications-node": "^0.2.5",
     "@backstage/types": "^1.1.1",
-    "@dweber019/backstage-plugin-missing-entity-common": "workspace:^",
+    "@dweber019/backstage-plugin-missing-entity-common": "^0.0.1",
     "@types/express": "*",
     "express": "^4.18.1",
     "express-promise-router": "^4.1.0",

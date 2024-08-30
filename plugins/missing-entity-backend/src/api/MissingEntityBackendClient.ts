@@ -105,12 +105,7 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
       targetPluginId: 'catalog',
     });
     const response = await this.catalogApi.getEntities(request, { token });
-    const entities = response.items.filter(item =>
-      !this.excludeKindAndType.some(excludeKindAndType =>
-        item.kind.toLowerCase() === excludeKindAndType.kind.toLowerCase()
-        && (excludeKindAndType.type === undefined || (item as { spec?: { type?: string }}).spec?.type?.toLowerCase() === excludeKindAndType.type?.toLowerCase())
-      )
-    );
+    const entities = response.items.filter(item => !this.isEntityExcluded(item));
 
     entities.forEach(entity => {
       const entityRef = stringifyEntityRef(entity);
@@ -206,6 +201,12 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
     if (!entity) {
       throw new Error('Entity doesn\'t exist in catalog.');
     }
+    if (!this.isEntityIncluded(entity)) {
+      return;
+    }
+    if (this.isEntityExcluded(entity)) {
+      return;
+    }
 
     const entityResults: EntityMissingResults = {
       entityRef,
@@ -265,6 +266,20 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
       return (entity as GroupEntity).spec.members?.map(member => stringifyEntityRef(parseEntityRef(member, { defaultKind: 'User' }))) ?? [];
     }
     return [];
+  }
+
+  private isEntityIncluded(entity: Entity) {
+    return this.kindAndType.some(kindAndType =>
+      entity.kind.toLowerCase() === kindAndType.kind.toLowerCase()
+      && (kindAndType.type === undefined || (entity as { spec?: { type?: string }}).spec?.type?.toLowerCase() === kindAndType.type?.toLowerCase())
+    );
+  }
+
+  private isEntityExcluded(entity: Entity) {
+    return this.excludeKindAndType.some(excludeKindAndType =>
+      entity.kind.toLowerCase() === excludeKindAndType.kind.toLowerCase()
+      && (excludeKindAndType.type === undefined || (entity as { spec?: { type?: string }}).spec?.type?.toLowerCase() === excludeKindAndType.type?.toLowerCase())
+    );
   }
 }
 
