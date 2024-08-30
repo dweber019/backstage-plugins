@@ -46,13 +46,12 @@ export const apis: AnyApiFactory[] = [
     api: apiDocsConfigRef,
     deps: {},
     factory: () => {
-      // load the default widgets
       const definitionWidgets = defaultDefinitionWidgets();
-      // add the wsdl-docs api widget to the definition widgets
-      definitionWidgets.push(wsdlApiWidget);
       return {
         getApiDefinitionWidget: (apiEntity: ApiEntity) => {
-          // find the widget for the type of api entity
+          if (apiEntity.spec.type.toLowerCase() === 'wsdl') {
+            return wsdlApiWidget(apiEntity);
+          }
           return definitionWidgets.find(d => d.type === apiEntity.spec.type);
         },
       };

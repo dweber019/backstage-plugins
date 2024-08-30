@@ -9,3 +9,14 @@ spec:
   owner: foo
   definition:
     $text: http://www.dneonline.com/calculator.asmx?wsdl
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: wsdl-hello-world
+spec:
+  type: service
+  lifecycle: production
+  owner: user:development/guest
+  providesApis:
+    - wsdl-hello-world

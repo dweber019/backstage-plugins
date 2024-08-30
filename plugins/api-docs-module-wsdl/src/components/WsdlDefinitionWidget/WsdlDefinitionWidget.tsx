@@ -1,5 +1,6 @@
 import { Progress } from '@backstage/core-components';
 import React, { Suspense } from 'react';
+import { ApiEntityV1alpha1 } from '@backstage/catalog-model';
 
 // The widget will convert WSDL markup to HTML so only load it if necessary
 const LazyWsdlDefinition = React.lazy(() =>
@@ -11,6 +12,7 @@ const LazyWsdlDefinition = React.lazy(() =>
 /** @public */
 export type WsdlDefinitionWidgetProps = {
   definition: string;
+  entity: ApiEntityV1alpha1;
 };
 
 /** @public */
