@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl
 
+## 0.0.15
+
+### Patch Changes
+
+- b41c810: Fix WSDL preview on component tab.
+
+  **BREAKING**: Because of this change the API setup has changed, see README.
+
 ## 0.0.14
 
 ### Patch Changes
