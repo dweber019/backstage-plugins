@@ -7,5 +7,5 @@ export const missingEntityApiRef = createApiRef<MissingEntityApi>({
 
 export interface MissingEntityApi {
   getMissingEntities(entityRef: string, refresh: boolean): Promise<EntityMissingResults>;
-  getAllMissingEntities(onlyWithMissing: boolean): Promise<EntitiesPageResult>;
+  getAllMissingEntities(onlyWithMissing: boolean, owner: string | undefined): Promise<EntitiesPageResult>;
 }

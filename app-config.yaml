@@ -72,6 +72,8 @@ catalog:
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
+      target: ../entities/development-guest.yaml
+    - type: file
       target: ../entities/wsdl-api-example.yaml
     - type: file
       target: ../entities/wsdl-api-example-big.yaml

@@ -7,7 +7,7 @@ import {
 } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
 import React, { useCallback, useState } from 'react';
-import { useApi } from '@backstage/core-plugin-api';
+import { identityApiRef, useApi } from '@backstage/core-plugin-api';
 import { missingEntityApiRef } from '../../api';
 import { EntityMissingResults } from '@dweber019/backstage-plugin-missing-entity-common';
 import { EntityRefLink } from '@backstage/plugin-catalog-react';
@@ -18,11 +18,14 @@ import { useAsyncRetry } from 'react-use';
 
 export const MissingEntityPage = () => {
   const missingEntityApi = useApi(missingEntityApiRef);
+  const identityApi = useApi(identityApiRef);
   const [withMissing, setWithMissing] = useState(true);
+  const [myEntities, setMyEntities] = useState(true);
 
-  const { value, loading, error, retry } = useAsyncRetry(() => {
-    return missingEntityApi.getAllMissingEntities(withMissing);
-  }, [missingEntityApi, withMissing]);
+  const { value, loading, error, retry } = useAsyncRetry(async () => {
+    const userIdentity = await identityApi.getBackstageIdentity();
+    return missingEntityApi.getAllMissingEntities(withMissing, myEntities ? userIdentity.ownershipEntityRefs.join(',') : undefined);
+  }, [missingEntityApi, identityApi, withMissing, myEntities]);
 
   const reloadEntity = useCallback(async (entityRef: string) => {
     await missingEntityApi.getMissingEntities(entityRef, true);
@@ -69,6 +72,21 @@ export const MissingEntityPage = () => {
               onChange={selected => setWithMissing(Boolean(selected))}
               selected={1}
               label="Only with missing entities"
+              items={[
+                {
+                  label: 'Yes',
+                  value: 1,
+                },
+                {
+                  label: 'No',
+                  value: 0,
+                },
+              ]}
+            />
+            <Select
+              onChange={selected => setMyEntities(Boolean(selected))}
+              selected={1}
+              label="Only my entities"
               items={[
                 {
                   label: 'Yes',

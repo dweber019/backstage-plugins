@@ -16,6 +16,7 @@ export interface MissingEntityBackendStore {
   getProcessedEntities(): Promise<ProcessedEntity[]>;
   getUnprocessedEntities(): Promise<string[]>;
   getAllEntities(onlyWithMissing: boolean): Promise<EntityMissingResults[]>;
+  getEntitiesByRefs(entityRefs: string[], onlyWithMissing: boolean): Promise<EntityMissingResults[]>;
   deleteEntity(entityRef: string): Promise<void>;
 }
 
@@ -68,7 +69,7 @@ export class MissingEntityBackendDatabase implements MissingEntityBackendStore {
     try {
       return {
         entityRef: entityResults.entity_ref,
-        missingEntityRefs: JSON.parse(entityResults.entity_refs_missing),
+        missingEntityRefs: entityResults.entity_refs_missing ? JSON.parse(entityResults.entity_refs_missing) : [],
       };
     } catch (error) {
       throw new Error(`Failed to query missing entity for '${entityRef}', ${error}`);
@@ -136,14 +137,22 @@ export class MissingEntityBackendDatabase implements MissingEntityBackendStore {
     return rawEntities.map(rawEntity => {
       return {
         entityRef: rawEntity.entity_ref,
-        missingEntityRefs: JSON.parse(rawEntity.entity_refs_missing),
+        missingEntityRefs: rawEntity.entity_refs_missing ? JSON.parse(rawEntity.entity_refs_missing) : [],
       };
     });
   }
 
-  async getEntitiesByRefs(entityRefs: string[]): Promise<EntityMissingResults[]> {
-    const rawEntities = await this.db<RawDbRow>('missing_entity')
-      .whereIn('entity_ref', entityRefs);
+  async getEntitiesByRefs(entityRefs: string[], onlyWithMissing = false): Promise<EntityMissingResults[]> {
+    let rawEntities;
+    if (onlyWithMissing) {
+      rawEntities = await this.db<RawDbRow>('missing_entity')
+        .whereIn('entity_ref', entityRefs).and
+        .whereNotNull('entity_refs_missing')
+        .andWhereRaw('LENGTH(entity_refs_missing) > 2');
+    } else {
+      rawEntities = await this.db<RawDbRow>('missing_entity')
+        .whereIn('entity_ref', entityRefs);
+    }
 
     if (!rawEntities) {
       return [];
@@ -152,7 +161,7 @@ export class MissingEntityBackendDatabase implements MissingEntityBackendStore {
     return rawEntities.map(rawEntity => {
       return {
         entityRef: rawEntity.entity_ref,
-        missingEntityRefs: JSON.parse(rawEntity.entity_refs_missing),
+        missingEntityRefs: rawEntity.entity_refs_missing ? JSON.parse(rawEntity.entity_refs_missing) : [],
       };
     });
   }
