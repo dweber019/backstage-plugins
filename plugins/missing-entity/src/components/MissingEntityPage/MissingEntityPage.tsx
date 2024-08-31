@@ -49,7 +49,7 @@ export const MissingEntityPage = () => {
     <Page themeId="tool">
       <Header
         title="Missing entity"
-        subtitle="All enitities which are proccessed"
+        subtitle="All entities which are proccessed"
       />
       <Content>
         {error && <Alert severity="error">{error.message}</Alert>}
