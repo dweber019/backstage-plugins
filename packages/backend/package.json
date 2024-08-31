@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "dist/index.cjs.js",
   "types": "src/index.ts",
   "private": true,
@@ -53,7 +53,7 @@
     "@dweber019/backstage-plugin-accentuate-backend": "^0.0.8",
     "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": "^0.0.15",
     "@dweber019/backstage-plugin-endoflife-backend": "^0.0.10",
-    "@dweber019/backstage-plugin-missing-entity-backend": "0.0.2",
+    "@dweber019/backstage-plugin-missing-entity-backend": "0.0.3",
     "@dweber019/backstage-plugin-relations-backend": "0.0.9",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",

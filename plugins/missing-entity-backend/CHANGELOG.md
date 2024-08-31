@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.0.3
+
+### Patch Changes
+
+- 13a5044: Add owner filter.
+
 ## 0.0.2
 
 ### Patch Changes
