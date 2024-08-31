@@ -129,10 +129,11 @@ export async function createRouter(
    * /entities?onlyWithMissing=true
    */
   router.get('/entities', async (req, res) => {
-    const { onlyWithMissing: onlyWithMissing } = req.query;
+    const { onlyWithMissing: onlyWithMissing, owner: owner } = req.query;
 
     const missingEntities = await missingEntityBackendClient.getAllMissingEntities(
-      onlyWithMissing === undefined ? true : (onlyWithMissing === 'true')
+      onlyWithMissing === undefined ? true : (onlyWithMissing === 'true'),
+      owner as string | undefined,
     );
     res.status(200).json(missingEntities);
   });

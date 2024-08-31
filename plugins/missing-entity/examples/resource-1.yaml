@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: resource
+kind: Resource
 metadata:
   name: missing-entity
 spec:

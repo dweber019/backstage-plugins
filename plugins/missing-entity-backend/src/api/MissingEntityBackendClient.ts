@@ -17,7 +17,7 @@ import { NotificationService } from '@backstage/plugin-notifications-node';
 /** @public */
 export interface MissingEntityBackendApi {
   getMissingEntities(entityRef: string, refresh: boolean): Promise<EntityMissingResults>;
-  getAllMissingEntities(onlyWithMissing: boolean): Promise<EntitiesPageResult>;
+  getAllMissingEntities(onlyWithMissing: boolean, owner: string | undefined): Promise<EntitiesPageResult>;
   processEntities(): Promise<void>;
 }
 
@@ -68,11 +68,29 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
     return missingEntities!;
   }
 
-  async getAllMissingEntities(onlyWithMissing = false): Promise<EntitiesPageResult> {
+  async getAllMissingEntities(onlyWithMissing = false, owner: string | undefined): Promise<EntitiesPageResult> {
     this.logger?.debug(`Getting all missing entities"`);
+
+    let entityResult: EntityMissingResults[] = [];
+    if (owner) {
+      const { token } = await this.auth.getPluginRequestToken({
+        onBehalfOf: await this.auth.getOwnServiceCredentials(),
+        targetPluginId: 'catalog',
+      });
+      const response = await this.catalogApi.queryEntities({
+        filter: {
+          'relations.ownedBy': owner.split(','),
+        },
+        fields: [ 'kind', 'metadata.name', 'metadata.namespace' ]
+      }, { token });
+      entityResult = await this.store.getEntitiesByRefs(response.items.map(item => stringifyEntityRef(item)), onlyWithMissing);
+    } else {
+      entityResult = await this.store.getAllEntities(onlyWithMissing);
+    }
+
     return {
       overview: await this.getEntitiesOverview(),
-      entities: await this.store.getAllEntities(onlyWithMissing),
+      entities: entityResult,
     };
   }
 

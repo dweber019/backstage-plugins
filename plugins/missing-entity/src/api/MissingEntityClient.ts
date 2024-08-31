@@ -25,9 +25,12 @@ export class MissingEntityClient implements MissingEntityApi {
     return await this.get<EntityMissingResults>(urlSegment);
   }
 
-  public async getAllMissingEntities(onlyWithMissing = false): Promise<EntitiesPageResult> {
+  public async getAllMissingEntities(onlyWithMissing = false, owner: string | undefined): Promise<EntitiesPageResult> {
     const queryString = new URLSearchParams();
     queryString.append('onlyWithMissing', `${onlyWithMissing}`);
+    if (owner) {
+      queryString.append('owner', `${owner}`);
+    }
 
     const urlSegment = `entities?${queryString}`;
 
