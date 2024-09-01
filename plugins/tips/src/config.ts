@@ -1,4 +1,4 @@
-import { createApiRef } from '@backstage/core-plugin-api';
+import { createApiRef, IdentityApi } from '@backstage/core-plugin-api';
 import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 
@@ -15,5 +15,5 @@ export interface TipsConfig {
 export interface Tip {
   content: string | React.ReactElement;
   title: string;
-  activate: (options: { entity?: Entity }) => boolean;
+  activate: (options: { entity?: Entity, identity?: IdentityApi }) => Promise<boolean>;
 }

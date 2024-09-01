@@ -1,26 +1,22 @@
-/*
- * Copyright 2021 The Backstage Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import { Entity, EntityLink } from '@backstage/catalog-model';
 import { extraTips } from './extraTips';
 import { Tip } from '../config';
+import { IdentityApi } from '@backstage/core-plugin-api';
 
 describe('Defaults tips', () => {
   const links: EntityLink[] = [{ url: 'link' }];
   const documentationAnnotation = { 'backstage.io/techdocs-ref': 'any' };
+
+  const mockIdentityApi: jest.Mocked<IdentityApi> = {
+    getBackstageIdentity: jest.fn().mockResolvedValue({
+      type: 'user',
+      userEntityRef: 'user:default/owner',
+      ownershipEntityRefs: ['user:default/owner'],
+    }),
+    signOut: jest.fn(),
+    getCredentials: jest.fn(),
+    getProfileInfo: jest.fn(),
+  };
 
   const getTipActivateByTitle = (title: string) =>
     extraTips.find(tip => tip.title === title) as Tip;
@@ -30,24 +26,28 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'Component',
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('Documentation missing').activate({
+    const activate = await getTipActivateByTitle('Documentation missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
   });
 
-  it('should not activate on documentation exiting', async () => {
+  it('should not activate on documentation existing', async () => {
     const mockEntity = {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock', annotations: documentationAnnotation },
       kind: 'Component',
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('Documentation missing').activate({
+    const activate = await getTipActivateByTitle('Documentation missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeFalsy();
@@ -58,10 +58,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'Component',
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('Links missing').activate({
+    const activate = await getTipActivateByTitle('Links missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -72,10 +74,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock', links: [] },
       kind: 'Component',
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('Links missing').activate({
+    const activate = await getTipActivateByTitle('Links missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -86,10 +90,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock', links },
       kind: 'Component',
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('Links missing').activate({
+    const activate = await getTipActivateByTitle('Links missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeFalsy();
@@ -100,11 +106,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'Component',
-      spec: {},
+      spec: { owner: 'user:default/owner' }
     } as Entity;
 
-    const activate = getTipActivateByTitle('System missing').activate({
+    const activate = await getTipActivateByTitle('System missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -115,11 +122,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'Component',
-      spec: { system: 'any' },
+      spec: { system: 'any', owner: 'user:default/owner' },
     } as Entity;
 
-    const activate = getTipActivateByTitle('System missing').activate({
+    const activate = await getTipActivateByTitle('System missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeFalsy();
@@ -130,11 +138,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'Group',
-      spec: {},
+      spec: {}
     } as Entity;
 
-    const activate = getTipActivateByTitle('Members missing').activate({
+    const activate = await getTipActivateByTitle('Members missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -148,8 +157,9 @@ describe('Defaults tips', () => {
       spec: { members: [] },
     } as Entity;
 
-    const activate = getTipActivateByTitle('Members missing').activate({
+    const activate = await getTipActivateByTitle('Members missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -163,8 +173,9 @@ describe('Defaults tips', () => {
       spec: { members: ['user1'] },
     } as Entity;
 
-    const activate = getTipActivateByTitle('Members missing').activate({
+    const activate = await getTipActivateByTitle('Members missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeFalsy();
@@ -175,11 +186,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'System',
-      spec: {},
+      spec: { owner: 'user:default/owner' },
     } as Entity;
 
-    const activate = getTipActivateByTitle('Domain missing').activate({
+    const activate = await getTipActivateByTitle('Domain missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeTruthy();
@@ -190,11 +202,12 @@ describe('Defaults tips', () => {
       apiVersion: 'backstage.io/v1beta1',
       metadata: { name: 'mock' },
       kind: 'System',
-      spec: { domain: 'any' },
+      spec: { domain: 'any', owner: 'user:default/owner' },
     } as Entity;
 
-    const activate = getTipActivateByTitle('Domain missing').activate({
+    const activate = await getTipActivateByTitle('Domain missing').activate({
       entity: mockEntity,
+      identity: mockIdentityApi,
     });
 
     expect(activate).toBeFalsy();
