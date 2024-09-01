@@ -31,3 +31,12 @@ export const MissingEntityPage = missingEntityPlugin.provide(
     mountPoint: rootRouteRef,
   }),
 );
+
+export const MissingEntityContent = missingEntityPlugin.provide(
+  createRoutableExtension({
+    name: 'MissingEntityContent',
+    component: () =>
+      import('./components/MissingEntityPage').then(m => m.MissingEntityContent),
+    mountPoint: rootRouteRef,
+  }),
+);
