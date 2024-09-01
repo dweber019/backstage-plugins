@@ -1,5 +1,5 @@
 import { Tip } from '../config';
-import { hasAnnotation, isEntityOfKind } from './utils';
+import { hasAnnotation, isEntityOfKind, isOwner } from './utils';
 import { CodeSnippet } from '@backstage/core-components';
 import React from 'react';
 import {
@@ -17,10 +17,11 @@ export const extraTips: Tip[] = [
     content: `You should have some documentation by adding the annotation \`backstage.io/techdocs-ref\`.  
 You can find details at [How to understand techdocs-ref annotation values](https://backstage.io/docs/features/techdocs/how-to-guides#how-to-understand-techdocs-ref-annotation-values).
     `,
-    activate: ({ entity }) =>
-      !!entity &&
+    activate: async ({ entity, identity }) =>
+      !!entity && !!identity &&
       isEntityOfKind(entity, ['component', 'api', 'system']) &&
-      !hasAnnotation(entity, 'backstage.io/techdocs-ref'),
+      !hasAnnotation(entity, 'backstage.io/techdocs-ref') &&
+      isOwner(entity, identity),
   },
   {
     title: 'Links missing',
@@ -41,11 +42,12 @@ links:
         />
       </>
     ),
-    activate: ({ entity }) =>
-      (!!entity &&
+    activate: async ({ entity, identity }) =>
+      ((!!entity &&
         Array.isArray(entity.metadata.links) &&
         entity.metadata.links.length === 0) ||
-      (!!entity && !entity.metadata.links),
+      (!!entity && !entity.metadata.links)) &&
+      (!!identity && isOwner(entity, identity)),
   },
   {
     title: 'System missing',
@@ -69,10 +71,11 @@ spec:
         />
       </>
     ),
-    activate: ({ entity }) =>
-      !!entity &&
+    activate: async ({ entity, identity }) =>
+      !!entity && !!identity &&
       isEntityOfKind(entity, ['component', 'api', 'resource']) &&
-      !(entity as ComponentEntity | ApiEntity | ResourceEntity).spec.system,
+      !(entity as ComponentEntity | ApiEntity | ResourceEntity).spec.system &&
+      isOwner(entity, identity),
   },
   {
     title: 'Members missing',
@@ -95,7 +98,7 @@ spec:
         />
       </>
     ),
-    activate: ({ entity }) =>
+    activate: async ({ entity }) =>
       (!!entity &&
         isEntityOfKind(entity, ['group']) &&
         !(entity as GroupEntity).spec.members) ||
@@ -121,9 +124,10 @@ spec:
         />
       </>
     ),
-    activate: ({ entity }) =>
-      !!entity &&
+    activate: async ({ entity, identity }) =>
+      !!entity && !!identity &&
       isEntityOfKind(entity, ['system']) &&
-      !(entity as SystemEntity).spec.domain,
+      !(entity as SystemEntity).spec.domain &&
+      isOwner(entity, identity),
   },
 ];

@@ -1,20 +1,4 @@
-/*
- * Copyright 2022 The Backstage Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useEntity } from '@backstage/plugin-catalog-react';
 import { ApiEntity } from '@backstage/catalog-model';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
@@ -33,8 +17,9 @@ import {
   Zoom,
 } from '@material-ui/core';
 import { MarkdownContent } from '@backstage/core-components';
-import { useApi } from '@backstage/core-plugin-api';
+import { identityApiRef, useApi } from '@backstage/core-plugin-api';
 import { tipsConfigRef } from '../../config';
+import useAsync from 'react-use/lib/useAsync';
 
 const useStyles = makeStyles(theme => ({
   fabButton: {
@@ -86,6 +71,7 @@ export const EntityTipsDialog = () => {
   const classes = useStyles();
   const { entity } = useEntity<ApiEntity>();
   const tipsConfig = useApi(tipsConfigRef);
+  const identity = useApi(identityApiRef);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
 
@@ -97,12 +83,13 @@ export const EntityTipsDialog = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
-  const tips = useMemo(() => {
+  const { value: tips, loading, error } = useAsync(async () => {
     setActiveStep(0);
-    return tipsConfig.tips.filter(tip => tip.activate({ entity }));
-  }, [tipsConfig.tips, entity]);
+    const resolvedActivates = await Promise.all(tipsConfig.tips.map(tip => tip.activate({ entity, identity })));
+    return tipsConfig.tips.filter((_, index) => resolvedActivates[index]);
+  }, [tipsConfig.tips, entity, identity]);
 
-  if (tips.length === 0 || !tips[activeStep]) {
+  if (loading || error || tips === undefined || tips.length === 0 || !tips[activeStep]) {
     return <></>;
   }
 

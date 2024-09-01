@@ -14,7 +14,7 @@ A component can implement APIs for other components to consume. In turn it might
 or directly depend on components or resources that are attached to it at runtime.
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#component).`,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['component']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['component']),
   },
   {
     title: 'API',
@@ -32,7 +32,7 @@ indexing and searching all APIs so we can browse them as developers.
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#api).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['api']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['api']),
   },
   {
     title: 'Resource',
@@ -43,7 +43,7 @@ and create tooling around them.
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#resource).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['resource']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['resource']),
   },
   {
     title: 'User',
@@ -51,7 +51,7 @@ More information can be found at [System Model](https://backstage.io/docs/featur
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#user).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['user']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['user']),
   },
   {
     title: 'Group',
@@ -60,7 +60,7 @@ or a loose collection of people in an interest group.
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#group).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['group']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['group']),
   },
   {
     title: 'System',
@@ -78,7 +78,7 @@ and a database to store them. It could expose an RPC API, a daily snapshots data
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#system).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['system']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['system']),
   },
   {
     title: 'Domain',
@@ -91,6 +91,6 @@ Other domains could be “Content Ingestion”, “Ads” or “Search”.
 
 More information can be found at [System Model](https://backstage.io/docs/features/software-catalog/system-model#domain).
     `,
-    activate: ({ entity }) => !!entity && isEntityOfKind(entity, ['domain']),
+    activate: async ({ entity }) => !!entity && isEntityOfKind(entity, ['domain']),
   },
 ];

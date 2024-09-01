@@ -15,6 +15,7 @@
  */
 
 import { Entity } from '@backstage/catalog-model';
+import { IdentityApi } from '@backstage/core-plugin-api';
 
 /** @public */
 export const hasAnnotation = (entity: Entity, annotation: string) =>
@@ -27,3 +28,15 @@ export const isEntityOfKind = (
     'api' | 'user' | 'group' | 'component' | 'resource' | 'system' | 'domain'
   >,
 ) => Boolean(kinds.includes(entity.kind.toLowerCase() as any));
+
+/** @public */
+export const isOwner = async (
+  entity: Entity,
+  identity: IdentityApi,
+) => {
+  const userIdentity = await identity.getBackstageIdentity();
+  if (!['component', 'api', 'resource', 'system', 'domain'].includes(entity.kind.toLowerCase())) {
+    return false
+  }
+  return userIdentity.ownershipEntityRefs.includes((entity.spec as { owner: string }).owner);
+}
