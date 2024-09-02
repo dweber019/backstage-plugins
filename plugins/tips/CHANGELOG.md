@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.18
+
+### Patch Changes
+
+- 80f9253: Add identify api for tip activation and use ownership for missing data.
+
+  **breaking**: This changes the interface of a tip to become a promise.
+
 ## 0.0.17
 
 ### Patch Changes
