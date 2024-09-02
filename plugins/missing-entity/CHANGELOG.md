@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity
 
+## 0.0.4
+
+### Patch Changes
+
+- 9b29263: Extract content from page and provide content separately.
+
 ## 0.0.3
 
 ### Patch Changes
