@@ -6280,7 +6280,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-missing-entity-backend@0.0.3, @dweber019/backstage-plugin-missing-entity-backend@workspace:plugins/missing-entity-backend":
+"@dweber019/backstage-plugin-missing-entity-backend@0.0.4, @dweber019/backstage-plugin-missing-entity-backend@workspace:plugins/missing-entity-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-missing-entity-backend@workspace:plugins/missing-entity-backend"
   dependencies:
@@ -15598,7 +15598,7 @@ __metadata:
     "@dweber019/backstage-plugin-accentuate-backend": ^0.0.8
     "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": ^0.0.15
     "@dweber019/backstage-plugin-endoflife-backend": ^0.0.10
-    "@dweber019/backstage-plugin-missing-entity-backend": 0.0.3
+    "@dweber019/backstage-plugin-missing-entity-backend": 0.0.4
     "@dweber019/backstage-plugin-relations-backend": 0.0.9
     "@types/express": ^4.17.6
     "@types/express-serve-static-core": ^4.17.5

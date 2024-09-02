@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.0.4
+
+### Patch Changes
+
+- d3ab43f: Limit amount of relations per entity to 1000.
+
 ## 0.0.3
 
 ### Patch Changes
