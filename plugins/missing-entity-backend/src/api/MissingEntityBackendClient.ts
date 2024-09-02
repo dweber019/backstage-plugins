@@ -239,11 +239,11 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
       entityRefRelations?.length > 1
     ) {
       const relatedEntities = await this.catalogApi.getEntitiesByRefs({
-        entityRefs: entityRefRelations,
+        entityRefs: entityRefRelations.slice(0, 1000),
         fields: ['kind', 'metadata.name', 'metadata.namespace'],
       }, { token });
 
-      entityResults.missingEntityRefs = entityRefRelations.filter(
+      entityResults.missingEntityRefs = entityRefRelations.slice(0, 1000).filter(
         (_, index) => relatedEntities.items[index] === undefined,
       );
     }

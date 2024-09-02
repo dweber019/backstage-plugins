@@ -61,3 +61,9 @@ The default setup will only check missing entities once when processed.
 If you want this process to also refresh the data you can do so by adding the `age`.
 
 It's recommended that if you choose to use this configuration to set it to 3 to update stale data.
+
+## Limitations
+
+### Relation limit
+
+Currently, we only process the first 1000 relation per entity.
