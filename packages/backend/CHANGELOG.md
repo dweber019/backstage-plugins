@@ -1,5 +1,12 @@
 # backend
 
+## 0.0.16
+
+### Patch Changes
+
+- Updated dependencies [322d56a]
+  - @dweber019/backstage-plugin-missing-entity-backend@0.0.5
+
 ## 0.0.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.0.5
+
+### Patch Changes
+
+- 322d56a: Improve batch size to 500, default kind filter remove users and batch cleanup of entities.
+
 ## 0.0.4
 
 ### Patch Changes
