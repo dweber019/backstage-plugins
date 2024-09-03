@@ -11,7 +11,7 @@ import { Entity, GroupEntity, parseEntityRef, stringifyEntityRef } from '@backst
 import { assertError } from '@backstage/errors';
 import { HumanDuration } from '@backstage/types';
 import { type AuthService, LoggerService } from '@backstage/backend-plugin-api';
-import { isEqual } from 'lodash';
+import { isEqual, chunk } from 'lodash';
 import { NotificationService } from '@backstage/plugin-notifications-node';
 
 /** @public */
@@ -136,18 +136,30 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
     this.logger?.info('Cleaning entities in missing entity queue');
     const allEntities = (await this.store.getAllEntities(false)).map(item => item.entityRef);
 
-    for (const entityRef of allEntities) {
+    const allEntitiesChunks = chunk(allEntities, 500);
+
+    for (const entitiesChunk of allEntitiesChunks) {
       const { token } = await this.auth.getPluginRequestToken({
         onBehalfOf: await this.auth.getOwnServiceCredentials(),
         targetPluginId: 'catalog',
       });
-      const result = await this.catalogApi.getEntityByRef(entityRef, { token });
+      const result = await this.catalogApi.getEntitiesByRefs({
+        entityRefs: entitiesChunk,
+        fields: ['kind', 'metadata', 'spec.type'],
+      }, { token });
 
-      if (!result) {
-        this.logger?.info(
-          `Entity ${entityRef} was not found in the Catalog, it will be deleted`,
-        );
-        await this.store.deleteEntity(entityRef);
+      for (const [index, item] of result.items.entries()) {
+        if (item === undefined) {
+          this.logger?.info(
+            `Entity ${entitiesChunk[index]} was not found in the Catalog, it will be deleted.`,
+          );
+          await this.store.deleteEntity(entitiesChunk[index]);
+        } else if (this.isEntityExcluded(item) || !this.isEntityIncluded(item)) {
+          this.logger?.info(
+            `Entity ${entitiesChunk[index]} allowed by include or exclude filter, it will be deleted.`,
+          );
+          await this.store.deleteEntity(entitiesChunk[index]);
+        }
       }
     }
   }
@@ -161,7 +173,7 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
 
     const entities = entitiesOverview.filteredEntities.slice(
       0,
-      this.batchSize ?? 20,
+      this.batchSize ?? 500,
     );
 
     for (const entityRef of entities) {
@@ -303,7 +315,7 @@ export class MissingEntityBackendClient implements MissingEntityBackendApi {
 
 export function kindAndTypeOrDefault(kindAndType?: { kind: string, type?: string }[]): { kind: string, type?: string }[] {
   if (!kindAndType || kindAndType.length === 0) {
-    return [{ kind: 'API' }, { kind: 'Component' }, { kind: 'Resource' }, { kind: 'User' }, { kind: 'Group' },
+    return [{ kind: 'API' }, { kind: 'Component' }, { kind: 'Resource' }, { kind: 'Group' },
       { kind: 'System' }, { kind: 'Domain' }];
   }
   return kindAndType;

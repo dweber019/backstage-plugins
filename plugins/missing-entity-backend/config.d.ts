@@ -6,7 +6,7 @@ export interface Config {
   missingEntity?: {
     schedule?: SchedulerServiceTaskScheduleDefinition;
     /**
-     * @default 20
+     * @default 500
      */
     batchSize?: number;
     /**
@@ -14,7 +14,7 @@ export interface Config {
      */
     age?: HumanDuration;
     /**
-     * @default [{ kind: 'API' }, { kind: 'Component'}, { kind: 'Resource'}, { kind: 'User'}, { kind: 'Group'}, { kind: 'Domain'}, { kind: 'System'}]
+     * @default [{ kind: 'API' }, { kind: 'Component'}, { kind: 'Resource'}, { kind: 'Group'}, { kind: 'Domain'}, { kind: 'System'}]
      */
     kindAndType?: { kind: string, type?: string }[];
     /**

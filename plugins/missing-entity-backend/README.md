@@ -42,7 +42,7 @@ missingEntity:
       seconds: 15
   age:
     days: 3
-  batchSize: 2 # Default 20
+  batchSize: 2 # Default 500
   kindAndType: [ { kind: 'Component' }, { kind: 'Resource', type: 'db' }] # See config.d.ts for default
   excludeKindAndType: [] # See config.d.ts for default
 ```
@@ -52,15 +52,18 @@ missingEntity:
 ### Batch Size
 
 The missing entity backend is setup to process entities by acting as a queue where it will pull down all the applicable
-entities from the Catalog and add them to it's database (saving just the `entityRef`). Then it will grab the `n` oldest
+entities from the catalog and add them to it's database (saving just the `entityRef`). Then it will grab the `n` oldest
 entities that have not been processed to process them.
+
+By default, 500 entities are pull and processed in 60 minutes (see config above). This means for every entity there is
+around 7 seconds to get the relations and check them.
 
 ### Refresh
 
 The default setup will only check missing entities once when processed.
 If you want this process to also refresh the data you can do so by adding the `age`.
 
-It's recommended that if you choose to use this configuration to set it to 3 to update stale data.
+It's recommended that if you choose to use this configuration to set it to 3 days to update stale data.
 
 ## Limitations
 
