@@ -89,19 +89,15 @@ You could use this directly on components like this
 ```tsx
 // packages/app/src/components/catalog/EntityPage.tsx
 
-import { EntityEndOfLifeCard } from '@dweber019/backstage-plugin-endoflife';
+import {
+  EntityEndOfLifeCard,
+  isEndOfLifeAvailable,
+} from '@dweber019/backstage-plugin-endoflife';
 
 const overviewContent = (
   <Grid container spacing={3} alignItems="stretch">
     {entityWarningContent}
     ...
-    <EntitySwitch>
-      <EntitySwitch.Case if={hasLabels}>
-        <Grid item md={4} xs={12}>
-          <EntityLabelsCard />
-        </Grid>
-      </EntitySwitch.Case>
-    </EntitySwitch>
     <EntitySwitch>
       <EntitySwitch.Case if={isEndOfLifeAvailable}>
         <Grid item md={6}>
