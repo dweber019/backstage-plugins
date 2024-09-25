@@ -2,16 +2,11 @@ import express from 'express';
 import Router from 'express-promise-router';
 import fetch from 'cross-fetch';
 import { CatalogClient } from '@backstage/catalog-client';
-import {
-  createLegacyAuthAdapters,
-  PluginEndpointDiscovery,
-  TokenManager,
-} from '@backstage/backend-common';
 import { ApiEntity } from '@backstage/catalog-model';
 // @ts-ignore
 import SaxonJS from 'saxon-js';
 import styleSheet from '../stylesheet.sef.json';
-import { AuthService, LoggerService } from '@backstage/backend-plugin-api';
+import { AuthService, DiscoveryService, LoggerService } from '@backstage/backend-plugin-api';
 
 const downloadExternalSchema = async (uri: string, logger: LoggerService) => {
   try {
@@ -105,24 +100,17 @@ const wsdlToHtml = async (xml: string, logger: LoggerService) => {
 
 export interface RouterOptions {
   logger: LoggerService;
-  discovery: PluginEndpointDiscovery;
-  tokenManager: TokenManager;
-  auth?: AuthService;
+  discovery: DiscoveryService;
+  auth: AuthService;
 }
 
 /** @public */
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, discovery, tokenManager, auth } = options;
+  const { logger, discovery, auth } = options;
 
   const catalogClient = new CatalogClient({ discoveryApi: discovery });
-
-  const { auth: adaptedAuth } = createLegacyAuthAdapters({
-    auth,
-    tokenManager: tokenManager,
-    discovery: discovery,
-  });
 
   const router = Router();
   router.use(express.text());
@@ -132,8 +120,8 @@ export async function createRouter(
   });
 
   router.get('/v1/convert', async (req, res) => {
-    const { token } = await adaptedAuth.getPluginRequestToken({
-      onBehalfOf: await adaptedAuth.getOwnServiceCredentials(),
+    const { token } = await auth.getPluginRequestToken({
+      onBehalfOf: await auth.getOwnServiceCredentials(),
       targetPluginId: 'catalog',
     });
     const entityRef = req.query.entityRef as string;

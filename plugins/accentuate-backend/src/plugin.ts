@@ -18,16 +18,18 @@ export const accentuatePlugin = createBackendPlugin({
         logger: coreServices.logger,
         config: coreServices.rootConfig,
         database: coreServices.database,
-        identity: coreServices.identity,
+        userInfo: coreServices.userInfo,
         httpRouter: coreServices.httpRouter,
+        httpAuth: coreServices.httpAuth,
       },
-      async init({ logger, config, database, identity, httpRouter }) {
+      async init({ logger, config, database, httpAuth, httpRouter, userInfo }) {
         httpRouter.use(
           await createRouterFromConfig({
             logger,
             config,
             database,
-            identity,
+            userInfo,
+            httpAuth,
           }),
         );
         httpRouter.addAuthPolicy({
