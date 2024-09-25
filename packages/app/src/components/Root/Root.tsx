@@ -28,6 +28,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import LinkOffIcon from '@material-ui/icons/LinkOff';
 import { NotificationsSidebarItem } from '@backstage/plugin-notifications';
+import { siKong } from 'simple-icons';
+import { createIcon } from '@dweber019/backstage-plugin-simple-icons';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -77,6 +79,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
           {/* Items in this group will be scrollable if they run out of space */}
           <SidebarItem icon={BrushIcon} to="accentuate" text="Accentuate" />
           <SidebarItem icon={LinkOffIcon} to="missing-entity" text="Missing entity" />
+          <SidebarItem icon={createIcon(siKong, false)} to="kong-gateway" text="Kong Gateway" />
           <NotificationsSidebarItem webNotificationsEnabled snackbarEnabled />
         </SidebarScrollWrapper>
       </SidebarGroup>

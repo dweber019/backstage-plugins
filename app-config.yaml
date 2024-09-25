@@ -29,6 +29,7 @@ backend:
   reading:
     allow:
       - host: "*.dneonline.com"
+      - host: "*.swagger.io"
   # This is for local development only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   database:
@@ -41,10 +42,15 @@ integrations:
 proxy:
 ### Example for how to add a proxy endpoint for the frontend.
 ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-# endpoints:
-#   '/test':
-#     target: 'https://example.com'
-#     changeOrigin: true
+  endpoints:
+    '/kong-oss':
+      target: 'http://localhost:8001'
+      changeOrigin: true
+      credentials: dangerously-allow-unauthenticated
+    '/kong-enterprise':
+      target: 'http://localhost:9001'
+      changeOrigin: true
+      credentials: dangerously-allow-unauthenticated
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -99,6 +105,9 @@ catalog:
 
     - type: file
       target: ../../plugins/missing-entity/examples/all.yaml
+
+    - type: file
+      target: ../../plugins/kong-gateway/examples/all.yaml
 
 spectralLinter:
   openApiRulesetUrl: https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml
@@ -157,3 +166,14 @@ missingEntity:
       seconds: 15
   age:
     days: 3
+
+kongGateway:
+  instances:
+    - name: oss
+      proxy: kong-oss
+      managerUrl: http://localhost:8002/
+      oss: true
+    - name: enterprise
+      proxy: kong-enterprise
+      managerUrl: http://localhost:9002/
+      oss: false

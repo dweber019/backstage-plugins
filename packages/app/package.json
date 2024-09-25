@@ -40,6 +40,7 @@
     "@dweber019/backstage-plugin-api-docs-module-wsdl": "^0.0.15",
     "@dweber019/backstage-plugin-api-docs-spectral-linter": "^0.4.5",
     "@dweber019/backstage-plugin-endoflife": "^0.0.14",
+    "@dweber019/backstage-plugin-kong-gateway": "^0.0.0",
     "@dweber019/backstage-plugin-missing-entity": "0.0.4",
     "@dweber019/backstage-plugin-relations": "0.0.9",
     "@dweber019/backstage-plugin-simple-icons": "^0.0.4",

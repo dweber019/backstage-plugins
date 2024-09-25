@@ -1,0 +1,66 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - host: simple-service-oss
+    name: simple-service-oss
+    port: 8080
+    protocol: http
+    read_timeout: 60000
+    retries: 5
+    write_timeout: 60000
+    tags:
+      - tag-selector
+    routes:
+      - name: simple-route-oss
+        paths:
+          - /simple
+        preserve_host: false
+        protocols:
+          - http
+          - https
+        regex_priority: 0
+        strip_path: true
+        https_redirect_status_code: 426
+
+  - name: plugin-service-oss
+    host: plugin-service-oss
+    path: /
+    port: 80
+    protocol: http
+    routes:
+      - name: plugin-route-oss
+        paths:
+          - /plugin
+        protocols:
+          - http
+        strip_path: false
+    plugins:
+      - name: rate-limiting
+        config:
+          second: 20
+          minute: 20
+          hour: 20
+          policy: local
+
+  - name: upstream-service-oss
+    host: upstream-service.upstream-oss
+    path: /
+    port: 80
+    protocol: http
+    routes:
+      - name: upstream-route
+        paths:
+          - /upstream
+        protocols:
+          - http
+        strip_path: false
+
+upstreams:
+  - algorithm: round-robin
+    name: upstream-service.upstream-oss
+    targets:
+      - target: 10.130.12.43:8080
+        weight: 50
+      - target: 10.130.12.164:8080
+        weight: 50

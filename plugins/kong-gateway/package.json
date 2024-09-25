@@ -1,0 +1,64 @@
+{
+  "name": "@dweber019/backstage-plugin-kong-gateway",
+  "version": "0.0.0",
+  "backstage": {
+    "role": "frontend-plugin",
+    "pluginId": "kong-gateway",
+    "pluginPackages": [
+      "@dweber019/backstage-plugin-kong-gateway"
+    ]
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dweber019/backstage-plugins.git",
+    "directory": "plugins/kong-gateway"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "config.d.ts"
+  ],
+  "scripts": {
+    "build": "backstage-cli package build",
+    "clean": "backstage-cli package clean",
+    "lint": "backstage-cli package lint",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "start": "backstage-cli package start",
+    "test": "backstage-cli package test"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.6.0",
+    "@backstage/core-components": "^0.14.10",
+    "@backstage/core-plugin-api": "^1.9.3",
+    "@backstage/errors": "^1.2.4",
+    "@backstage/plugin-catalog-react": "^1.12.3",
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "react-use": "^17.2.4"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.27.0",
+    "@backstage/dev-utils": "^1.0.37",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^15.0.0",
+    "@types/react-dom": "^18.2.19",
+    "canvas": "^2.11.2"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "configSchema": "config.d.ts"
+}

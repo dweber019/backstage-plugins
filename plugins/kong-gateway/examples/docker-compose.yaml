@@ -1,0 +1,89 @@
+# Sourced from https://github.com/Kong/docker-kong/blob/master/compose/docker-compose.yml
+version: '3.9'
+
+volumes:
+  kong_prefix_vol_oss:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  kong_tmp_vol_oss:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  kong_prefix_vol_enterprise:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  kong_tmp_vol_enterprise:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+
+networks:
+  kong-net-oss:
+    external: false
+  kong-net-enterprise:
+    external: false
+
+services:
+  kong-oss:
+    image: "${KONG_DOCKER_TAG:-kong:latest}"
+    user: "${KONG_USER:-kong}"
+    environment:
+      KONG_PREFIX: ${KONG_PREFIX:-/var/run/kong}
+      KONG_DATABASE: off
+      KONG_PROXY_LISTEN: "${KONG_PROXY_LISTEN:-0.0.0.0:8000}"
+      KONG_ADMIN_LISTEN: "${KONG_ADMIN_LISTEN:-0.0.0.0:8001}"
+      KONG_ADMIN_GUI_LISTEN: "${KONG_ADMIN_GUI_LISTEN:-0.0.0.0:8002}"
+      KONG_DECLARATIVE_CONFIG: "/tmp/kong.yaml"
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+    networks:
+      - kong-net-oss
+    ports:
+      - "0.0.0.0:8000:8000/tcp" # Kong proxy
+      - "0.0.0.0:8001:8001/tcp" # Kong admin
+      - "0.0.0.0:8002:8002/tcp" # Kong manager
+    healthcheck:
+      test: [ "CMD", "kong", "health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    read_only: true
+    volumes:
+      - kong_prefix_vol_oss:${KONG_PREFIX:-/var/run/kong}
+      - kong_tmp_vol_oss:/tmp
+      - type: bind
+        source: ./kong-config-oss.yaml
+        target: /tmp/kong.yaml
+
+  kong-enterprise:
+    image: "${KONG_DOCKER_TAG:-kong/kong-gateway:latest}"
+    user: "${KONG_USER:-kong}"
+    environment:
+      KONG_PREFIX: ${KONG_PREFIX:-/var/run/kong}
+      KONG_DATABASE: off
+      KONG_PROXY_LISTEN: "${KONG_PROXY_LISTEN:-0.0.0.0:9000}"
+      KONG_ADMIN_LISTEN: "${KONG_ADMIN_LISTEN:-0.0.0.0:9001}"
+      KONG_ADMIN_GUI_LISTEN: "${KONG_ADMIN_GUI_LISTEN:-0.0.0.0:9002}"
+      KONG_DECLARATIVE_CONFIG: "/tmp/kong.yaml"
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+    networks:
+      - kong-net-enterprise
+    ports:
+      - "0.0.0.0:9000:9000/tcp" # Kong proxy
+      - "0.0.0.0:9001:9001/tcp" # Kong admin
+      - "0.0.0.0:9002:9002/tcp" # Kong manager
+    healthcheck:
+      test: [ "CMD", "kong", "health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    read_only: true
+    volumes:
+      - kong_prefix_vol_enterprise:${KONG_PREFIX:-/var/run/kong}
+      - kong_tmp_vol_enterprise:/tmp
+      - type: bind
+        source: ./kong-config-enterprise.yaml
+        target: /tmp/kong.yaml

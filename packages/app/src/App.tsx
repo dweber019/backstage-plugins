@@ -54,6 +54,7 @@ import { AccentuatePage } from '@dweber019/backstage-plugin-accentuate';
 import { MissingEntityPage } from '@dweber019/backstage-plugin-missing-entity';
 import LinkOffIcon from '@material-ui/icons/LinkOff';
 import { NotificationsPage } from '@backstage/plugin-notifications';
+import { KongGatewayPage } from '@dweber019/backstage-plugin-kong-gateway';
 
 const app = createApp({
   apis,
@@ -116,6 +117,7 @@ const routes = (
     <Route path="/notifications" element={<NotificationsPage />} />
     <Route path="/accentuate" element={<AccentuatePage />} />
     <Route path="/missing-entity" element={<MissingEntityPage />} />
+    <Route path="/kong-gateway" element={<KongGatewayPage />} />
   </FlatRoutes>
 );
 

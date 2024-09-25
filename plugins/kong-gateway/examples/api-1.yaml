@@ -1,0 +1,51 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kong-gateway-oss
+  annotations:
+    konghq.com/service-name: oss:simple-service-oss
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-c
+  definition:
+    $text: https://petstore3.swagger.io/api/v3/openapi.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kong-gateway-enterprise
+  annotations:
+    konghq.com/service-name: enterprise:simple-service
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-c
+  definition:
+    $text: https://petstore3.swagger.io/api/v3/openapi.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kong-gateway-multiple
+  annotations:
+    konghq.com/service-name: enterprise:simple-service,oss:simple-service-oss
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-c
+  definition:
+    $text: https://petstore3.swagger.io/api/v3/openapi.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kong-gateway-tags
+  annotations:
+    konghq.com/tag-selector: oss:tag-selector
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-c
+  definition:
+    $text: https://petstore3.swagger.io/api/v3/openapi.json
