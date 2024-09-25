@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-tips
 
+## 0.0.19
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+
 ## 0.0.18
 
 ### Patch Changes

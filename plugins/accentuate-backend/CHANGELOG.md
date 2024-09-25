@@ -1,5 +1,17 @@
 # @dweber019/backstage-plugin-accentuate-backend
 
+## 1.0.0
+
+### Major Changes
+
+- e1586e3: BREAKING: The deprecated identity and token manager services have been removed from route configurations.
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+- Updated dependencies [e1586e3]
+  - @dweber019/backstage-plugin-accentuate-common@0.0.8
+
 ## 0.0.8
 
 ### Patch Changes

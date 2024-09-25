@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.0.6
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+- Updated dependencies [e1586e3]
+  - @dweber019/backstage-plugin-missing-entity-common@0.0.2
+
 ## 0.0.5
 
 ### Patch Changes

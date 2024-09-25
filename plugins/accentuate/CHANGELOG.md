@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-accentuate
 
+## 0.0.10
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+- Updated dependencies [e1586e3]
+  - @dweber019/backstage-plugin-accentuate-common@0.0.8
+
 ## 0.0.9
 
 ### Patch Changes
