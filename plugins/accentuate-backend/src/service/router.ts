@@ -4,16 +4,16 @@ import { AccentuateBackendDatabase } from '../db';
 import { AccentuateBackendClient, AccentuateBackendApi } from '../api';
 import { Config } from '@backstage/config';
 import { InputError } from '@backstage/errors';
-import { IdentityApi } from '@backstage/plugin-auth-node';
 import { AccentuateInput } from '@dweber019/backstage-plugin-accentuate-common';
-import { DatabaseService, LoggerService } from '@backstage/backend-plugin-api';
+import { DatabaseService, HttpAuthService, LoggerService, UserInfoService } from '@backstage/backend-plugin-api';
 
 /** @public */
 export interface RouterOptions {
   accentuateBackendApi?: AccentuateBackendApi;
   logger: LoggerService;
   database: DatabaseService;
-  identity: IdentityApi;
+  userInfo: UserInfoService;
+  httpAuth: HttpAuthService;
   config?: Config;
 }
 
@@ -21,7 +21,7 @@ export interface RouterOptions {
 export async function createRouter(
   routerOptions: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, database, identity } = routerOptions;
+  const { logger, database, httpAuth, userInfo } = routerOptions;
 
   const accentuateBackendStore = await AccentuateBackendDatabase.create(
     await database.getClient(),
@@ -50,7 +50,8 @@ export async function createRouter(
   });
 
   router.put('/', async (req, res) => {
-    const identityResponse = await identity.getIdentity({ request: req });
+    const credentials = await httpAuth.credentials(req);
+    const info = await userInfo.getUserInfo(credentials);
 
     const accentuateInput = req.body as AccentuateInput;
     if (
@@ -64,7 +65,7 @@ export async function createRouter(
       const accentuateResponse = await accentuateBackendClient.update(
         accentuateInput.entityRef,
         accentuateInput.data,
-        identityResponse ? identityResponse.identity.userEntityRef : 'unknown',
+        info ? info.userEntityRef : 'unknown',
       );
       res.status(200).json(accentuateResponse);
     }
