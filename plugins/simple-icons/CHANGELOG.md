@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.5
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+
 ## 0.0.4
 
 ### Patch Changes

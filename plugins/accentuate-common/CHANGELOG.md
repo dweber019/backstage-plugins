@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-accentuate-common
 
+## 0.0.8
+
+### Patch Changes
+
+- e1586e3: Update backstage to 1.31.1.
+
 ## 0.0.7
 
 ### Patch Changes
