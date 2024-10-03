@@ -5,7 +5,7 @@ Backend for the `@dweber019/backstage-plugin-api-docs-module-wsdl` frontend plug
 ## Setup
 
 ```
-yarn add --cwd packages/backend @dweber019/backstage-plugin-api-docs-module-wsdl-backend
+yarn --cwd packages/backend add @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 ```
 
 Then integrate the plugin using the following default setup for `src/plugins/apiDocsModuleWsdl.ts`:
