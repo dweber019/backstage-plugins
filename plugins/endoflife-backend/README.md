@@ -14,7 +14,7 @@ First we need to add the `@dweber019/backstage-plugin-endoflife-backend` package
 
 ```sh
 # From your Backstage root directory
-yarn add --cwd packages/backend @dweber019/backstage-plugin-endoflife-backend
+yarn --cwd packages/backend add @dweber019/backstage-plugin-endoflife-backend
 ```
 
 Then we will create a new file named `packages/backend/src/plugins/endoflife.ts`, and add the following to it:

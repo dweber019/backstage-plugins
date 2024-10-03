@@ -13,7 +13,7 @@ First we need to add the `@dweber019/backstage-plugin-accentuate-backend` packag
 
 ```sh
 # From your Backstage root directory
-yarn add --cwd packages/backend @dweber019/backstage-plugin-accentuate-backend
+yarn --cwd packages/backend add @dweber019/backstage-plugin-accentuate-backend
 ```
 
 Then we open the file named `packages/backend/src/plugins/catalog.ts`, and extend it with:

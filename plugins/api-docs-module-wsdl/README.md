@@ -6,7 +6,7 @@ You need to install the backend plugin too.
 ## Setup
 
 ```
-yarn add --cwd packages/app @dweber019/backstage-plugin-api-docs-module-wsdl
+yarn --cwd packages/app add @dweber019/backstage-plugin-api-docs-module-wsdl
 ```
 
 ### Add the wsdlDocsApiWidget to your apis
