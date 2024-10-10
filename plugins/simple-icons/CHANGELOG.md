@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.6
+
+### Patch Changes
+
+- 560d626: Update simple-icons dependency.
+
 ## 0.0.5
 
 ### Patch Changes
