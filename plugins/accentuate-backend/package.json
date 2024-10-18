@@ -34,7 +34,7 @@
     "postpack": "backstage-cli package postpack"
   },
   "dependencies": {
-    "@backstage/backend-defaults": "^0.5.1",
+    "@backstage/backend-defaults": "^0.5.2",
     "@backstage/backend-plugin-api": "^1.0.1",
     "@backstage/catalog-model": "^1.7.0",
     "@backstage/config": "^1.2.0",
@@ -54,7 +54,7 @@
     "yn": "^4.0.0"
   },
   "devDependencies": {
-    "@backstage/backend-test-utils": "^1.0.1",
+    "@backstage/backend-test-utils": "^1.0.2",
     "@backstage/cli": "^0.28.0",
     "@backstage/test-utils": "^1.7.0",
     "@types/supertest": "^6.0.0",
