@@ -7,7 +7,7 @@
     "directory": "plugins/accentuate-backend"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {
@@ -42,7 +42,7 @@
     "@backstage/plugin-auth-node": "^0.5.3",
     "@backstage/plugin-catalog-node": "^1.13.1",
     "@backstage/types": "^1.1.1",
-    "@dweber019/backstage-plugin-accentuate-common": "^0.0.8",
+    "@dweber019/backstage-plugin-accentuate-common": "^0.0.9",
     "@types/express": "^4.17.6",
     "deepmerge": "^4.3.1",
     "express": "^4.18.1",

@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-accentuate
 
+## 0.0.11
+
+### Patch Changes
+
+- c6310a5: Update backstage dependencies to 1.32.2
+- Updated dependencies [c6310a5]
+  - @dweber019/backstage-plugin-accentuate-common@0.0.9
+
 ## 0.0.10
 
 ### Patch Changes
