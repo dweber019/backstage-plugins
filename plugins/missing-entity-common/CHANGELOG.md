@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity-common
 
+## 0.0.3
+
+### Patch Changes
+
+- c6310a5: Update backstage dependencies to 1.32.2
+
 ## 0.0.2
 
 ### Patch Changes

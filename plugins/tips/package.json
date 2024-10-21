@@ -7,7 +7,7 @@
     "directory": "plugins/tips"
   },
   "license": "MIT",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

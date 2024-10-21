@@ -1,5 +1,17 @@
 # backend
 
+## 0.0.18
+
+### Patch Changes
+
+- c6310a5: Update backstage dependencies to 1.32.2
+- Updated dependencies [c6310a5]
+  - @dweber019/backstage-plugin-api-docs-module-wsdl-backend@1.0.1
+  - @dweber019/backstage-plugin-missing-entity-backend@0.0.7
+  - @dweber019/backstage-plugin-accentuate-backend@1.0.1
+  - @dweber019/backstage-plugin-endoflife-backend@0.0.12
+  - @dweber019/backstage-plugin-relations-backend@0.0.11
+
 ## 0.0.17
 
 ### Patch Changes

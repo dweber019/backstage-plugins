@@ -1,5 +1,20 @@
 # app
 
+## 0.0.23
+
+### Patch Changes
+
+- c6310a5: Update backstage dependencies to 1.32.2
+- Updated dependencies [c6310a5]
+  - @dweber019/backstage-plugin-api-docs-spectral-linter@0.4.7
+  - @dweber019/backstage-plugin-api-docs-module-wsdl@0.0.17
+  - @dweber019/backstage-plugin-missing-entity@0.0.6
+  - @dweber019/backstage-plugin-simple-icons@0.0.7
+  - @dweber019/backstage-plugin-accentuate@0.0.11
+  - @dweber019/backstage-plugin-endoflife@0.0.16
+  - @dweber019/backstage-plugin-relations@0.0.11
+  - @dweber019/backstage-plugin-tips@0.0.20
+
 ## 0.0.22
 
 ### Patch Changes
