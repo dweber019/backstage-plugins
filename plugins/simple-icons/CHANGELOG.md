@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.8
+
+### Patch Changes
+
+- eda3051: Use simple IconComponent type without the AppIcons type.
+
 ## 0.0.7
 
 ### Patch Changes
