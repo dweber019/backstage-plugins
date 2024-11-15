@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-simple-icons
 
+## 0.0.9
+
+### Patch Changes
+
+- 4fba97b: Update simple icons.
+
 ## 0.0.8
 
 ### Patch Changes
