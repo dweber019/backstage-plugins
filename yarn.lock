@@ -6244,7 +6244,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-simple-icons@npm:^0.0.8, @dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons":
+"@dweber019/backstage-plugin-simple-icons@npm:^0.0.9, @dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-simple-icons@workspace:plugins/simple-icons"
   dependencies:
@@ -14717,7 +14717,7 @@ __metadata:
     "@dweber019/backstage-plugin-endoflife": "npm:^0.0.16"
     "@dweber019/backstage-plugin-missing-entity": "npm:0.0.6"
     "@dweber019/backstage-plugin-relations": "npm:0.0.11"
-    "@dweber019/backstage-plugin-simple-icons": "npm:^0.0.8"
+    "@dweber019/backstage-plugin-simple-icons": "npm:^0.0.9"
     "@dweber019/backstage-plugin-tips": "npm:^0.0.20"
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
