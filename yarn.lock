@@ -6262,7 +6262,7 @@ __metadata:
     "@testing-library/user-event": "npm:^14.0.0"
     "@types/node": "npm:*"
     msw: "npm:^1.0.0"
-    simple-icons: "npm:^13.13.0"
+    simple-icons: "npm:^13.16.0"
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -32276,10 +32276,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:^13.13.0":
-  version: 13.13.0
-  resolution: "simple-icons@npm:13.13.0"
-  checksum: 10/a3289dd8f18ce6b64aad563d9b16e348bd6c204d2034b0d59b76ef4c8abb3d1fb2d1dd9da2fbe8d5947141228c712c888bb00c2cf0246dbe6789adc999ed0c86
+"simple-icons@npm:^13.16.0":
+  version: 13.16.0
+  resolution: "simple-icons@npm:13.16.0"
+  checksum: 10/3df437c39e4a6a2709ebaf2ce6d089dbdf7367ef0823c75eb85830c396f4cb0d3ffe08866f7f227e22e1b4e44fe16b2cba1f84c1ad9e472751ff098d5361cafd
   languageName: node
   linkType: hard
 
