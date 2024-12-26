@@ -1,6 +1,6 @@
 {
   "name": "@dweber019/backstage-plugin-missing-entity-backend",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "backstage": {
     "role": "backend-plugin",
     "pluginId": "missing-entity",
@@ -47,7 +47,7 @@
     "@backstage/errors": "^1.2.6",
     "@backstage/plugin-notifications-node": "^0.2.10",
     "@backstage/types": "^1.2.0",
-    "@dweber019/backstage-plugin-missing-entity-common": "^0.0.3",
+    "@dweber019/backstage-plugin-missing-entity-common": "^0.0.4",
     "@types/express": "*",
     "express": "^4.18.1",
     "express-promise-router": "^4.1.0",

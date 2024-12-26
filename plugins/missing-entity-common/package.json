@@ -1,6 +1,6 @@
 {
   "name": "@dweber019/backstage-plugin-missing-entity-common",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Common functionalities for the missing entity plugin",
   "backstage": {
     "role": "common-library",
