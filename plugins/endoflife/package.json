@@ -34,12 +34,12 @@
     "postpack": "backstage-cli package postpack"
   },
   "dependencies": {
-    "@backstage/catalog-model": "^1.7.0",
-    "@backstage/core-components": "^0.15.1",
-    "@backstage/core-plugin-api": "^1.10.0",
-    "@backstage/errors": "^1.2.4",
-    "@backstage/integration-react": "^1.2.0",
-    "@backstage/plugin-catalog-react": "^1.14.0",
+    "@backstage/catalog-model": "^1.7.2",
+    "@backstage/core-components": "^0.16.2",
+    "@backstage/core-plugin-api": "^1.10.2",
+    "@backstage/errors": "^1.2.6",
+    "@backstage/integration-react": "^1.2.2",
+    "@backstage/plugin-catalog-react": "^1.15.0",
     "@egjs/hammerjs": "^2.0.17",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
@@ -58,10 +58,10 @@
     "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.28.0",
-    "@backstage/dev-utils": "^1.1.2",
-    "@backstage/integration": "^1.15.1",
-    "@backstage/test-utils": "^1.7.0",
+    "@backstage/cli": "^0.29.4",
+    "@backstage/dev-utils": "^1.1.5",
+    "@backstage/integration": "^1.16.0",
+    "@backstage/test-utils": "^1.7.3",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^15.0.0",
     "@testing-library/user-event": "^14.0.0",
