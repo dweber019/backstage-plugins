@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.0.9
+
+### Patch Changes
+
+- 908981b: Update Backstage to 1.35.0.
+- Updated dependencies [908981b]
+  - @dweber019/backstage-plugin-missing-entity-common@0.0.5
+
 ## 0.0.8
 
 ### Patch Changes

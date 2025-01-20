@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 
+## 1.0.3
+
+### Patch Changes
+
+- 908981b: Update Backstage to 1.35.0.
+
 ## 1.0.2
 
 ### Patch Changes
