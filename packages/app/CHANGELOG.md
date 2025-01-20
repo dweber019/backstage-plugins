@@ -1,5 +1,19 @@
 # app
 
+## 0.0.27
+
+### Patch Changes
+
+- Updated dependencies [908981b]
+  - @dweber019/backstage-plugin-api-docs-spectral-linter@0.4.9
+  - @dweber019/backstage-plugin-api-docs-module-wsdl@0.0.19
+  - @dweber019/backstage-plugin-missing-entity@0.0.8
+  - @dweber019/backstage-plugin-simple-icons@0.0.11
+  - @dweber019/backstage-plugin-accentuate@0.0.13
+  - @dweber019/backstage-plugin-endoflife@0.0.18
+  - @dweber019/backstage-plugin-relations@0.0.13
+  - @dweber019/backstage-plugin-tips@0.0.22
+
 ## 0.0.26
 
 ### Patch Changes
