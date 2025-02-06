@@ -63,7 +63,7 @@ You can add custom tips.
 ```tsx
 // packages/app/src/apis.tsx
 
-import { tipsConfigRef, defaultTips } from '@dweber019/backstage-plugin-tips';
+import { tipsConfigRef, systemModelTips, extraTips } from '@dweber019/backstage-plugin-tips';
 import { YourTip } from '...';
 
 // ...
@@ -75,7 +75,7 @@ export const apis: AnyApiFactory[] = [
     deps: {},
     factory: () => {
       return {
-        tips: [...defaultTips, YourTip],
+        tips: [...systemModelTips, ...extraTips, YourTip],
       };
     },
   }),
@@ -95,8 +95,4 @@ export interface Tip {
 The tip will be displayed on the entity page when `activate` evaluates to `true`.  
 The `content` of type `string` will be rendered with the builtin Backstage `Markdown` component.
 
-You can have a look at `plugins/tips/src/lib/defaults.tsx` for some inspiration.
-
-## Local development
-
-There is a local setup at `plugins/tips/dev` which can be started with `yarn --cwd plugins/tips start` from the root.
+You can have a look at `plugins/tips/src/lib/systemModelTips.ts` or `plugins/tips/src/lib/extraTips.tsx` for some inspiration.
