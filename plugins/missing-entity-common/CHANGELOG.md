@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-missing-entity-common
 
+## 0.0.6
+
+### Patch Changes
+
+- 1f7ff3f: Update backstage to 1.36.1.
+
 ## 0.0.5
 
 ### Patch Changes

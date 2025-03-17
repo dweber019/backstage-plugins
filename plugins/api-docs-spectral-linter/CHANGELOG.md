@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-api-docs-spectral-linter
 
+## 0.4.10
+
+### Patch Changes
+
+- d837ffe: Patch source of spectral to make linting work again until fix is provided by upstream project.
+- 1f7ff3f: Update backstage to 1.36.1.
+
 ## 0.4.9
 
 ### Patch Changes
