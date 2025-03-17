@@ -36,11 +36,11 @@
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.3",
-    "@backstage/core-components": "^0.16.3",
-    "@backstage/core-plugin-api": "^1.10.3",
+    "@backstage/core-components": "^0.16.4",
+    "@backstage/core-plugin-api": "^1.10.4",
     "@backstage/errors": "^1.2.7",
-    "@backstage/plugin-catalog": "^1.26.1",
-    "@backstage/plugin-catalog-react": "^1.15.1",
+    "@backstage/plugin-catalog": "^1.27.0",
+    "@backstage/plugin-catalog-react": "^1.15.2",
     "@backstage/types": "^1.2.1",
     "@dweber019/backstage-plugin-accentuate-common": "^0.0.11",
     "@material-ui/core": "^4.12.2",
@@ -58,9 +58,9 @@
     "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.29.5",
-    "@backstage/dev-utils": "^1.1.6",
-    "@backstage/test-utils": "^1.7.4",
+    "@backstage/cli": "^0.30.0",
+    "@backstage/dev-utils": "^1.1.7",
+    "@backstage/test-utils": "^1.7.5",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^15.0.0",
     "@testing-library/user-event": "^14.0.0",

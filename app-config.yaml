@@ -67,6 +67,9 @@ scaffolder:
 # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  # Experimental: Always use the search method in UrlReaderProcessor.
+  # New adopters are encouraged to enable it as this behavior will be the default in a future release.
+  useUrlReadersSearch: true
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User]
   locations:
