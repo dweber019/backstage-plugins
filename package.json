@@ -28,7 +28,7 @@
     "lint": "backstage-cli repo lint --since origin/{{defaultBranch}}",
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
-    "new": "backstage-cli new --scope internal",
+    "new": "backstage-cli new",
     "version": "changeset version && yarn install --no-immutable && (git commit -am 'Update internal dependencies' || true)",
     "release": "changeset publish",
     "prepare": "husky install",
@@ -44,7 +44,7 @@
     "@changesets/cli": "^2.18.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.29.5",
+    "@backstage/cli": "^0.30.0",
     "@backstage/e2e-test-utils": "^0.1.1",
     "@playwright/test": "^1.32.3",
     "@spotify/prettier-config": "^12.0.0",
