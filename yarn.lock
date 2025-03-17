@@ -6235,9 +6235,9 @@ __metadata:
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
-    "@stoplight/spectral-core": "npm:^1.19.5"
-    "@stoplight/spectral-ruleset-bundler": "npm:^1.6.2"
-    "@stoplight/spectral-runtime": "npm:^1.1.4"
+    "@stoplight/spectral-core": "patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch"
+    "@stoplight/spectral-ruleset-bundler": "npm:1.6.2"
+    "@stoplight/spectral-runtime": "npm:1.1.4"
     "@testing-library/jest-dom": "npm:^6.0.0"
     "@testing-library/react": "npm:^15.0.0"
     "@testing-library/user-event": "npm:^14.0.0"
@@ -11847,65 +11847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.18.3, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
-  version: 1.19.1
-  resolution: "@stoplight/spectral-core@npm:1.19.1"
-  dependencies:
-    "@stoplight/better-ajv-errors": "npm:1.0.3"
-    "@stoplight/json": "npm:~3.21.0"
-    "@stoplight/path": "npm:1.3.2"
-    "@stoplight/spectral-parsers": "npm:^1.0.0"
-    "@stoplight/spectral-ref-resolver": "npm:^1.0.4"
-    "@stoplight/spectral-runtime": "npm:^1.0.0"
-    "@stoplight/types": "npm:~13.6.0"
-    "@types/es-aggregate-error": "npm:^1.0.2"
-    "@types/json-schema": "npm:^7.0.11"
-    ajv: "npm:^8.17.1"
-    ajv-errors: "npm:~3.0.0"
-    ajv-formats: "npm:~2.1.0"
-    es-aggregate-error: "npm:^1.0.7"
-    jsonpath-plus: "npm:7.1.0"
-    lodash: "npm:~4.17.21"
-    lodash.topath: "npm:^4.5.2"
-    minimatch: "npm:3.1.2"
-    nimma: "npm:0.2.2"
-    pony-cause: "npm:^1.0.0"
-    simple-eval: "npm:1.0.0"
-    tslib: "npm:^2.3.0"
-  checksum: 10/3669d16d88fed6dec01f0f3ec67a2f5dea22fa0c8d2c200e1e171822a7a0a877ab84d19a6e4ffff295ba0dcf7edca0e62bdf63dc97de647adc4ad88c8545dd8a
-  languageName: node
-  linkType: hard
-
-"@stoplight/spectral-core@npm:^1.19.2":
-  version: 1.19.4
-  resolution: "@stoplight/spectral-core@npm:1.19.4"
-  dependencies:
-    "@stoplight/better-ajv-errors": "npm:1.0.3"
-    "@stoplight/json": "npm:~3.21.0"
-    "@stoplight/path": "npm:1.3.2"
-    "@stoplight/spectral-parsers": "npm:^1.0.0"
-    "@stoplight/spectral-ref-resolver": "npm:^1.0.4"
-    "@stoplight/spectral-runtime": "npm:^1.1.2"
-    "@stoplight/types": "npm:~13.6.0"
-    "@types/es-aggregate-error": "npm:^1.0.2"
-    "@types/json-schema": "npm:^7.0.11"
-    ajv: "npm:^8.17.1"
-    ajv-errors: "npm:~3.0.0"
-    ajv-formats: "npm:~2.1.0"
-    es-aggregate-error: "npm:^1.0.7"
-    jsonpath-plus: "npm:10.2.0"
-    lodash: "npm:~4.17.21"
-    lodash.topath: "npm:^4.5.2"
-    minimatch: "npm:3.1.2"
-    nimma: "npm:0.2.3"
-    pony-cause: "npm:^1.1.1"
-    simple-eval: "npm:1.0.1"
-    tslib: "npm:^2.8.1"
-  checksum: 10/4413cb02dec5624aaa45a82d11cd3424814078f42d2b7f2d120cf602e59455ece81bb9f3339cf58e4e0c9a2c625478127a66fb6f0efda33b6c23f0adb9b84d9a
-  languageName: node
-  linkType: hard
-
-"@stoplight/spectral-core@npm:^1.19.5":
+"@stoplight/spectral-core@npm:1.19.5":
   version: 1.19.5
   resolution: "@stoplight/spectral-core@npm:1.19.5"
   dependencies:
@@ -11931,6 +11873,35 @@ __metadata:
     simple-eval: "npm:1.0.1"
     tslib: "npm:^2.8.1"
   checksum: 10/db0f6c1c0ca67bc4a49c480259d261283ccb72958cd3a2a761dccbbbb1fdd04911df9c0a05f7ce4453e303de737206fbf3e799a1ace5db49d433a2848abe13b2
+  languageName: node
+  linkType: hard
+
+"@stoplight/spectral-core@patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch":
+  version: 1.19.5
+  resolution: "@stoplight/spectral-core@patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch::version=1.19.5&hash=9f9180"
+  dependencies:
+    "@stoplight/better-ajv-errors": "npm:1.0.3"
+    "@stoplight/json": "npm:~3.21.0"
+    "@stoplight/path": "npm:1.3.2"
+    "@stoplight/spectral-parsers": "npm:^1.0.0"
+    "@stoplight/spectral-ref-resolver": "npm:^1.0.4"
+    "@stoplight/spectral-runtime": "npm:^1.1.2"
+    "@stoplight/types": "npm:~13.6.0"
+    "@types/es-aggregate-error": "npm:^1.0.2"
+    "@types/json-schema": "npm:^7.0.11"
+    ajv: "npm:^8.17.1"
+    ajv-errors: "npm:~3.0.0"
+    ajv-formats: "npm:~2.1.1"
+    es-aggregate-error: "npm:^1.0.7"
+    jsonpath-plus: "npm:^10.3.0"
+    lodash: "npm:~4.17.21"
+    lodash.topath: "npm:^4.5.2"
+    minimatch: "npm:3.1.2"
+    nimma: "npm:0.2.3"
+    pony-cause: "npm:^1.1.1"
+    simple-eval: "npm:1.0.1"
+    tslib: "npm:^2.8.1"
+  checksum: 10/db9f4d38d5a8a75de96ed4c911d3bc979394001cc2b6f07109b5b4847c75cb02d39019b9850027e0fe9db4cc0ff50870f998c2131532ac042412118b937a1f53
   languageName: node
   linkType: hard
 
@@ -12002,7 +11973,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-ruleset-bundler@npm:^1.6.2":
+"@stoplight/spectral-ruleset-bundler@npm:1.6.2":
   version: 1.6.2
   resolution: "@stoplight/spectral-ruleset-bundler@npm:1.6.2"
   dependencies:
@@ -12071,22 +12042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-runtime@npm:^1.0.0, @stoplight/spectral-runtime@npm:^1.1.0, @stoplight/spectral-runtime@npm:^1.1.1, @stoplight/spectral-runtime@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@stoplight/spectral-runtime@npm:1.1.2"
-  dependencies:
-    "@stoplight/json": "npm:^3.17.0"
-    "@stoplight/path": "npm:^1.3.2"
-    "@stoplight/types": "npm:^12.3.0"
-    abort-controller: "npm:^3.0.0"
-    lodash: "npm:^4.17.21"
-    node-fetch: "npm:^2.6.7"
-    tslib: "npm:^2.3.1"
-  checksum: 10/dcc2b09bc4699ad62434d16e086266ce95d07b0c432df12eb2212be8d585fb3618a2b9bd57ff0235575344c5c5b71e784c5d8961d23aed7c601f083c98042af3
-  languageName: node
-  linkType: hard
-
-"@stoplight/spectral-runtime@npm:^1.1.4":
+"@stoplight/spectral-runtime@npm:1.1.4":
   version: 1.1.4
   resolution: "@stoplight/spectral-runtime@npm:1.1.4"
   dependencies:
@@ -12098,6 +12054,21 @@ __metadata:
     node-fetch: "npm:^2.7.0"
     tslib: "npm:^2.8.1"
   checksum: 10/77ffe7cf55d19046aaa3125f2395ab142a0c384f20245dcf5f7a100dcbdf8c726d95f25e5731746ce5ba34527ac64e62401d9e17f24156b708e9e464747e5ff5
+  languageName: node
+  linkType: hard
+
+"@stoplight/spectral-runtime@npm:^1.1.0, @stoplight/spectral-runtime@npm:^1.1.1, @stoplight/spectral-runtime@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@stoplight/spectral-runtime@npm:1.1.2"
+  dependencies:
+    "@stoplight/json": "npm:^3.17.0"
+    "@stoplight/path": "npm:^1.3.2"
+    "@stoplight/types": "npm:^12.3.0"
+    abort-controller: "npm:^3.0.0"
+    lodash: "npm:^4.17.21"
+    node-fetch: "npm:^2.6.7"
+    tslib: "npm:^2.3.1"
+  checksum: 10/dcc2b09bc4699ad62434d16e086266ce95d07b0c432df12eb2212be8d585fb3618a2b9bd57ff0235575344c5c5b71e784c5d8961d23aed7c601f083c98042af3
   languageName: node
   linkType: hard
 
@@ -24816,7 +24787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsep@npm:^1.1.2, jsep@npm:^1.2.0":
+"jsep@npm:^1.2.0":
   version: 1.3.9
   resolution: "jsep@npm:1.3.9"
   checksum: 10/c60d7064c3b5047f58345e65e7618bbaecf2f46338e56689244db057b0550bf8fb7c1457a7384dfd38aca9acde3ff851d062c3f182cc1fbc66c13cb2ca0b579d
@@ -25047,7 +25018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonpath-plus@npm:10.2.0, jsonpath-plus@npm:^10.0.0, jsonpath-plus@npm:^6.0.1 || ^10.1.0":
+"jsonpath-plus@npm:^10.0.0, jsonpath-plus@npm:^6.0.1 || ^10.1.0":
   version: 10.2.0
   resolution: "jsonpath-plus@npm:10.2.0"
   dependencies:
@@ -25058,13 +25029,6 @@ __metadata:
     jsonpath: bin/jsonpath-cli.js
     jsonpath-plus: bin/jsonpath-cli.js
   checksum: 10/3a6bd775d4348f5e014249a11abb635af2f1265d83ba716b3d633ca3f118e79c318223dd685170c50652494a492f3354163bbe4cd5554bb4d7992fecf53c4874
-  languageName: node
-  linkType: hard
-
-"jsonpath-plus@npm:7.1.0":
-  version: 7.1.0
-  resolution: "jsonpath-plus@npm:7.1.0"
-  checksum: 10/a93311a7ae04a5ef91dc906126b0f635c91bee6c8a047c53b89ca47c36c07a890dadd8acc441c23b2f3eea1808f4b508e2c37d2efe8e04cc9202b08c1d9d491e
   languageName: node
   linkType: hard
 
@@ -25079,13 +25043,6 @@ __metadata:
     jsonpath: bin/jsonpath-cli.js
     jsonpath-plus: bin/jsonpath-cli.js
   checksum: 10/082302334414c7c5ab0cc8239563118f7f14bb2949d001b009f436491d00f94a7a293eed3eaf61ffdaf72f6fda9d25198a4280c4f68a4c403154ca7ed2bd0dc9
-  languageName: node
-  linkType: hard
-
-"jsonpath-plus@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "jsonpath-plus@npm:6.0.1"
-  checksum: 10/9e865d2f0c523637b2213263e62d65f782e83be4007ff3dc6646b618945bbf1532c5e3718aef30410f0d342deff3f11b4aa94fc87333a6f141d6ddf57a2586d2
   languageName: node
   linkType: hard
 
@@ -27839,25 +27796,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nimma@npm:0.2.2":
-  version: 0.2.2
-  resolution: "nimma@npm:0.2.2"
-  dependencies:
-    "@jsep-plugin/regex": "npm:^1.0.1"
-    "@jsep-plugin/ternary": "npm:^1.0.2"
-    astring: "npm:^1.8.1"
-    jsep: "npm:^1.2.0"
-    jsonpath-plus: "npm:^6.0.1"
-    lodash.topath: "npm:^4.5.2"
-  dependenciesMeta:
-    jsonpath-plus:
-      optional: true
-    lodash.topath:
-      optional: true
-  checksum: 10/aa7f7357a7c45af3cc884c186429da081328c5967ace20bd0a411f7b8b47ec902cb42ad6327bec62d29920ccc6d04a5c95a90fc25672ac3e5e8ffdf8090aae93
-  languageName: node
-  linkType: hard
-
 "nimma@npm:0.2.3":
   version: 0.2.3
   resolution: "nimma@npm:0.2.3"
@@ -29926,7 +29864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pony-cause@npm:1.1.1, pony-cause@npm:^1.0.0, pony-cause@npm:^1.1.1":
+"pony-cause@npm:1.1.1, pony-cause@npm:^1.1.1":
   version: 1.1.1
   resolution: "pony-cause@npm:1.1.1"
   checksum: 10/8464dfdc1d102def7368810c0ef6d1b011004b0f372f2f57cce9bb293d5fd4a1f0bc37ac3464869c51c88d996815dabbcab7c618ec400730e6f61493755591d6
@@ -33093,15 +33031,6 @@ __metadata:
   version: 1.0.1
   resolution: "simple-concat@npm:1.0.1"
   checksum: 10/4d211042cc3d73a718c21ac6c4e7d7a0363e184be6a5ad25c8a1502e49df6d0a0253979e3d50dbdd3f60ef6c6c58d756b5d66ac1e05cda9cacd2e9fc59e3876a
-  languageName: node
-  linkType: hard
-
-"simple-eval@npm:1.0.0":
-  version: 1.0.0
-  resolution: "simple-eval@npm:1.0.0"
-  dependencies:
-    jsep: "npm:^1.1.2"
-  checksum: 10/0f0719ae3a84d4b9c19366dc03065b1fe9638c982ed3e9d44ba541d25e3454e99419e3239034974fd6c5074b79c119419168b8f343fef4da6d7e35227cfd1f87
   languageName: node
   linkType: hard
 
