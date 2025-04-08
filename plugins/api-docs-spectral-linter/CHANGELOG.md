@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-spectral-linter
 
+## 0.4.11
+
+### Patch Changes
+
+- d03af60: Correct package.json for patch
+
 ## 0.4.10
 
 ### Patch Changes
