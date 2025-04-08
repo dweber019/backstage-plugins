@@ -6235,7 +6235,7 @@ __metadata:
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
-    "@stoplight/spectral-core": "patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch"
+    "@stoplight/spectral-core": "npm:1.19.5"
     "@stoplight/spectral-ruleset-bundler": "npm:1.6.2"
     "@stoplight/spectral-runtime": "npm:1.1.4"
     "@testing-library/jest-dom": "npm:^6.0.0"
@@ -11847,7 +11847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-core@npm:1.19.5":
+"@stoplight/spectral-core@npm:1.19.5, @stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.18.3, @stoplight/spectral-core@npm:^1.19.2, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
   version: 1.19.5
   resolution: "@stoplight/spectral-core@npm:1.19.5"
   dependencies:
