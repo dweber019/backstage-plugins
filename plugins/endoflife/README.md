@@ -155,6 +155,15 @@ endOfLife:
     You can use markdown if you like
 ```
 
+### Base Url
+
+If you're hosting a local End of Life instance, configure the base url to your service in the `app-config.yaml`
+
+```yaml
+endOfLife:
+  baseUrl: https://endoflife.mycompany.com
+```
+
 ## Troubleshooting
 
 ### Behavior 'endoflife.date/products': angular
