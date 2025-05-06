@@ -48,7 +48,7 @@ export function extractEndOfLifeSourceLocationAnnotation(
  * @public
  */
 export function extractProducts(annotation: string): AnnotationProducts {
-  return annotation.split(',').map(product => {
+  return annotation.split(',').map((s) => s.trim()).map(product => {
     const productWithCycle = product.split('@');
     return {
       product: productWithCycle[0],
