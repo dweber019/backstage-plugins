@@ -12,6 +12,7 @@ import {
   parseEntityRef,
   stringifyEntityRef,
 } from '@backstage/catalog-model';
+import { get } from 'lodash';
 import { ProcessorConfig } from './processorConfig';
 import { Config } from '@backstage/config';
 import { LoggerService } from '@backstage/backend-plugin-api';
@@ -124,7 +125,7 @@ export class RelationEntitiesProcessor implements CatalogProcessor {
   }
 
   private getEntityAttribute(entity: Entity, attribute: string) {
-    return entity.spec![attribute] as string[] | string;
+    return get(entity.spec, attribute) as string[] | string;
   }
 
   public static fromConfig(options: { logger: LoggerService; config: Config }) {
