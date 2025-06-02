@@ -1,4 +1,4 @@
-import { getVoidLogger } from '@backstage/backend-common';
+import { mockServices } from '@backstage/backend-test-utils';
 import { RelationEntitiesProcessor } from './processor';
 import { ProcessorConfig } from './processorConfig';
 import { Entity } from '@backstage/catalog-model';
@@ -11,7 +11,7 @@ describe('processor', () => {
     } as any;
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
 
@@ -50,7 +50,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
     await relationEntitiesProcessor.postProcessEntity(
@@ -94,7 +94,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
     await relationEntitiesProcessor.postProcessEntity(
@@ -135,7 +135,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
     await relationEntitiesProcessor.postProcessEntity(
@@ -178,7 +178,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
     await relationEntitiesProcessor.postProcessEntity(
@@ -220,7 +220,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
     await relationEntitiesProcessor.postProcessEntity(
@@ -266,7 +266,7 @@ describe('processor', () => {
     const mockEmit = jest.fn();
 
     const relationEntitiesProcessor = new RelationEntitiesProcessor({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       processorConfig,
     });
 

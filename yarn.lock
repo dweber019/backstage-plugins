@@ -6388,6 +6388,7 @@ __metadata:
   dependencies:
     "@backstage/backend-common": "npm:^0.25.0"
     "@backstage/backend-plugin-api": "npm:^1.2.0"
+    "@backstage/backend-test-utils": "npm:^1.3.0"
     "@backstage/catalog-model": "npm:^1.7.3"
     "@backstage/cli": "npm:^0.30.0"
     "@backstage/config": "npm:^1.3.2"
