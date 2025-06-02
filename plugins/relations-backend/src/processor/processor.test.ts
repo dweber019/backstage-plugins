@@ -278,4 +278,52 @@ describe('processor', () => {
       ),
     ).rejects.toThrow(Error);
   });
+  test('should emit relations with nested attribute', async () => {
+    const processorConfig: jest.Mocked<ProcessorConfig> = {
+      getRelations: jest.fn(_ => [
+        {
+          sourceKind: 'component',
+          targetKinds: ['user'],
+          attribute: 'nested.test',
+          pairs: [
+            {
+              incoming: 'testOf',
+              outgoing: 'testBy',
+            },
+          ],
+        },
+      ]),
+      getSchema: jest.fn(),
+    } as any;
+    const entity = {
+      kind: 'Component',
+      metadata: {
+        name: 'component-name',
+        namespace: 'default',
+      },
+      spec: {
+        nested: {
+          test: 'bruno',
+      },
+      },
+    } as unknown as Entity;
+    const mockEmit = jest.fn();
+
+    const relationEntitiesProcessor = new RelationEntitiesProcessor({
+      logger: mockServices.logger.mock(),
+      processorConfig,
+    });
+    await relationEntitiesProcessor.postProcessEntity(
+      entity,
+      null as any,
+      mockEmit,
+    );
+
+    expect(mockEmit.mock.calls).toHaveLength(2);
+    expect(mockEmit.mock.calls[0][0].relation.target.kind).toEqual('user');
+    expect(mockEmit.mock.calls[0][0].relation.target.namespace).toEqual(
+      'default',
+    );
+    expect(mockEmit.mock.calls[0][0].relation.target.name).toEqual('bruno');
+  });
 });
