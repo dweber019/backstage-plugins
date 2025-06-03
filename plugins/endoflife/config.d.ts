@@ -5,5 +5,12 @@ export interface Config {
      * @visibility frontend
      */
     helpText?: string;
+    /**
+     * Url of the end-of-life service
+     * @visibility frontend
+     *
+     * @default https://endoflife.date
+     */
+    baseUrl? string;
   };
 }
