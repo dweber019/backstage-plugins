@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.0.20
+
+### Patch Changes
+
+- a72fa22: added annotation trim
+
 ## 0.0.19
 
 ### Patch Changes

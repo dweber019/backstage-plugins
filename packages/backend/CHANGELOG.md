@@ -1,5 +1,12 @@
 # backend
 
+## 0.0.22
+
+### Patch Changes
+
+- Updated dependencies [a0ff803]
+  - @dweber019/backstage-plugin-relations-backend@0.0.15
+
 ## 0.0.21
 
 ### Patch Changes
