@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-relations-backend
 
+## 0.0.15
+
+### Patch Changes
+
+- a0ff803: Add support for nested attributes
+
 ## 0.0.14
 
 ### Patch Changes

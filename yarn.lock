@@ -6278,7 +6278,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-endoflife@npm:^0.0.19, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
+"@dweber019/backstage-plugin-endoflife@npm:^0.0.20, @dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-endoflife@workspace:plugins/endoflife"
   dependencies:
@@ -6382,7 +6382,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dweber019/backstage-plugin-relations-backend@npm:0.0.14, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
+"@dweber019/backstage-plugin-relations-backend@npm:0.0.15, @dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend":
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-relations-backend@workspace:plugins/relations-backend"
   dependencies:
@@ -15053,7 +15053,7 @@ __metadata:
     "@dweber019/backstage-plugin-accentuate": "npm:^0.0.14"
     "@dweber019/backstage-plugin-api-docs-module-wsdl": "npm:^0.0.20"
     "@dweber019/backstage-plugin-api-docs-spectral-linter": "npm:^0.4.10"
-    "@dweber019/backstage-plugin-endoflife": "npm:^0.0.19"
+    "@dweber019/backstage-plugin-endoflife": "npm:^0.0.20"
     "@dweber019/backstage-plugin-missing-entity": "npm:0.0.9"
     "@dweber019/backstage-plugin-relations": "npm:0.0.14"
     "@dweber019/backstage-plugin-simple-icons": "npm:^0.0.12"
@@ -15850,7 +15850,7 @@ __metadata:
     "@dweber019/backstage-plugin-api-docs-module-wsdl-backend": "npm:^1.0.4"
     "@dweber019/backstage-plugin-endoflife-backend": "npm:^0.0.15"
     "@dweber019/backstage-plugin-missing-entity-backend": "npm:0.0.10"
-    "@dweber019/backstage-plugin-relations-backend": "npm:0.0.14"
+    "@dweber019/backstage-plugin-relations-backend": "npm:0.0.15"
     "@types/express": "npm:^4.17.6"
     "@types/express-serve-static-core": "npm:^4.17.5"
     "@types/luxon": "npm:^2.0.4"
