@@ -1,5 +1,16 @@
 # @dweber019/backstage-plugin-endoflife
 
+## 0.1.0
+
+### Minor Changes
+
+- 1961f38: Update backstage to 1.41.0 and remove react imports.
+- cb9458d: Enable custom url for data.
+
+### Patch Changes
+
+- cc95570: Update dependencies.
+
 ## 0.0.20
 
 ### Patch Changes

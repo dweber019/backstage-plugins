@@ -7,7 +7,7 @@
     "directory": "plugins/accentuate"
   },
   "license": "MIT",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {
@@ -42,7 +42,7 @@
     "@backstage/plugin-catalog": "^1.31.0",
     "@backstage/plugin-catalog-react": "^1.19.0",
     "@backstage/types": "^1.2.1",
-    "@dweber019/backstage-plugin-accentuate-common": "^0.0.12",
+    "@dweber019/backstage-plugin-accentuate-common": "^0.1.0",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "4.0.0-alpha.61",

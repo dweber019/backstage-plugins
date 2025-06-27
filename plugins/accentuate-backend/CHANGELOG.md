@@ -1,5 +1,16 @@
 # @dweber019/backstage-plugin-accentuate-backend
 
+## 1.1.0
+
+### Minor Changes
+
+- 1961f38: Update backstage to 1.41.0 and remove react imports.
+
+### Patch Changes
+
+- Updated dependencies [1961f38]
+  - @dweber019/backstage-plugin-accentuate-common@0.1.0
+
 ## 1.0.4
 
 ### Patch Changes

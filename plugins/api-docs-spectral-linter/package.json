@@ -7,7 +7,7 @@
     "directory": "plugins/api-docs-spectral-linter"
   },
   "license": "MIT",
-  "version": "0.4.11",
+  "version": "0.5.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

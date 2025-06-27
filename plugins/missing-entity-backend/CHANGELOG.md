@@ -1,5 +1,16 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.1.0
+
+### Minor Changes
+
+- 1961f38: Update backstage to 1.41.0 and remove react imports.
+
+### Patch Changes
+
+- Updated dependencies [1961f38]
+  - @dweber019/backstage-plugin-missing-entity-common@0.1.0
+
 ## 0.0.10
 
 ### Patch Changes
