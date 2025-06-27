@@ -1,5 +1,5 @@
 diff --git a/src/components/fields/ObjectField.tsx b/src/components/fields/ObjectField.tsx
-index 8399429da5d89bec13da4150c6053731a1b95071..b602b526d11ea7843d056dab164d9872a5ee3714 100644
+index fd884efc7d01dc86aba47bbca1eb0c3fc4cf8893..9562fc73a4fb664e5c37185f7a5151e8e356a894 100644
 --- a/src/components/fields/ObjectField.tsx
 +++ b/src/components/fields/ObjectField.tsx
 @@ -1,3 +1,4 @@
@@ -8,7 +8,7 @@ index 8399429da5d89bec13da4150c6053731a1b95071..b602b526d11ea7843d056dab164d9872
  import {
    getTemplate,
 diff --git a/src/components/fields/SchemaField.tsx b/src/components/fields/SchemaField.tsx
-index ee7bd23ca5d034ef2234f0d909f6c16a03002db4..e99ef6aa8de4670cdf6e2225f1e612e80dd2255f 100644
+index c7b8db77e5a381f8e4d6960229cadd402f8d0f2f..bc72122836eeae9e7809027335f0f2e18537b5b3 100644
 --- a/src/components/fields/SchemaField.tsx
 +++ b/src/components/fields/SchemaField.tsx
 @@ -1,3 +1,4 @@

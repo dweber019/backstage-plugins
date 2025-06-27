@@ -1,5 +1,5 @@
 import { EntityLayout } from '@backstage/plugin-catalog';
-import React, { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import { EntityAccentuateDialog } from '../EntityAccentuateDialog';
 import EditIcon from '@material-ui/icons/Edit';
 import { isAccentuateEnabled } from '@dweber019/backstage-plugin-accentuate-common';

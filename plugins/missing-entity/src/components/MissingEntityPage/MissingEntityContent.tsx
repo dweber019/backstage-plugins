@@ -4,7 +4,7 @@ import {
   TableColumn,
 } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { identityApiRef, useApi } from '@backstage/core-plugin-api';
 import { missingEntityApiRef } from '../../api';
 import { EntityMissingResults } from '@dweber019/backstage-plugin-missing-entity-common';

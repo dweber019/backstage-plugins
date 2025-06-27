@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { IconButton, makeStyles, Theme, Tooltip } from '@material-ui/core';
 import { configApiRef, useApi } from '@backstage/core-plugin-api';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';

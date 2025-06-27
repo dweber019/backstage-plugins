@@ -5907,10 +5907,10 @@ __metadata:
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.11.3"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
-    "@rjsf/core": "npm:5.20.1"
-    "@rjsf/material-ui": "npm:5.20.1"
-    "@rjsf/utils": "npm:5.20.1"
-    "@rjsf/validator-ajv8": "npm:5.20.1"
+    "@rjsf/core": "patch:@rjsf/core@npm%3A5.24.12#~/.yarn/patches/@rjsf-core-npm-5.24.12-44fc14a0e8.patch"
+    "@rjsf/material-ui": "npm:5.24.12"
+    "@rjsf/utils": "npm:5.24.12"
+    "@rjsf/validator-ajv8": "npm:5.24.12"
     "@testing-library/jest-dom": "npm:^6.0.0"
     "@testing-library/react": "npm:^15.0.0"
     "@testing-library/user-event": "npm:^14.0.0"
@@ -6060,7 +6060,7 @@ __metadata:
     msw: "npm:^1.0.0"
     react-use: "npm:^17.2.4"
     vis-data: "npm:^7.1.9"
-    vis-timeline: "npm:^7.7.3"
+    vis-timeline: "npm:^7.7.4"
     vis-util: "npm:^5.0.7"
     xss: "npm:^1.0.15"
   peerDependencies:
@@ -6205,7 +6205,7 @@ __metadata:
     "@testing-library/user-event": "npm:^14.0.0"
     "@types/node": "npm:*"
     msw: "npm:^1.0.0"
-    simple-icons: "npm:^14.11.0"
+    simple-icons: "npm:^15.3.0"
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -12314,9 +12314,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rjsf/core@npm:5.20.1":
-  version: 5.20.1
-  resolution: "@rjsf/core@npm:5.20.1"
+"@rjsf/core@npm:5.24.12":
+  version: 5.24.12
+  resolution: "@rjsf/core@npm:5.24.12"
   dependencies:
     lodash: "npm:^4.17.21"
     lodash-es: "npm:^4.17.21"
@@ -12324,15 +12324,15 @@ __metadata:
     nanoid: "npm:^3.3.7"
     prop-types: "npm:^15.8.1"
   peerDependencies:
-    "@rjsf/utils": ^5.20.x
+    "@rjsf/utils": ^5.24.x
     react: ^16.14.0 || >=17
-  checksum: 10/8c99cb10302b9b4f0dc4dfc298f1fddeef9cf9f8ebf78846339c593b0c6ae4e29d48f0950626f0c4cfb6120d99c79f2e1d88b1d90a8e6cd792d25d073efd4a6b
+  checksum: 10/39033e91e3c8212c43a22489d569807fd62c060eef4aeefe53d473687bdf7fa3b1c385c40c85ce08050776cb5b051d3f98d60be9aee4b4387983f2ff69c5efae
   languageName: node
   linkType: hard
 
-"@rjsf/core@npm:5.23.2":
-  version: 5.23.2
-  resolution: "@rjsf/core@npm:5.23.2"
+"@rjsf/core@patch:@rjsf/core@npm%3A5.24.12#~/.yarn/patches/@rjsf-core-npm-5.24.12-44fc14a0e8.patch":
+  version: 5.24.12
+  resolution: "@rjsf/core@patch:@rjsf/core@npm%3A5.24.12#~/.yarn/patches/@rjsf-core-npm-5.24.12-44fc14a0e8.patch::version=5.24.12&hash=593f96"
   dependencies:
     lodash: "npm:^4.17.21"
     lodash-es: "npm:^4.17.21"
@@ -12340,38 +12340,9 @@ __metadata:
     nanoid: "npm:^3.3.7"
     prop-types: "npm:^15.8.1"
   peerDependencies:
-    "@rjsf/utils": ^5.23.x
+    "@rjsf/utils": ^5.24.x
     react: ^16.14.0 || >=17
-  checksum: 10/a49cbd41bb8b499ad2ed521417f53bf3fa65c09bedbf0e02ce0f00a5287a3ae4df774e74f89a8dcb8a24359d382a585ea4d20c3a6e109f4aaad2cd74b7db2b01
-  languageName: node
-  linkType: hard
-
-"@rjsf/core@patch:@rjsf/core@npm%3A5.20.1#./.yarn/patches/@rjsf-core-npm-5.20.1-ef53d8664a.patch::locator=root%40workspace%3A.":
-  version: 5.20.1
-  resolution: "@rjsf/core@patch:@rjsf/core@npm%3A5.20.1#./.yarn/patches/@rjsf-core-npm-5.20.1-ef53d8664a.patch::version=5.20.1&hash=93f77c&locator=root%40workspace%3A."
-  dependencies:
-    lodash: "npm:^4.17.21"
-    lodash-es: "npm:^4.17.21"
-    markdown-to-jsx: "npm:^7.4.1"
-    nanoid: "npm:^3.3.7"
-    prop-types: "npm:^15.8.1"
-  peerDependencies:
-    "@rjsf/utils": ^5.20.x
-    react: ^16.14.0 || >=17
-  checksum: 10/1d69e6ff8d6ef7140632efeb45394b250359a49a5ad901a11778a2e2ace9b35993a040dd8e569c32e36d094ddc21cfaa0381990eb7296ab6245949328aef97a6
-  languageName: node
-  linkType: hard
-
-"@rjsf/material-ui@npm:5.20.1":
-  version: 5.20.1
-  resolution: "@rjsf/material-ui@npm:5.20.1"
-  peerDependencies:
-    "@material-ui/core": ^4.12.3
-    "@material-ui/icons": ^4.11.2
-    "@rjsf/core": ^5.20.x
-    "@rjsf/utils": ^5.20.x
-    react: ^16.14.0 || >=17
-  checksum: 10/1fdd95a6551f92bfac11bbf6a88d37600ac27df77d3bf9d58d198eddde20041f3b3345633ca701d6e79ca59530ab69a8b4348cbcabe46f6f9b95629c34c91689
+  checksum: 10/5943c47da5020e34522f5c4b2b8180708721f26d340073a7e59a2638a31eccbc968af359510cac5c83312170d56c9727f54536d67aad8a6b726e91849b2ef1c1
   languageName: node
   linkType: hard
 
@@ -12388,18 +12359,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rjsf/utils@npm:5.20.1":
-  version: 5.20.1
-  resolution: "@rjsf/utils@npm:5.20.1"
-  dependencies:
-    json-schema-merge-allof: "npm:^0.8.1"
-    jsonpointer: "npm:^5.0.1"
-    lodash: "npm:^4.17.21"
-    lodash-es: "npm:^4.17.21"
-    react-is: "npm:^18.2.0"
+"@rjsf/material-ui@npm:5.24.12":
+  version: 5.24.12
+  resolution: "@rjsf/material-ui@npm:5.24.12"
   peerDependencies:
+    "@material-ui/core": ^4.12.3
+    "@material-ui/icons": ^4.11.2
+    "@rjsf/core": ^5.24.x
+    "@rjsf/utils": ^5.24.x
     react: ^16.14.0 || >=17
-  checksum: 10/adf8820c72e8e51d2b5b10cfef4b193b8db174001c19b302e3dd7a30a819a0687377a07a5e0af1c65d802e1fb647d5f59f431593ebc72c6e54a759169f6ad6dd
+  checksum: 10/d24d0ab189f92baf46847c689b6e73dd86fc9380792194afc04af67f4e472cd5039b123b59b1e33c4df1aca77239bb068d853c7d6fc4370675e632f7509144fe
   languageName: node
   linkType: hard
 
@@ -12418,17 +12387,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rjsf/validator-ajv8@npm:5.20.1":
-  version: 5.20.1
-  resolution: "@rjsf/validator-ajv8@npm:5.20.1"
+"@rjsf/utils@npm:5.24.12":
+  version: 5.24.12
+  resolution: "@rjsf/utils@npm:5.24.12"
   dependencies:
-    ajv: "npm:^8.12.0"
-    ajv-formats: "npm:^2.1.1"
+    json-schema-merge-allof: "npm:^0.8.1"
+    jsonpointer: "npm:^5.0.1"
     lodash: "npm:^4.17.21"
     lodash-es: "npm:^4.17.21"
+    react-is: "npm:^18.2.0"
   peerDependencies:
-    "@rjsf/utils": ^5.20.x
-  checksum: 10/4cb54a812acc500c1c8f3981a308b4515454e4e4a59645cd8f749dfdad2e6c0fad0ee3e1f5583ccc20b15881523cf7e3a01eaabe5211b50878632b535f28959c
+    react: ^16.14.0 || >=17
+  checksum: 10/8fdc966f91744cb7591f6874c563d13cb7f2e3b95bfda08446d3e7f1a6e9d41292091301d3935cb8eb9c7e4d13f75805899d71b91308ef9ffc4b1f01e165fdad
   languageName: node
   linkType: hard
 
@@ -12443,6 +12413,20 @@ __metadata:
   peerDependencies:
     "@rjsf/utils": ^5.23.x
   checksum: 10/568693ef0b93f21000b3b9352a65dd65001b4b85514fd94a1bf7562dc9ab8333f3a077c5335041fd7d250fac9a6c9cb77ea8539d8589a03afa55539898f896e6
+  languageName: node
+  linkType: hard
+
+"@rjsf/validator-ajv8@npm:5.24.12":
+  version: 5.24.12
+  resolution: "@rjsf/validator-ajv8@npm:5.24.12"
+  dependencies:
+    ajv: "npm:^8.12.0"
+    ajv-formats: "npm:^2.1.1"
+    lodash: "npm:^4.17.21"
+    lodash-es: "npm:^4.17.21"
+  peerDependencies:
+    "@rjsf/utils": ^5.24.x
+  checksum: 10/37e754e4cf0eaf4ccb1affbc7537f83aa8157746a2fd67a828a00df684b8cf5afdcd3bc6812304a6a4d4ed1617ec97be64c6a83d9aad3ffc69c8f4b0850b18a8
   languageName: node
   linkType: hard
 
@@ -34790,10 +34774,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-icons@npm:^14.11.0":
-  version: 14.11.0
-  resolution: "simple-icons@npm:14.11.0"
-  checksum: 10/ad95c5d6342c55f87c35f828e0bc5779dcc7defbe25aa6efc6ac8f6cc11990a57e5bc8a80b184f7434fc53141f12458d1c61a9b126d76ccf7b33fb1fb0d94f7c
+"simple-icons@npm:^15.3.0":
+  version: 15.3.0
+  resolution: "simple-icons@npm:15.3.0"
+  checksum: 10/8b92a6de85fd844729c87faf1da064bfe56b4140800d54764c4f38a5c5df97fd30fd7930c591c12fa774c13e8664122c14010b63ec2275c272c57843c8e55349
   languageName: node
   linkType: hard
 
@@ -37817,20 +37801,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vis-timeline@npm:^7.7.3":
-  version: 7.7.3
-  resolution: "vis-timeline@npm:7.7.3"
+"vis-timeline@npm:^7.7.4":
+  version: 7.7.4
+  resolution: "vis-timeline@npm:7.7.4"
   peerDependencies:
     "@egjs/hammerjs": ^2.0.0
     component-emitter: ^1.3.0
     keycharm: ^0.2.0 || ^0.3.0 || ^0.4.0
     moment: ^2.24.0
     propagating-hammerjs: ^1.4.0 || ^2.0.0
-    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
     vis-data: ^6.3.0 || ^7.0.0
     vis-util: ^5.0.1
     xss: ^1.0.0
-  checksum: 10/00aec604e63cc2941e9eb19eb25a4ff2bfb26715858f2213e39bc58c9d6b113e7aeb9bd2ab2b8f5918f1458fc47c4cf7bb0faa44765504a9651f6cd353117573
+  checksum: 10/4585e4f53803577715f90320b13d7546bb88ab13aeb641b34cc248bd3aca25706e89e80c891cecc08cc2145a2383122e1b0db595e506b39b892d832277cb16df
   languageName: node
   linkType: hard
 
