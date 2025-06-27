@@ -56,8 +56,8 @@
   "resolutions": {
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@stoplight/spectral-core@1.19.5": "patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch",
-    "@rjsf/core@npm:5.23.2": "patch:@rjsf/core@npm%3A5.24.12#~/.yarn/patches/@rjsf-core-npm-5.24.12-44fc14a0e8.patch"
+    "@rjsf/core@5.20.1": "patch:@rjsf/core@npm%3A5.20.1#./.yarn/patches/@rjsf-core-npm-5.20.1-ef53d8664a.patch",
+    "@stoplight/spectral-core@1.19.5": "patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch"
   },
   "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {
