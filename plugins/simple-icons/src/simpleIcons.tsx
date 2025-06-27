@@ -1,7 +1,6 @@
 import { SvgIcon, SvgIconProps } from '@material-ui/core';
 import type { SimpleIcon } from 'simple-icons';
 import * as icons from 'simple-icons';
-import React from 'react';
 import { IconComponent } from '@backstage/core-plugin-api';
 
 export const createIcon = (icon: SimpleIcon, color = true, props?: SvgIconProps) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import useAsync from 'react-use/lib/useAsync';
 import { Alert } from '@material-ui/lab';
 import { Progress } from '@backstage/core-components';

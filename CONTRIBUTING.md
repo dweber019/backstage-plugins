@@ -42,8 +42,7 @@ A standalone development version of both the frontend and backend plugins are in
 They can be started as follows:
 
 ```
-yarn dev # starts both the frontend
-yarn start # starts the frontend only
+yarn start # starts both the frontend & backend
 ```
 
 ## Making Changes

@@ -16,3 +16,6 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Cache
+.cache/

@@ -1,4 +1,3 @@
-import React from 'react';
 import { WsdlDefinitionWidget } from './components/WsdlDefinitionWidget';
 import { ApiEntityV1alpha1 } from '@backstage/catalog-model';
 

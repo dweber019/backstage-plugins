@@ -3,7 +3,6 @@ import { renderHook } from '@testing-library/react';
 import { ConfigReader } from '@backstage/config';
 import { useRelations } from './useRelations';
 import { TestApiProvider } from '@backstage/test-utils';
-import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 

@@ -1,6 +1,5 @@
 import { useElementFilter } from '@backstage/core-plugin-api';
 import { Grid, makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
 
 const useStyles = makeStyles(theme => ({
   value: {

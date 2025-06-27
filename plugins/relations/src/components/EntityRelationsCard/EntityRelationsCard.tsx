@@ -1,9 +1,9 @@
-import React from 'react';
 import { EntityRefLink } from '@backstage/plugin-catalog-react';
 import { InfoCard } from '@backstage/core-components';
 import { Grid } from '@material-ui/core';
 import { AboutField } from './AboutField';
 import { RelationsWithLabel, useRelations } from '../../hooks';
+import { Fragment } from 'react';
 
 export interface EntityRelationsCardProps {
   title?: string;
@@ -24,10 +24,10 @@ export const EntityRelationsCard = (props: EntityRelationsCardProps) => {
             gridSizes={{ xs: 12, sm: 6, lg: 4 }}
           >
             {relation.entityRefs.map((entityRef, idx2) => (
-              <React.Fragment key={`entity-ref${idx2}`}>
+              <Fragment key={`entity-ref${idx2}`}>
                 <EntityRefLink entityRef={entityRef} />
                 {idx2 < relation.entityRefs.length - 1 && <span>, </span>}
-              </React.Fragment>
+              </Fragment>
             ))}
           </AboutField>
         ))}

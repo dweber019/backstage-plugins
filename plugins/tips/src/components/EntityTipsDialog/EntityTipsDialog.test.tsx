@@ -5,7 +5,6 @@ import {
 } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { renderWithEffects, TestApiProvider } from '@backstage/test-utils';
-import React from 'react';
 import { TipsConfig, tipsConfigRef } from '../../config';
 import { EntityTipsDialog } from './EntityTipsDialog';
 import { extraTips } from '../../lib/extraTips';

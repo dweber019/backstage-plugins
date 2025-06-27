@@ -1,7 +1,6 @@
 import { ComponentEntity, SystemEntity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { renderWithEffects, TestApiProvider } from '@backstage/test-utils';
-import React from 'react';
 import { EntityEndOfLifeCard } from './EntityEndOfLifeCard';
 import { EndOfLifeApi, endOfLifeApiRef } from '../../api';
 import {

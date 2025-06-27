@@ -3,7 +3,6 @@ import {
   Header,
   Page,
 } from '@backstage/core-components';
-import React from 'react';
 import { MissingEntityContent } from './MissingEntityContent';
 
 export const MissingEntityPage = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { EntityCatalogGraphCard } from '@backstage/plugin-catalog-graph';
 import { useRelationsCatalogGraphDefaults } from '../../hooks';
 
