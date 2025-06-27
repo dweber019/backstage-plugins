@@ -1,5 +1,11 @@
 # @dweber019/backstage-plugin-api-docs-module-wsdl-backend
 
+## 1.1.0
+
+### Minor Changes
+
+- 1961f38: Update backstage to 1.41.0 and remove react imports.
+
 ## 1.0.4
 
 ### Patch Changes
