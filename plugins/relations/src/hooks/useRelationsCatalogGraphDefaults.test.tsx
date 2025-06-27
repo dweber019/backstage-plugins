@@ -3,7 +3,6 @@ import { renderHook } from '@testing-library/react';
 import { ConfigReader } from '@backstage/config';
 import { useRelationsCatalogGraphDefaults } from './useRelationsCatalogGraphDefaults';
 import { TestApiProvider } from '@backstage/test-utils';
-import React from 'react';
 
 describe('useRelationsCatalogGraphDefaults', () => {
   const config = new ConfigReader({

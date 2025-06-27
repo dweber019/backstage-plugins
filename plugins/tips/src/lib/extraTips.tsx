@@ -1,7 +1,6 @@
 import { Tip } from '../config';
 import { hasAnnotation, isEntityOfKind, isOwner } from './utils';
 import { CodeSnippet } from '@backstage/core-components';
-import React from 'react';
 import {
   ApiEntity,
   ComponentEntity,

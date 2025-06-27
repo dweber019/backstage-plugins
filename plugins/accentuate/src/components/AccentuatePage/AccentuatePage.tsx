@@ -7,7 +7,6 @@ import {
   TableColumn,
 } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
-import React from 'react';
 import { useApi } from '@backstage/core-plugin-api';
 import useAsync from 'react-use/lib/useAsync';
 import { accentuateApiRef } from '../../api';

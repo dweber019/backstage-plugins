@@ -1,5 +1,4 @@
 import { createApiRef, IdentityApi } from '@backstage/core-plugin-api';
-import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 
 export const tipsConfigRef = createApiRef<TipsConfig>({

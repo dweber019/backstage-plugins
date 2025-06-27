@@ -1,4 +1,3 @@
-import React from 'react';
 import { Chip, makeStyles, Theme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({

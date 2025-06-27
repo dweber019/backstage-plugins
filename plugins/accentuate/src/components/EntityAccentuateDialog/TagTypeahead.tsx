@@ -1,4 +1,3 @@
-import React from 'react';
 import { Autocomplete } from '@material-ui/lab';
 import { WidgetProps } from '@rjsf/utils';
 import { Chip, TextField } from '@material-ui/core';

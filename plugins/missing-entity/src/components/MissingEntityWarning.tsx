@@ -1,7 +1,6 @@
 import Box from '@material-ui/core/Box';
 import { ResponseErrorPanel } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
-import React from 'react';
 import { useEntity } from '@backstage/plugin-catalog-react';
 import useAsync from 'react-use/esm/useAsync';
 import { ApiHolder, useApi } from '@backstage/core-plugin-api';
