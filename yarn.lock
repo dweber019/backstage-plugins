@@ -5988,7 +5988,7 @@ __metadata:
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
-    "@stoplight/spectral-core": "npm:1.19.5"
+    "@stoplight/spectral-core": "npm:1.20.0"
     "@stoplight/spectral-ruleset-bundler": "npm:1.6.2"
     "@stoplight/spectral-runtime": "npm:1.1.4"
     "@testing-library/jest-dom": "npm:^6.0.0"
@@ -13516,9 +13516,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-core@npm:1.19.5, @stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.18.3, @stoplight/spectral-core@npm:^1.19.2, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
-  version: 1.19.5
-  resolution: "@stoplight/spectral-core@npm:1.19.5"
+"@stoplight/spectral-core@npm:1.20.0, @stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.18.3, @stoplight/spectral-core@npm:^1.19.2, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
+  version: 1.20.0
+  resolution: "@stoplight/spectral-core@npm:1.20.0"
   dependencies:
     "@stoplight/better-ajv-errors": "npm:1.0.3"
     "@stoplight/json": "npm:~3.21.0"
@@ -13541,36 +13541,7 @@ __metadata:
     pony-cause: "npm:^1.1.1"
     simple-eval: "npm:1.0.1"
     tslib: "npm:^2.8.1"
-  checksum: 10/db0f6c1c0ca67bc4a49c480259d261283ccb72958cd3a2a761dccbbbb1fdd04911df9c0a05f7ce4453e303de737206fbf3e799a1ace5db49d433a2848abe13b2
-  languageName: node
-  linkType: hard
-
-"@stoplight/spectral-core@patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch":
-  version: 1.19.5
-  resolution: "@stoplight/spectral-core@patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch::version=1.19.5&hash=9f9180"
-  dependencies:
-    "@stoplight/better-ajv-errors": "npm:1.0.3"
-    "@stoplight/json": "npm:~3.21.0"
-    "@stoplight/path": "npm:1.3.2"
-    "@stoplight/spectral-parsers": "npm:^1.0.0"
-    "@stoplight/spectral-ref-resolver": "npm:^1.0.4"
-    "@stoplight/spectral-runtime": "npm:^1.1.2"
-    "@stoplight/types": "npm:~13.6.0"
-    "@types/es-aggregate-error": "npm:^1.0.2"
-    "@types/json-schema": "npm:^7.0.11"
-    ajv: "npm:^8.17.1"
-    ajv-errors: "npm:~3.0.0"
-    ajv-formats: "npm:~2.1.1"
-    es-aggregate-error: "npm:^1.0.7"
-    jsonpath-plus: "npm:^10.3.0"
-    lodash: "npm:~4.17.21"
-    lodash.topath: "npm:^4.5.2"
-    minimatch: "npm:3.1.2"
-    nimma: "npm:0.2.3"
-    pony-cause: "npm:^1.1.1"
-    simple-eval: "npm:1.0.1"
-    tslib: "npm:^2.8.1"
-  checksum: 10/db9f4d38d5a8a75de96ed4c911d3bc979394001cc2b6f07109b5b4847c75cb02d39019b9850027e0fe9db4cc0ff50870f998c2131532ac042412118b937a1f53
+  checksum: 10/63628dcf4b1556db166a020dd78d17033908fa7d1c67c62739e35848e5d0e095714524b4c142aa7d6524fe556152f4dbb8cb388b36bc6e37026bf07c31a0e69b
   languageName: node
   linkType: hard
 

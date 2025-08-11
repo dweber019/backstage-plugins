@@ -56,8 +56,7 @@
   "resolutions": {
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@rjsf/core@5.20.1": "patch:@rjsf/core@npm%3A5.20.1#./.yarn/patches/@rjsf-core-npm-5.20.1-ef53d8664a.patch",
-    "@stoplight/spectral-core@1.19.5": "patch:@stoplight/spectral-core@npm%3A1.19.5#~/.yarn/patches/@stoplight-spectral-core-npm-1.19.5-42e9772abf.patch"
+    "@rjsf/core@5.20.1": "patch:@rjsf/core@npm%3A5.20.1#./.yarn/patches/@rjsf-core-npm-5.20.1-ef53d8664a.patch"
   },
   "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {
