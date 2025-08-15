@@ -1,5 +1,14 @@
 # @dweber019/backstage-plugin-missing-entity-backend
 
+## 0.1.1
+
+### Patch Changes
+
+- a3bfb7c: Update backstage to 1.41.1.
+- fd2aa07: Fix type definitions.
+- Updated dependencies [a3bfb7c]
+  - @dweber019/backstage-plugin-missing-entity-common@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
