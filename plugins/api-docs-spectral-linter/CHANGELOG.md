@@ -1,5 +1,12 @@
 # @dweber019/backstage-plugin-api-docs-spectral-linter
 
+## 0.5.1
+
+### Patch Changes
+
+- 7a324c1: Update to 1.20.0 and fix rule object issue.
+- a3bfb7c: Update backstage to 1.41.1.
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # backend
 
+## 0.0.24
+
+### Patch Changes
+
+- Updated dependencies [a3bfb7c]
+- Updated dependencies [fd2aa07]
+  - @dweber019/backstage-plugin-api-docs-module-wsdl-backend@1.1.1
+  - @dweber019/backstage-plugin-missing-entity-backend@0.1.1
+  - @dweber019/backstage-plugin-accentuate-backend@1.1.1
+  - @dweber019/backstage-plugin-endoflife-backend@0.1.1
+  - @dweber019/backstage-plugin-relations-backend@0.1.1
+
 ## 0.0.23
 
 ### Patch Changes
