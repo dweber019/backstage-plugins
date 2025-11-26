@@ -3,12 +3,16 @@ import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { renderWithEffects, TestApiProvider } from '@backstage/test-utils';
 import { EntityEndOfLifeCard } from './EntityEndOfLifeCard';
 import { EndOfLifeApi, endOfLifeApiRef } from '../../api';
+import { of } from 'rxjs';
 import {
   AppThemeApi,
   appThemeApiRef,
   ConfigApi,
   configApiRef,
+  ErrorApi,
+  errorApiRef,
 } from '@backstage/core-plugin-api';
+import { translationApiRef } from '@backstage/core-plugin-api/alpha';
 import { scmIntegrationsApiRef } from '@backstage/integration-react';
 import { ScmIntegrationRegistry } from '@backstage/integration';
 
@@ -44,6 +48,14 @@ describe('EntityEndOfLifeCard', () => {
   const mockConfigApi = {
     getOptionalString: jest.fn(),
   } as unknown as ConfigApi;
+  const mockErrorApi = {
+    post: jest.fn(),
+    error$: jest.fn(),
+  } as unknown as ErrorApi;
+  const mockTranslationApi = {
+    translation$: jest.fn(() => of({ ready: true as const, t: (key: string) => key })),
+    getTranslation: jest.fn(() => ({ ready: true as const, t: (key: string) => key })),
+  } as any;
 
   const endOfLifeAnnotation = { 'endoflife.date/products': 'rhel' };
 
@@ -62,6 +74,8 @@ describe('EntityEndOfLifeCard', () => {
           [appThemeApiRef, mockAppThemeApi],
           [scmIntegrationsApiRef, mockScmIntegrationRegistry],
           [configApiRef, mockConfigApi],
+          [errorApiRef, mockErrorApi],
+          [translationApiRef, mockTranslationApi],
         ]}
       >
         <EntityProvider entity={mockEntity}>
@@ -70,7 +84,7 @@ describe('EntityEndOfLifeCard', () => {
       </TestApiProvider>,
     );
 
-    const annotation = await rendered.findByText('endoflife.date/products');
+    const annotation = await rendered.findByText('endoflife.date/products:');
     expect(annotation).toBeInTheDocument();
   });
 
@@ -92,6 +106,8 @@ describe('EntityEndOfLifeCard', () => {
           [appThemeApiRef, mockAppThemeApi],
           [scmIntegrationsApiRef, mockScmIntegrationRegistry],
           [configApiRef, mockConfigApi],
+          [errorApiRef, mockErrorApi],
+          [translationApiRef, mockTranslationApi],
         ]}
       >
         <EntityProvider entity={mockEntity}>
@@ -156,6 +172,8 @@ describe('EntityEndOfLifeCard', () => {
           [appThemeApiRef, mockAppThemeApi],
           [scmIntegrationsApiRef, mockScmIntegrationRegistry],
           [configApiRef, mockConfigApi],
+          [errorApiRef, mockErrorApi],
+          [translationApiRef, mockTranslationApi],
         ]}
       >
         <EntityProvider entity={mockEntity}>
