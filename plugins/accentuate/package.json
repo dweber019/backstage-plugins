@@ -35,13 +35,13 @@
     "postpack": "backstage-cli package postpack"
   },
   "dependencies": {
-    "@backstage/catalog-model": "^1.7.5",
-    "@backstage/core-components": "^0.17.4",
-    "@backstage/core-plugin-api": "^1.10.9",
+    "@backstage/catalog-model": "^1.7.6",
+    "@backstage/core-components": "^0.18.4",
+    "@backstage/core-plugin-api": "^1.12.1",
     "@backstage/errors": "^1.2.7",
-    "@backstage/plugin-catalog": "^1.31.1",
-    "@backstage/plugin-catalog-react": "^1.19.1",
-    "@backstage/types": "^1.2.1",
+    "@backstage/plugin-catalog": "^1.32.1",
+    "@backstage/plugin-catalog-react": "^1.21.4",
+    "@backstage/types": "^1.2.2",
     "@dweber019/backstage-plugin-accentuate-common": "^0.1.1",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.3",
@@ -58,9 +58,9 @@
     "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.33.1",
-    "@backstage/dev-utils": "^1.1.12",
-    "@backstage/test-utils": "^1.7.10",
+    "@backstage/cli": "^0.35.1",
+    "@backstage/dev-utils": "^1.1.18",
+    "@backstage/test-utils": "^1.7.14",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^15.0.0",
     "@testing-library/user-event": "^14.0.0",

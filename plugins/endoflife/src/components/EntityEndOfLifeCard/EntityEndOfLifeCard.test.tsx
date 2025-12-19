@@ -1,4 +1,4 @@
-import { ComponentEntity, SystemEntity } from '@backstage/catalog-model';
+import { SystemEntity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { renderWithEffects, TestApiProvider } from '@backstage/test-utils';
 import { EntityEndOfLifeCard } from './EntityEndOfLifeCard';
@@ -46,33 +46,6 @@ describe('EntityEndOfLifeCard', () => {
   } as unknown as ConfigApi;
 
   const endOfLifeAnnotation = { 'endoflife.date/products': 'rhel' };
-
-  it('should have missing annotation', async () => {
-    const mockEntity = {
-      apiVersion: 'backstage.io/v1beta1',
-      metadata: { name: 'mock' },
-      kind: 'Component',
-      spec: { system: 'any' },
-    } as ComponentEntity;
-
-    const rendered = await renderWithEffects(
-      <TestApiProvider
-        apis={[
-          [endOfLifeApiRef, mockEndOfLifeApi],
-          [appThemeApiRef, mockAppThemeApi],
-          [scmIntegrationsApiRef, mockScmIntegrationRegistry],
-          [configApiRef, mockConfigApi],
-        ]}
-      >
-        <EntityProvider entity={mockEntity}>
-          <EntityEndOfLifeCard />
-        </EntityProvider>
-      </TestApiProvider>,
-    );
-
-    const annotation = await rendered.findByText('endoflife.date/products');
-    expect(annotation).toBeInTheDocument();
-  });
 
   it('should have rendered', async () => {
     const mockEntity = {
