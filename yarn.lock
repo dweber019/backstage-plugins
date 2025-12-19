@@ -4847,7 +4847,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dweber019/backstage-plugin-api-docs-module-wsdl-backend@workspace:plugins/api-docs-module-wsdl-backend"
   dependencies:
-    "@backstage/backend-common": "npm:^0.25.0"
     "@backstage/backend-plugin-api": "npm:^1.6.0"
     "@backstage/catalog-client": "npm:^1.12.1"
     "@backstage/catalog-model": "npm:^1.7.6"
