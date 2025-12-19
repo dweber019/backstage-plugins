@@ -1,5 +1,13 @@
 # @dweber019/backstage-plugin-accentuate
 
+## 0.1.2
+
+### Patch Changes
+
+- 7d1fffc: Update to backstage 1.46.1.
+- Updated dependencies [7d1fffc]
+  - @dweber019/backstage-plugin-accentuate-common@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
