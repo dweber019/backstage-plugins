@@ -26,6 +26,8 @@ import {
   isApiDocsSpectralLinterAvailable,
 } from '../lib/helper';
 import { ApiEntity } from '@backstage/catalog-model';
+import { FileHandle } from 'node:fs/promises';
+import { PathLike } from 'node:fs';
 
 /**
  * Options for creating an LinterClient.
@@ -70,18 +72,20 @@ export class LinterClient implements LinterApi {
 
     const fs = {
       promises: {
-        async readFile(filepath: string) {
-          if (filepath === '/.spectral.yaml') {
+        async readFile(
+          path: PathLike | FileHandle,
+        ): Promise<string> {
+          if (path === '/.spectral.yaml') {
             return `
             extends:
             - ${ruleSetToDownload}
             `;
           }
 
-          throw new Error(`Could not read ${filepath}`);
+          throw new Error(`Could not read ${path}`);
         },
       },
-    };
+    } as any;
     const spectral = new Spectral();
     const ruleSet = await bundleAndLoadRuleset('/.spectral.yaml', {
       fs,

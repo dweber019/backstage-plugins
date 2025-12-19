@@ -15,6 +15,7 @@
  */
 
 import { Navigate, Route } from 'react-router-dom';
+import { SignalsDisplay } from '@backstage/plugin-signals';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -113,6 +114,7 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<RelationsCatalogGraphPage />} />
     <Route path="/notifications" element={<NotificationsPage />} />
+    <Route path="/notifications" element={<NotificationsPage />} />
     <Route path="/accentuate" element={<AccentuatePage />} />
     <Route path="/missing-entity" element={<MissingEntityPage />} />
   </FlatRoutes>
@@ -122,6 +124,7 @@ export default app.createRoot(
   <>
     <AlertDisplay />
     <OAuthRequestDialog />
+    <SignalsDisplay />
     <AppRouter>
       <Root>{routes}</Root>
     </AppRouter>

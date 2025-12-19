@@ -7,7 +7,6 @@ import {
 const backend = createBackend();
 backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
-backend.add(import('@backstage/plugin-scaffolder-backend'));
 backend.add(import('@backstage/plugin-techdocs-backend'));
 // auth plugin
 backend.add(import('@backstage/plugin-auth-backend'));
@@ -29,9 +28,14 @@ backend.add(
 backend.add(import('@backstage/plugin-search-backend'));
 backend.add(import('@backstage/plugin-search-backend-module-catalog'));
 backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
-
-// Notifications plugin
+// scaffolder plugin
+backend.add(import('@backstage/plugin-scaffolder-backend'));
+backend.add(
+  import('@backstage/plugin-scaffolder-backend-module-notifications'),
+);
+// notifications and signals plugins
 backend.add(import('@backstage/plugin-notifications-backend'));
+backend.add(import('@backstage/plugin-signals-backend'));
 
 // api-docs-module-wsdl-backend plugin
 backend.add(import('@dweber019/backstage-plugin-api-docs-module-wsdl-backend'));
