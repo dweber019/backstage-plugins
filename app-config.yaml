@@ -135,7 +135,7 @@ relationsProcessor:
     - sourceKind: group
       targetKinds:
         - user
-      attribute: productOwner
+      attribute: nestedContact.productOwner
       multi: false
       pairs:
       - incoming: productOwnerOf
