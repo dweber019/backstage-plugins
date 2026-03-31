@@ -8,4 +8,5 @@ spec:
   members:
     - john-doe
     - kevin-po
-  productOwner: user:default/kevin-po
+  nestedContact:  
+    productOwner: user:default/kevin-po

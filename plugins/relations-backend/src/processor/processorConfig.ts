@@ -1,6 +1,7 @@
 import { Config } from '@backstage/config';
 import relationV1alpha1Schema from './Relation.v1alpha1.schema.json';
 import { Entity } from '@backstage/catalog-model';
+import { has } from 'lodash';
 
 interface RelationConfig {
   sourceKind: string;
@@ -25,7 +26,7 @@ export class ProcessorConfig {
     return this.relations.filter(relation => {
       return (
         entity.kind.toLocaleLowerCase() === relation.sourceKind &&
-        entity.spec?.hasOwnProperty(relation.attribute) &&
+        has(entity.spec, relation.attribute) &&
         (relation.sourceType === undefined ||
           (entity.spec?.type &&
             (entity.spec?.type as string).toLocaleLowerCase() ===

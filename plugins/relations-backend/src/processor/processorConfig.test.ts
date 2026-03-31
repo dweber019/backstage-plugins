@@ -221,6 +221,38 @@ describe('processorConfig', () => {
     expect(relations).toHaveLength(2);
   });
 
+  test('should return relation for nested attribute', async () => {
+    const config = new ConfigReader({
+      relationsProcessor: {
+        relations: [
+          {
+            sourceKind: 'System',
+            attribute: 'contacts.technologyOwner',
+            pairs: [
+              {
+                incoming: 'technologyOwnerOf',
+                outgoing: 'technologyOwner',
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const entity = {
+      kind: 'System',
+      spec: {
+        contacts: {
+          technologyOwner: 'user:default/john.doe',
+        },
+      },
+    } as unknown as Entity;
+
+    const processorConfig = new ProcessorConfig(config);
+    const relations = processorConfig.getRelations(entity);
+
+    expect(relations).toHaveLength(1);
+  });
+
   test('should throw error for config errors', async () => {
     const config = new ConfigReader({
       relationsProcessor: {
