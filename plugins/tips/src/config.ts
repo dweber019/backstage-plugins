@@ -1,7 +1,7 @@
-import { createApiRef, IdentityApi } from '@backstage/core-plugin-api';
+import { ApiRef, createApiRef, IdentityApi } from '@backstage/core-plugin-api';
 import { Entity } from '@backstage/catalog-model';
 
-export const tipsConfigRef = createApiRef<TipsConfig>({
+export const tipsConfigRef: ApiRef<TipsConfig> = createApiRef<TipsConfig>({
   id: 'plugin.tips.config',
 });
 
