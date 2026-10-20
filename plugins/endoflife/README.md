@@ -143,6 +143,40 @@ const resourcePage = (
 or if you have API entities you could use the annotation `endoflife.date/source-location`
 to make version lifecycles visible to consumers.
 
+### New Frontend System
+
+The section above applies to the old frontend system. If your app runs on the
+[new frontend system](https://backstage.io/docs/frontend-system/), the plugin is picked up
+automatically by package discovery, and there is nothing to add to your `EntityPage`. To install it
+explicitly instead, import the `/alpha` entry point:
+
+```ts
+// packages/app/src/App.tsx
+
+import endOfLifePlugin from '@dweber019/backstage-plugin-endoflife/alpha';
+
+export default createApp({
+  features: [endOfLifePlugin],
+}).createRoot();
+```
+
+The plugin provides the following extensions:
+
+| Extension                  | Default  | Description                                                                                                        |
+| -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `api:endoflife`            | enabled  | The end of life API, the same one exported as `endOfLifeApiRef` from the main entry point.                         |
+| `entity-card:endoflife`    | enabled  | The end of life card, on the overview of entities carrying one of the annotations above.                           |
+| `entity-content:endoflife` | disabled | The same card on an `/endoflife` tab of its own, for apps that prefer a dedicated tab over a card on the overview. |
+
+Enable the tab, or disable the card, through `app-config.yaml`:
+
+```yaml
+app:
+  extensions:
+    - entity-content:endoflife: true
+    - entity-card:endoflife: false
+```
+
 ### Help text
 
 You can customize the help text in the right upper corner by using the following configuration in `app-config.yaml`
